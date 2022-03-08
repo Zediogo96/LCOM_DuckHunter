@@ -7,5 +7,5 @@ Group members:
 1. &lt;Domingos&gt; &lt;Santos&gt; (&lt;up201906680@edu.fe.up.pt&gt;)
 
 2. &lt;José&gt; &lt;Diogo&gt; (&lt;up202003529@edu.fe.up.pt&gt;)
-3. &lt;first name&gt; &lt;family name&gt; (&lt;email address&gt;)
+3. &lt;Miguel&gt; &lt;Teixeira&gt; (&lt;up202005208@edu.fe.up.pt&gt;)
 4. &lt;first name&gt; &lt;family name&gt; (&lt;email address&gt;)
