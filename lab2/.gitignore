@@ -1,0 +1,4 @@
+lab2.o
+utils.o 
+timer.o
+.gdbinit
