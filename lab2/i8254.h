@@ -1,6 +1,6 @@
 #ifndef _LCOM_I8254_H_
 #define _LCOM_I8254_H_
-
+//lol
 #include <lcom/lcf.h>
 
 /** @defgroup i8254 i8254
