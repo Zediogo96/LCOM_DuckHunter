@@ -63,8 +63,41 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
 
 int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field field) {
 
-  union timer_status_field_val conf;
-  
+  #define TIMER_INMODE_MASK 0x30 // 0x00110000 (bit pos 4 e 5)
+  #define TIMER_COUNTMODE_MASK 0x0E // 0x00001110 (bit pos 1, 2 e 3)
 
+  // @brief Union for storing values of timer status fields, including the full status byte
+  union timer_status_field_val conf;
+  uint8_t in_mode;
+  
+  // tsf_all,     /*!< configuration/status */ tsf_initial, /*!< timer initialization mode */ 
+  // tsf_mode,    /*!< timer counting mode */  tsf_base     /*!< timer counting base */
+  switch (field) {
+
+    case tsf_all: conf.byte = st; break;
+    case tsf_initial: 
+        in_mode = (st & TIMER_INMODE_MASK) >> 4; // RIGHT SHIFT 
+
+        switch(in_mode) {
+
+          case 0: conf.in_mode = INVAL_val; break; // 0x000
+          case 1: conf.in_mode = LSB_only; break; // 0x001
+          case 2: conf.in_mode = MSB_only; break; // 0x010
+          case 3: conf.in_mode = MSB_after_LSB; break; // 0x011
+          default: return 1;
+        }
+        break;
+
+    case tsf_mode:
+        conf.count_mode = (st & TIMER_COUNTMODE_MASK) >> 1;
+
+    case tsf_base:
+        conf.bcd = st & TIMER_BCD;
+        break;
+    default: return 1;
+
+    if (timer_print_config(timer, field, conf)) return 1;
+    return 0;
+    }
   return 1;
 }
