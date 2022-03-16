@@ -10,7 +10,7 @@ int(util_get_LSB)(uint16_t val, uint8_t *lsb) {
 
 int(util_get_MSB)(uint16_t val, uint8_t *msb) {
   /* To be implemented by the students */
-  *msb = val << 8;
+  *msb = (val >> 8);
   return 1;
 }
 
