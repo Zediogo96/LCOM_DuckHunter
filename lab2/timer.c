@@ -8,10 +8,46 @@
 #include <minix/syslib.h>
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  
+    uint16_t initial_value = (uint16_t)(TIMER_FREQ / freq);
+    uint8_t status, control_word, timer_port, init_val_lsb, init_val_msb;
 
-  return 1;
+    switch(timer) {
+      case 0: 
+          control_word = TIMER_SEL0;
+          timer_port = TIMER_0;
+          break;
+      case 1:
+          control_word = TIMER_SEL1;
+          timer_port = TIMER_1;
+          break;
+      case 2:
+          control_word = TIMER_SEL2;
+          timer_port = TIMER_2;
+          break;
+      default:
+          return 1;
+    }
+    
+    // get status value 
+    if (timer_get_conf(timer, &status)) return 1;
+
+    uint8_t mask = 0x0F;
+    control_word |= TIMER_LSB_MSB | (status & mask);
+
+    if (sys_outb(TIMER_CTRL, control_word) != OK) {
+      printf("%s: sys_outb() failed \n", __func__);
+      return 1;
+    }
+
+    /** Splits 16 bit word (IV) into 2 bytes **/
+    if(util_get_LSB(initial_value, &init_val_lsb)) return 1;
+    if (util_get_MSB(initial_value, &init_val_msb)) return 1;
+
+    if (sys_outb(initial_value, init_val_lsb)) return 1;
+    if (sys_outb(initial_value, init_val_msb)) return 1;
+
+  return 0;
 }
 
 int (timer_subscribe_int)(uint8_t *bit_no) {
@@ -63,8 +99,8 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
 
 int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field field) {
 
-  #define TIMER_INMODE_MASK 0x30 // 0x00110000 (bit pos 4 e 5)
-  #define TIMER_COUNTMODE_MASK 0x0E // 0x00001110 (bit pos 1, 2 e 3)
+  #define TIMER_INMODE_MASK 0x30 // 0x00110000 (bit pos 5 e 4)
+  #define TIMER_COUNTMODE_MASK 0x0E // 0x00001110 (bit pos 3, 2 e 1)
 
   // @brief Union for storing values of timer status fields, including the full status byte
   union timer_status_field_val conf;
