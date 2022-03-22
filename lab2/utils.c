@@ -4,9 +4,10 @@
 
 int(util_get_LSB)(uint16_t val, uint8_t *lsb) {
   /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
 
-  return 1;
+  *lsb =  (uint8_t)(val & 0xff);
+
+  return 0;
 }
 
 int(util_get_MSB)(uint16_t val, uint8_t *msb) {
@@ -20,6 +21,6 @@ int (util_sys_inb)(int port, uint8_t *value) {
   /* To be implemented by the students */
   uint32_t clean_value;
   int error = sys_inb(port,&clean_value);
-  *value = clean_value;
+  *value = (uint8_t) clean_value;
   return error;
 }
