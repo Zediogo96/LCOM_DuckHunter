@@ -1,0 +1,12 @@
+@lcflib.a:2019, lcf_start
+  timer_test_int(time)
+> timer_test_int(0)
+  @lab2.c:54, timer_test_int
+    timer_subscribe_int(&bit_no)
+  > timer_subscribe_int(addr: 0xeffff73f [0])
+    @timer.c:61, timer_subscribe_int
+      sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id)
+    > sys_irqsetpolicy(0, 1, addr: 0x822d848 [0])
+    < sys_irqsetpolicy(0, 1, addr: 0x822d848 [10]) -> (ret: 0)
+    @timer.c:65, timer_subscribe_int
+      printf("%s: hook_id = 0x%s", __func__, hook_id)

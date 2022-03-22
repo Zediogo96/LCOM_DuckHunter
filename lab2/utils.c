@@ -22,6 +22,4 @@ int (util_sys_inb)(int port, uint8_t *value) {
     *value = (uint8_t) value32; // Only assigns the first 8 bits
 
     return status;
-    
-  return 1;
 }
