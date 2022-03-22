@@ -35,7 +35,6 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
   /* To be implemented by the students */
   if(timer >= 3 || timer < 0)
   {
-      printf("Timer number invalid.");
       return 1;
   }
   uint8_t read_back = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(timer);
@@ -54,7 +53,11 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
 
 int (timer_display_conf)(uint8_t timer, uint8_t st,enum timer_status_field field) {
   /* To be implemented by the students */
-
+  union timer_status_field_val valor;
+    switch (field) {
+        case tsf_all:
+            valor
+    }
   printf("%s is not yet implemented!\n", __func__);
 
   return 1;
