@@ -32,14 +32,27 @@ void (timer_int_handler)() {
 }
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+    uint8_t readback = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(timer);
 
-  return 1;
+    if(sys_outb(TIMER_CTRL,readback)){
+        printf("sys_outb falhou\n");
+        return 1;
+    }
+    switch (timer) {
+        case 0:
+            if(util_sys_inb(TIMER_0, st)) return 1;
+            break;
+        case 1:
+            if(util_sys_inb(TIMER_1,st)) return 1;
+            break;
+        case 2:
+            if(util_sys_inb(TIMER_2, st)) return 1;
+            break;
+    }
+    return 0;
 }
 
-int (timer_display_conf)(uint8_t timer, uint8_t st,
-                        enum timer_status_field field) {
+int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field field) {
   /* To be implemented by the students */
   printf("%s is not yet implemented!\n", __func__);
 
