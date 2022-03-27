@@ -7,6 +7,8 @@
 
 #include <minix/syslib.h>
 
+uint32_t global_int_counter = 0;
+
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   
     uint16_t initial_value = (uint16_t)(TIMER_FREQ / freq);
@@ -56,10 +58,11 @@ int (timer_subscribe_int)(uint8_t *bit_no) {
   
   hook_id = TIMER0_IRQ;
 
-  *bit_no = hook_id;
+  *bit_no = (uint8_t) hook_id;
 
   if (sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id) != 0) {
       printf("%s: sys_irqsetpolicy failed. \n", __func__);
+      return 1;
   }
   
   printf("%s: hook_id = 0x%s", __func__, hook_id);
@@ -77,10 +80,10 @@ int (timer_unsubscribe_int)() {
   return 0;
 }
 
+extern no_interrupts;
 /** gets it from another file **/ 
-extern uint64_t timer_count;
 void (timer_int_handler)() {
-  timer_count++;
+  no_interrupts++;
 }
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
@@ -137,7 +140,6 @@ int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field fiel
 
           if (conf.count_mode == 6) conf.count_mode = 2;
           if (conf.count_mode == 7) conf.count_mode = 3;
-         
 
           break;
 

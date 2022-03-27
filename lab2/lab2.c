@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-uint64_t timer_counter = 0;
+uint32_t no_interrupts = 0;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -50,52 +50,37 @@ int(timer_test_time_base)(uint8_t timer, uint32_t freq) {
 }
 
 int(timer_test_int)(uint8_t time) {
-
-  uint8_t bit_no = 0;
-  timer_subscribe_int(&bit_no);
-  printf("%s was sucessful.", __func__);
-  uint32_t irq_set = BIT(bit_no);
-
-  timer_counter = 0;
-
-  uint8_t FREQ = 60;
-
-  int ipc_status;
-  message msg;
-
-  while(time > 0 ) { /* You may want to use a different condition */
-
-    /* Get a request message. */
-    
-    /* It should be used by device drivers to receive messages, including notifications, from the kernel or from other processes. The first argument specifies the sender of the messages we want to receive. The value ANY means that the driver accepts messages from any process. The second and third arguments are the addresses of variables of type message and int, which will be initialized, by the driver_receive() code, with the message received and IPC related status, respectively.*/
-    int r;
-
-    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
-        printf("driver_receive failed with: %d", r);
-        continue;
-    }
-
-    /** MUST USE BIT() because we do not want the value of the bit_no, we want it's bit number **/
-    
-    if (is_ipc_notify(ipc_status)) { /* received notification */
-        switch (_ENDPOINT_P(msg.m_source)) {
-            case HARDWARE: /* hardware interrupt notification */				
-                if (msg.m_notify.interrupts & irq_set) { /* subscribed interrupt */
-                  timer_int_handler();
-                  if (timer_counter % FREQ == 0) {
-                    timer_print_elapsed_time();
-                  }                    /* process it */
-                }
-                break;
-            default:
-                break; /* no other notifications expected: do nothing */	
+    const int frequency = 60; // Frequency asummed at 60Hz
+    int ipc_status, r;
+    message msg;
+    uint8_t timer_id = 0;
+    no_interrupts = 0;
+    if (timer_subscribe_int(&timer_id)) return 1;
+    int irq_set = BIT(timer_id);
+    while (time) {
+        /* Get a request message. */
+        if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+            printf("driver_receive failed with %d", r);
+            continue;
         }
-    } else { /* received a standard message, not a notification */
-        /* no standard messages expected: do nothing */
+        if (is_ipc_notify(ipc_status)) { /* received notification */
+            switch (_ENDPOINT_P(msg.m_source)) {
+                case HARDWARE: /* hardware interrupt notification */
+                    if (msg.m_notify.interrupts & irq_set) { /* subscribed interrupt */
+                        timer_int_handler();
+                        if (!(no_interrupts % frequency)) { /* second elapsed */
+                            timer_print_elapsed_time();
+                            time--;
+                        }
+                    }
+                    break;
+                default:
+                    break; /* no other notifications expected: do nothing */
+            }
+        } else { /* received standart message, not a notification */
+            /* no standart message expected: do nothing */
+        }
     }
-  }
-  /** Must unsubscribe the current bit_no as it ends **/
-  timer_unsubscribe_int();
-  printf("%s was sucessful.", __func__);
-  return 0;
+    if (timer_unsubscribe_int()) return 1;
+    return 0;
 }
