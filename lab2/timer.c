@@ -4,8 +4,8 @@
 #include <stdint.h>
 
 #include "i8254.h"
-
 #include <minix/syslib.h>
+
 
 uint32_t global_int_counter = 0;
 

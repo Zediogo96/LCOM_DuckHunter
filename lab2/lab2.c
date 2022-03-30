@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+
 uint32_t no_interrupts = 0;
 
 int main(int argc, char *argv[]) {
