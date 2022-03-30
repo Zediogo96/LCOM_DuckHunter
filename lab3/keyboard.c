@@ -3,6 +3,30 @@
 #include <keyboard.h>
 #include <i8042.h>
 
+
+int kbc_issue_command(uint8_t cmd, int port) {
+
+  uint8_t status = 0;
+  int count_cycles = 0;
+
+  while (count_cycles++ < 20) {
+    if (util_sys_inb(KBD_STATUS_REG, &status) != 0) return 1; 
+
+    if ((status & KBD_INPUT_BUFFER_FULL) == 0) { //IS NOT FULL
+        sys_outb(port, cmd);
+        printf("%s: Wrote 0x%x to port 0x%x", __func__, cmd, KBD_STATUS_REG);
+        return 0;
+    }
+    tickdelay(micros_to_ticks(DELAY_US));
+  }
+
+  printf("Exiting %s with insuccess", __func__);
+
+  return 1; // ??????
+
+}
+
+
 uint8_t out_byte;
 int kbc_read_outb(){
   out_byte = 0;
@@ -61,3 +85,4 @@ int kbd_unsubscribe_int() {
   }
   return 0;
 }
+

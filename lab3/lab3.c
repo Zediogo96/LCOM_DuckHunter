@@ -84,10 +84,36 @@ int(kbd_test_scan)() {
   
 
 int(kbd_test_poll)() {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  
 
-  return 1;
+  uint8_t bytes[2]; // can be 1 or 2 bytes long
+
+  int size = 0;
+
+  while (out_byte != KBD_BREAKCODE_ESQ) {
+
+    kbc_poll();
+
+    if (out_byte) { // meaning it's different than 0
+        bytes[size] = out_byte;
+
+        if (out_byte != 0xE0) {
+            kbd_print_scancode(isMakeCode(out_byte), size + 1, bytes);
+            size = 0;
+        }
+        else size = 1;
+    }
+  }
+
+  /** READ CURRENT COMMAND BYTE TO OUTBYTE **/
+  kbc_issue_command(KBD_READ_CMD, KBD_CMD_REG);
+  kbc_read_outb();
+
+  /** WRITE COMMAND BYTE WITH INTERRUPT ENABLED **/
+  kbc_issue_command(KBD_WRITE_CMD, KBD_CMD_REG);
+  kbc_issue_command(out_byte | BIT  (0), KBD_WRITE_CMD);
+  
+  return 0;
 }
 
 int(kbd_test_timed_scan)(uint8_t n) {

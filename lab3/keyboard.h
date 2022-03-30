@@ -13,4 +13,12 @@ int kbd_subscribe_int(uint8_t *bit_no);
  */
 int kbd_unsubscribe_int();
 
+int kbc_issue_command(uint8_t cmd, int port);
+
+void kbc_poll();
+
+int kbc_read_outb();
+
+void(kbc_ih)();
+
 #endif /* _KEYBOARD_H_ */
