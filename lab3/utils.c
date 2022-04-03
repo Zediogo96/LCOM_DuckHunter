@@ -2,6 +2,10 @@
 
 #include <stdint.h>
 
+#ifdef LAB3
+int cnt = 0;
+#endif
+
 int(util_get_LSB)(uint16_t val, uint8_t *lsb) {
   /* To be implemented by the students */
   *lsb =  (uint8_t)(val & 0xff);
@@ -19,5 +23,8 @@ int (util_sys_inb)(int port, uint8_t *value) {
   uint32_t clean_value;
   int error = sys_inb(port,&clean_value);
   *value = (uint8_t) clean_value;
+  #ifdef LAB3
+  cnt++;
+  #endif
   return error;
 }
