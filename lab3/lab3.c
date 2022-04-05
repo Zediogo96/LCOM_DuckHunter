@@ -102,7 +102,10 @@ int(kbd_test_scan)() {
 
 int(kbd_test_poll)() {
   /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  
+
+  uint8_t kbc_command;
+  kbc_command = BIT(1) | BIT(0);
 
   return 1;
 }

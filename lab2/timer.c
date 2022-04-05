@@ -14,13 +14,20 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   {
     return 1;
   }
+  if(freq < 19 || freq > TIMER_FREQ)
+  {
+    return 1;
+  }
   //nova frequencia
   uint16_t newfrequency = TIMER_FREQ / freq;
   uint8_t msb=0,lsb=0;
   util_get_LSB(newfrequency,&lsb);
   util_get_MSB(newfrequency,&msb);
   //setup do comando a enviar
-   uint8_t command =  TIMER_LSB_MSB | TIMER_SQR_WAVE | TIMER_BCD;
+   uint8_t command ;
+   timer_get_conf(timer,&command);
+   command = command & 0x0F;
+   command = command | TIMER_LSB_MSB;
   //escolher o timer
   switch (timer)
   {
@@ -35,6 +42,7 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
     sys_outb(TIMER_CTRL,command);
     sys_outb(TIMER_1,lsb);
     sys_outb(TIMER_1,msb);
+    break;
   case 2:
     command = command | TIMER_SEL2;
     sys_outb(TIMER_CTRL,command);
