@@ -74,7 +74,6 @@ int (timer_unsubscribe_int)() {
   return 0;
 }
 
-extern uint64_t no_interrupts;
 /** gets it from another file **/ 
 void (timer_int_handler)() {
   no_interrupts++;
