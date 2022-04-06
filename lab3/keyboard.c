@@ -3,6 +3,7 @@
 #include <keyboard.h>
 #include <i8042.h>
 
+static int hook_id;
 
 int kbc_issue_command(uint8_t cmd, int port) {
 
@@ -25,7 +26,6 @@ int kbc_issue_command(uint8_t cmd, int port) {
   return 1; // ??????
 
 }
-
 
 uint8_t out_byte;
 int kbc_read_outb(){
@@ -67,7 +67,7 @@ void kbc_poll(){
   tickdelay(micros_to_ticks(DELAY_US));
 }
 
-int hook_id;
+
 int kbd_subscribe_int(uint8_t *bit_no) {
   hook_id = KBD_IRQ;
   *bit_no = (uint8_t) hook_id;

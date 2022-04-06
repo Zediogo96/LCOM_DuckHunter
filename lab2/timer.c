@@ -4,10 +4,8 @@
 #include <stdint.h>
 
 #include "i8254.h"
+#include "timer.h"
 #include <minix/syslib.h>
-
-
-uint32_t global_int_counter = 0;
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   
@@ -57,7 +55,6 @@ static int hook_id;
 int (timer_subscribe_int)(uint8_t *bit_no) {
   
   hook_id = TIMER0_IRQ;
-
   *bit_no = (uint8_t) hook_id;
 
   if (sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &hook_id) != 0) {
@@ -65,22 +62,19 @@ int (timer_subscribe_int)(uint8_t *bit_no) {
       return 1;
   }
   
-  printf("%s: hook_id = 0x%s", __func__, hook_id);
+  printf("%s: hook_id = 0x%x", __func__, hook_id);
   return 0;
 }
 
 int (timer_unsubscribe_int)() {
-  
-  if (sys_irqrmpolicy(&hook_id) != 0) {
-      printf("%s: sys_irqrmpolicy failed. \n", __func__);
+  if(sys_irqrmpolicy(&hook_id) != OK){
+      printf("%s: sys_irqrmpolicy() failed\n", __func__);
       return 1;
   }
-
-  printf("%s: hook_id = 0x%s", __func__, hook_id);
   return 0;
 }
 
-extern no_interrupts;
+extern uint64_t no_interrupts;
 /** gets it from another file **/ 
 void (timer_int_handler)() {
   no_interrupts++;

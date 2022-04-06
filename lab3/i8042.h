@@ -7,7 +7,12 @@
  * @{
  *
  * Constants for programming the i8254 Timer. Needs to be completed.
+ *
  */
+
+uint64_t no_interrupts;
+
+uint32_t timer_counter;
 
 /** 
  * 
