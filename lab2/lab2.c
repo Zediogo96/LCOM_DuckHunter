@@ -59,7 +59,7 @@ int(timer_test_int)(uint8_t time) {
     message msg;
     no_interrupts = 0;
 
-    while(no_interrupts < time * FREQ ) { /* You may want to use a different condition */
+    while(time) { /* You may want to use a different condition */
       /* Get a request message. */
       int r;
       if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
@@ -73,6 +73,7 @@ int(timer_test_int)(uint8_t time) {
                     timer_int_handler();  /* process it */
                     if(no_interrupts % FREQ == 0){
                       timer_print_elapsed_time();
+                      time--;
                     }
                 }
                 break;
