@@ -127,6 +127,8 @@ int(kbd_test_timed_scan)(uint8_t n) {
   int ipc_status, r;
   message msg;
 
+  uint32_t time = n;
+
   // TIMER INTERRUPT HANDLING
   const uint32_t FREQ = 60;
   uint8_t timer_id = TIMER0_IRQ;
@@ -150,7 +152,7 @@ int(kbd_test_timed_scan)(uint8_t n) {
 
 
   // MAIN LOOP AFTER SUBSCRIBING BOTH I/O DEVICES
-  while (bytes[0] != KBD_BREAKCODE_ESQ && timer_counter < n) { // CHANGE
+  while (bytes[0] != KBD_BREAKCODE_ESQ && time) { // CHANGE
 
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
             printf("driver_receive failed with %d", r);
@@ -163,10 +165,14 @@ int(kbd_test_timed_scan)(uint8_t n) {
 
                     if (msg.m_notify.interrupts & timer_irq_set) {
                       timer_int_handler();
-                      if (no_interrupts % FREQ == 0) global_int_counter++;
+                      if (no_interrupts % FREQ == 0) {
+                        time--;
+                      }
                     }
-                    
                     if (msg.m_notify.interrupts & kbd_irq_set) { /* subscribed interrupt */
+
+                          time = n; no_interrupts = 0;
+                          
                           kbc_ih();
                           bytes[size] = out_byte;
   
