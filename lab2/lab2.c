@@ -3,8 +3,6 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#include "timer.h"
-
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
   lcf_set_language("EN-US");
@@ -48,6 +46,7 @@ int(timer_test_time_base)(uint8_t timer, uint32_t freq) {
   return 0;
 }
 
+uint64_t no_interrupts = 0;
 int(timer_test_int)(uint8_t time) {
     uint8_t bit_no = 0;
     const uint8_t FREQ = 60;
@@ -70,7 +69,7 @@ int(timer_test_int)(uint8_t time) {
         switch (_ENDPOINT_P(msg.m_source)) {
               case HARDWARE: /* hardware interrupt notification */				
                 if (msg.m_notify.interrupts & irq_set) { /* subscribed interrupt */
-                    timer_int_handler();  /* process it */
+                    timer_int_handler();
                     if(no_interrupts % FREQ == 0){
                       timer_print_elapsed_time();
                       time--;

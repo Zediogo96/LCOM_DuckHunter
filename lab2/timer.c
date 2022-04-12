@@ -4,7 +4,6 @@
 #include <stdint.h>
 
 #include "i8254.h"
-#include "timer.h"
 #include <minix/syslib.h>
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
@@ -74,6 +73,7 @@ int (timer_unsubscribe_int)() {
   return 0;
 }
 
+extern uint64_t no_interrupts;
 /** gets it from another file **/ 
 void (timer_int_handler)() {
   no_interrupts++;
