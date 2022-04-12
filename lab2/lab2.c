@@ -11,11 +11,11 @@ int main(int argc, char *argv[]) {
 
   // enables to log function invocations that are being "wrapped" by LCF
   // [comment this out if you don't want/need it]
-  lcf_trace_calls("/home/lcom/labs/lab2/trace.txt");
+  lcf_trace_calls("./trace.txt");
 
   // enables to save the output of printf function calls on a file
   // [comment this out if you don't want/need it]
-  lcf_log_output("/home/lcom/labs/lab2/output.txt");
+  lcf_log_output("./output.txt");
 
   // handles control over to LCF
   // [LCF handles command line arguments and invokes the right function]
@@ -31,7 +31,6 @@ int main(int argc, char *argv[]) {
 
 int(timer_test_read_config)(uint8_t timer, enum timer_status_field field) {
   /* To be implemented by the students */
-
   uint8_t st;
   if(timer_get_conf(timer,&st)){
       return 1;
@@ -39,6 +38,7 @@ int(timer_test_read_config)(uint8_t timer, enum timer_status_field field) {
   if(timer_display_conf(timer,st,timer)){
       return 1;
   }
+
   return 0;
 }
 
