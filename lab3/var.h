@@ -8,6 +8,7 @@
 #define KBC_CMD_REG 0x64
 #define KB_STATUS_REG 0x64
 #define KB_OUT_BUFF 0x60
+#define KBC_ARG_REG 0x60
 
 //KB status byte
 #define Parity BIT(7)
@@ -24,5 +25,9 @@
 #define ESC 0x81
 #define IRQ_KB 1
 #define TWO_BYTE 0xe0
+#define READ_CMD 0x20
+#define WRITE_CMD 0x60
+
+#define WAIT_KBC 20000
 
 #endif

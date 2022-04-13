@@ -1,6 +1,13 @@
 {
     "files.associations": {
         "lab2.h": "c",
-        "lab3.h": "c"
+        "lab3.h": "c",
+        "algorithm": "c",
+        "format": "c",
+        "xiosbase": "c",
+        "xlocale": "c",
+        "xutility": "c",
+        "__locale": "c",
+        "ios": "c"
     }
 }

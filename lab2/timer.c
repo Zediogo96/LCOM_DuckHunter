@@ -66,7 +66,7 @@ int (timer_subscribe_int)(uint8_t *bit_no) {
 }
 
 int (timer_unsubscribe_int)() {
-  /* To be implemented by the students */
+  
 
   sys_irqrmpolicy(&hookid);//help
 
@@ -74,7 +74,7 @@ int (timer_unsubscribe_int)() {
 }
 
 void (timer_int_handler)() {
-  /* To be implemented by the students */
+
     counter += 1;
 }
 

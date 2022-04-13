@@ -26,6 +26,18 @@ int (unsubscribe_kbc)()
     return 0;
 }
 
+int kbc_cmd_write(uint8_t command) {
+  sys_outb(KBC_CMD_REG, WRITE_CMD);
+  sys_outb(KBC_ARG_REG, command);
+  return 0;
+}
+
+int kbc_cmd_read(uint8_t *output){
+  sys_outb(KBC_CMD_REG, READ_CMD);
+  util_sys_inb(KB_OUT_BUFF, output);
+  return 0;
+}
+
 void (kbc_ih)(){
     scancode[2] = 0;
     uint8_t scan_code;
