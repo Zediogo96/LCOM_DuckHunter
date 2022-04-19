@@ -140,7 +140,7 @@ int(kbd_test_poll)() {
 
   uint8_t kbc_command;
   kbc_cmd_read(&kbc_command);
-  kbc_command |= BIT(0) | BIT(1);//???????
+  kbc_command |= BIT(0) | BIT(1);
   kbc_cmd_write(kbc_command);
 
   if(unsubscribe_kbc())

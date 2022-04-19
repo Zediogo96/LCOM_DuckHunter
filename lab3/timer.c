@@ -62,7 +62,7 @@ int (timer_unsubscribe_int)() {
 
   sys_irqrmpolicy(&hookid);//help
 
-  return 1;
+  return 0;
 }
 
 void (timer_int_handler)() {
