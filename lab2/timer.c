@@ -6,30 +6,107 @@
 
 #include "i8254.h"
 
-int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+extern uint64_t counter; // usada no timer_handler();
 
-  return 1;
+int timer_hook_id; // IRQ OF Timer0 (timer)
+
+int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
+    uint8_t controlWord, lsb, msb;
+    uint32_t newControlWord;
+
+    //reads the control word(status)
+    if(timer_get_conf(timer, &controlWord)){
+      printf("ERROR: Invalid timer value\n");
+      return 1;
+    }
+
+    uint8_t control_lsb = (BIT(0) | BIT(1) | BIT(2) | BIT(3)) & controlWord; // saves 4 lsb on control lsb
+
+    uint16_t divisor = (uint16_t)(TIMER_FREQ / freq);
+
+    if(util_get_LSB(divisor,&lsb)){
+      printf("Error in timer_set_frequency, util_get_lsb");
+      return 1;
+    }
+
+    if(util_get_MSB(divisor,&msb) != 0){
+      printf("Error in timer_set_frequency, util_get_msb");
+      return 1;
+    }
+
+    switch(timer){
+      case 0:
+          newControlWord = control_lsb | TIMER_SEL0 | TIMER_LSB_MSB; // control_lsb -> bits de 0 a 3; Timer_sel0 -> bits 7,6; timer_lsb_msb-> bits 5,4 
+          if(sys_outb(TIMER_CTRL, newControlWord) != 0){
+            printf("Error in timer_set_frequency, timer_0 ctrl sys_outb\n");
+            return 1;
+          } // escreve a newcontrolword no timer_ctrl
+          if(sys_outb(TIMER_0, lsb)!=0){
+            printf("Error in timer_set_frequency, timer_0 lsb sys_outb\n");
+            return 1;
+          }; //escreve lsb de frequencia divisor no timer_0
+          if(sys_outb(TIMER_0, msb) != 0){ 
+            printf("Error in timer_set_frequency, timer_0 msb sys_outb\n");
+            return 1;
+          } //escreve lsb de frequencia divisor no timer_0
+          break;
+        case 1:
+          newControlWord = control_lsb | TIMER_SEL1 | TIMER_LSB_MSB; // control_lsb -> bits de 0 a 3; Timer_sel0 -> bits 7,6; timer_lsb_msb-> bits 5,4 
+          if(sys_outb(TIMER_CTRL, newControlWord) != 0){
+            printf("Error in timer_set_frequency, timer_1 trl sys_outb\n");
+            return 1;
+          } // escreve a newcontrolword no timer_ctrl
+          if(sys_outb(TIMER_1, lsb)!=0){
+            printf("Error in timer_set_frequency, timer_1 lsb sys_outb\n");
+            return 1;
+          }; //escreve lsb de frequencia divisor no timer_0
+          if(sys_outb(TIMER_1, msb) != 0){ 
+            printf("Error in timer_set_frequency, timer_1 msb sys_outb\n");
+            return 1;
+          } //escreve lsb de frequencia divisor no timer_0
+        break;
+        case 2:
+          newControlWord = control_lsb | TIMER_SEL2| TIMER_LSB_MSB; // control_lsb -> bits de 0 a 3; Timer_sel0 -> bits 7,6; timer_lsb_msb-> bits 5,4 
+          if(sys_outb(TIMER_CTRL, newControlWord) != 0){
+            printf("Error in timer_set_frequency, timer_2 ctrl sys_outb\n");
+            return 1;
+          } // escreve a newcontrolword no timer_ctrl
+          if(sys_outb(TIMER_2, lsb)!=0){
+            printf("Error in timer_set_frequency, timer_2 lsb sys_outb\n");
+            return 1;
+          }; //escreve lsb de frequencia divisor no timer_0
+          if(sys_outb(TIMER_2, msb) != 0){ 
+            printf("Error in timer_set_frequency, timer_2 msb sys_outb\n");
+            return 1;
+          } //escreve lsb de frequencia divisor no timer_0
+          break;
+
+
+    }
+    return 0;
 }
 
 int (timer_subscribe_int)(uint8_t *bit_no) {
-    /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  timer_hook_id = TIMER0_IRQ; 
+  *bit_no = (uint8_t) timer_hook_id;
 
-  return 1;
+  if(sys_irqsetpolicy(TIMER0_IRQ, IRQ_REENABLE, &timer_hook_id)){
+      printf("sys_irqsetpolicy() failed\n");
+      return 1;
+  }
+  return 0;
 }
 
 int (timer_unsubscribe_int)() {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
-
-  return 1;
+  if(sys_irqrmpolicy(&timer_hook_id)){
+      printf("sys_irqrmpolicy() failed\n");
+      return 1;
+  }
+  return 0;
 }
 
 void (timer_int_handler)() {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  counter++;
 }
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {

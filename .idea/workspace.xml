@@ -15,7 +15,8 @@
       <change beforePath="$PROJECT_DIR$/lab2/lab2.c" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/lab2.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab2/lab2.o" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/lab2.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab2/timer.c" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/timer.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab2/timer.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/timer.o" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/timer.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab2/utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/utils.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab2/utils.o" beforeDir="false" afterPath="$PROJECT_DIR$/lab2/utils.o" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +67,7 @@
       <workItem from="1648511123420" duration="1318000" />
       <workItem from="1649701197677" duration="9000" />
       <workItem from="1649712881903" duration="509000" />
+      <workItem from="1650235335371" duration="8000" />
     </task>
     <servers />
   </component>
