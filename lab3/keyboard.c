@@ -23,7 +23,7 @@ int kbc_issue_command(uint8_t cmd, int port) {
 
   printf("Exiting %s with insuccess", __func__);
 
-  return 1; // ??????
+  return 1;
 
 }
 
