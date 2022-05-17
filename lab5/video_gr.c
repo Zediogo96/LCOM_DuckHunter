@@ -1,14 +1,15 @@
 #include "video_gr.h"
 
 static void *video_mem; /* Process (virtual) address to which VRAM is mapped */
-static void *video_buffer;
+/* static void *video_buffer; */
 
-static unsigned h_res; /* Horizontal resolution in pixels */
-static unsigned v_res; /* Vertical resolution in pixels */
+static unsigned h_res;          /* Horizontal resolution in pixels */
+static unsigned v_res;          /* Vertical resolution in pixels */
 static unsigned bits_per_pixel; /* Number of VRAM bits per pixel */
 static unsigned bytes_per_pixel;
-/* static enum xpm_image_type img_type; */
-static unsigned phys_base_ptr;
+/* static enum xpm_image_type img_type;
+static unsigned phys_base_ptr; */
+static vbe_mode_info_t inf;
 
 /**
  * @file video_gr.c
@@ -25,39 +26,88 @@ static unsigned phys_base_ptr;
  */
 
 void *(vg_init) (uint16_t mode) {
-
-  vbe_mode_info_t vmi_p;
-
-  vbe_get_mode_info(mode, &vmi_p);
-
-  /* switch (mode) {
-      case 
-  } */
-
-  h_res = vmi_p.XResolution;
-  v_res = vmi_p.YResolution;
-
-  bits_per_pixel = vmi_p.BitsPerPixel;
-  bytes_per_pixel = bits_per_pixel != 15 ? bits_per_pixel / 8 : 2;
-  phys_base_ptr = vmi_p.PhysBasePtr;
-
-  printf("h_res: %d    v_res: %d    bites_per_pixel: %d\n", h_res, v_res, bits_per_pixel);
-  
-  unsigned int vram_size = h_res * v_res * bytes_per_pixel;
-
-  video_buffer = (uint8_t *) malloc(vram_size);
-  memset(video_buffer, 0, vram_size);
-
-  video_mem = vbe_map_vram(phys_base_ptr, vram_size);
-
-  if (video_mem == NULL) {
-      printf("Failed to map vram\n");
-      return NULL;
+  if (vbe_get_mode_info(mode, &inf) != 0) { // if Operation fail
+    printf("vg_init(): failed to get mode \n");
+    return NULL;
   }
-  
-  if (vbe_set_mode(mode)) {
-      printf("vbe_set_mode failed\n");
-      return NULL;
+
+  struct reg86 r86;
+  int r;
+  struct minix_mem_range mr;
+  static unsigned int vram_base;
+  static unsigned int vram_size;
+  h_res = inf.XResolution;
+  v_res = inf.YResolution;
+  bits_per_pixel = inf.BitsPerPixel;
+  bytes_per_pixel = (bits_per_pixel + 7) / 8;
+
+  vram_base = inf.PhysBasePtr;
+  vram_size = h_res * v_res * bytes_per_pixel;
+
+  /* Allow memory mapping */
+  mr.mr_base = (phys_bytes) vram_base;
+  mr.mr_limit = mr.mr_base + vram_size;
+
+  if (OK != (r = sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr))) {
+    panic("sys_privctl (ADD_MEM) failed: %d\n", r);
+    return NULL;
   }
-  return video_mem; 
+  /* Map memory */
+  video_mem = vm_map_phys(SELF, (void *) mr.mr_base, vram_size);
+
+  if (video_mem == MAP_FAILED) {
+    panic("couldn't map video memory");
+    return NULL;
+  }
+
+  memset(&r86, 0, sizeof(r86));
+
+  r86.ax = 0x4F02;
+  r86.bx = BIT(14) | mode;
+  r86.intno = 0x10;
+
+  if (sys_int86(&r86) != OK) { // if Operation fail
+    printf("vg_init(): sys_int86() failed \n");
+    return NULL;
+  }
+
+  return video_mem;
+}
+
+int(change_pixel_color)(uint16_t x, uint16_t y, uint32_t color) {
+
+  if (x > h_res || y > v_res) {
+    return 1;
+  }
+
+  uint8_t *pixel_pointer;
+
+  pixel_pointer = (uint8_t *) video_mem + (x * bytes_per_pixel) + (y * h_res * bytes_per_pixel);
+  uint8_t change;
+
+  for (unsigned i = 0; i < bytes_per_pixel; i++) {
+    change = color & 0xFF;
+    *(pixel_pointer + i) = change;
+    color = color >> 8;
+  }
+
+  return 0;
+}
+
+int(vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
+  for (int i = 0; i < len; i++) {
+    if (change_pixel_color(x + i, y, color) != 0) {
+      return 1;
+    }
+  }
+  return 0;
+}
+
+int(vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
+  for (int i = 0; i < height; i++) {
+    if (vg_draw_hline(x, y + i, width, color) != 0) {
+      return 1;
+    }
+  }
+  return 0;
 }
