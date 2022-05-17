@@ -38,7 +38,6 @@ int(video_test_init)(uint16_t mode, uint8_t delay) {
   vg_init(mode);
   vg_draw_rectangle(10, 20, 200, 500, 0x14);
   sleep(delay);
-
   vg_exit();
 
   return 0;
@@ -68,8 +67,18 @@ int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, ui
 }
 
 int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
-  /* To be completed */
-  printf("%s(%8p, %u, %u): under construction\n", __func__, xpm, x, y);
+
+  uint8_t * map;
+  xpm_image_t img;
+
+  map = xpm_load(xpm, XPM_INDEXED, &img);
+  vg_init(0x105);
+  
+  vg_draw_image(img, map, x, y);
+  sleep(10);
+  vg_exit();
+
+
 
   return 1;
 }

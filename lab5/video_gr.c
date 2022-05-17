@@ -66,7 +66,7 @@ void *(vg_init) (uint16_t mode) {
   r86.bx = BIT(14) | mode;
   r86.intno = 0x10;
 
-  if (sys_int86(&r86) != OK) { // if Operation fail
+  if (sys_int86(&r86) != 0) { // if Operation fail
     printf("vg_init(): sys_int86() failed \n");
     return NULL;
   }
@@ -110,4 +110,16 @@ int(vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, 
     }
   }
   return 0;
+}
+
+
+void vg_draw_image(xpm_image_t img, uint8_t * map, uint16_t x, uint16_t y) {
+  uint32_t color;
+
+  for (uint16_t i = 0; i < img.height; i++) {
+    for(uint16_t j = 0; j < img.width; j++) {
+      color = map[j + i * img.width];
+      change_pixel_color(x + j, y + i, color);
+    }
+  }
 }
