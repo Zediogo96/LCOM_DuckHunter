@@ -1,6 +1,6 @@
 #include <lcom/lcf.h>
 #include <minix/sysutil.h>
-#include <keyboard.h>
+#include <kbc.h>
 #include <i8042.h>
 
 static int hook_id;
@@ -28,6 +28,7 @@ int kbc_issue_command(uint8_t cmd, int port) {
 }
 
 uint8_t out_byte;
+
 int kbc_read_outb(){
   out_byte = 0;
   uint8_t stat;
