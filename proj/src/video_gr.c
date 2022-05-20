@@ -113,16 +113,26 @@ int(vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, 
 }
 
 
-void vg_draw_image(xpm_image_t img, uint8_t * map, uint16_t x, uint16_t y) {
-  uint32_t color;
+int (vg_draw_image)(xpm_image_t img, uint16_t x, uint16_t y){
 
-  for (uint16_t i = 0; i < img.height; i++) {
-    for(uint16_t j = 0; j < img.width; j++) {
-      color = map[j + i * img.width];
-      change_pixel_color(x + j, y + i, color);
+  uint32_t transparent = xpm_transparency_color(XPM_8_8_8_8);
+  uint32_t* color = (uint32_t*)img.bytes;
+
+  for(int i=0; i<img.height; i++){
+    for(int j=0; j<img.width; j++){
+      if(*color!=transparent){
+        if(change_pixel_color(x + j,y + i, *color)!=0){
+          return 1;
+        }
+      }
+      
+      color++;
     }
   }
+
+  return 0;
 }
+
 
 
 char * get_video_mem() {

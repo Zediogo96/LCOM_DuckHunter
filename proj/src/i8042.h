@@ -47,7 +47,7 @@ uint32_t timer_counter;
  **/
 
 #define KBD_IRQ 1 /* IRQ for KEYBOARD */
-#define KBD_BREAKCODE_ESQ 0x81 /* BREAK CODE FOR THE ESCAPE KEY */
+#define KBD_BREAKCODE_ESC 0x81 /* BREAK CODE FOR THE ESCAPE KEY */
 #define DELAY_US 20000
 #define KBC_OUTPUT_BUF 0x60 
 
