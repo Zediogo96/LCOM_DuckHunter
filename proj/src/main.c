@@ -5,6 +5,8 @@
 #include "i8254.h"
 
 #include "images/ducks.xpm"
+#include "images/background.xpm"
+#include "images/crosshair.xpm"
 #include "keyboard.h"
 #include "timer.h"
 #include "utils.h"
@@ -36,37 +38,43 @@ int main(int argc, char *argv[]) {
 }
 
 extern uint8_t out_byte;
+uint64_t no_interrupts = 0; // prob change inside the loop
 
 int(proj_main_loop)(int argc, char *argv[]) {
 
-  uint8_t bit_no = KBD_IRQ;
-  uint32_t kbd_irq = BIT(bit_no);
+  uint8_t bit_no_kbd = KBD_IRQ;
+  uint8_t bit_no_timer = TIMER0_IRQ;
 
-  /* uint8_t timer_irq = TIMER0_IRQ;
-  uint32_t mouse_irq = MOUSE_IRQ; */
+  uint32_t kbd_irq = BIT(bit_no_kbd);
+  uint32_t timer_irq = BIT(bit_no_timer);
+  // uint32_t mouse_irq = MOUSE_IRQ;
 
   int r, ipc_status, size = 0;
   message msg;
 
   uint8_t bytes[2];
 
-  xpm_image_t img;
+  xpm_image_t img, img2, img3;
   xpm_load(ducks_xpm, XPM_8_8_8_8, &img);
+  xpm_load(background_xpm, XPM_8_8_8_8, &img2);
+  xpm_load(crosshair_xpm, XPM_8_8_8_8, &img3);
 
   vg_init(0x14C);
 
-  /* if (timer_subscribe_int(&timer_irq)) {
+  if (timer_subscribe_int(&bit_no_timer)) {
     printf("%s failed!", __func__);
     return 1;
-  } */
+  }
 
-  if (kbd_subscribe_int(&bit_no)) {
+  if (kbd_subscribe_int(&bit_no_kbd)) {
     printf("%s failed!", __func__);
   }
 
   while (bytes[0] != KBD_BREAKCODE_ESC) { /* You may want to use a different condition */
 
-    vg_draw_image(img, 50, 50);    // vg_draw_image(img, 0,0);
+    
+    vg_draw_image(img, 50, 50); 
+    vg_draw_image(img3, 100, 100);
 
 
     /* Get a request message. */
@@ -77,6 +85,10 @@ int(proj_main_loop)(int argc, char *argv[]) {
     if (is_ipc_notify(ipc_status)) { /* received notification */
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE:                             /* hardware interrupt notification */
+          if (msg.m_notify.interrupts & timer_irq) {
+            timer_int_handler();
+            vg_draw_image(img2, 0, 0);
+          }
           if (msg.m_notify.interrupts & kbd_irq) { /* subscribed interrupt */
             kbc_ih();
             bytes[size] = out_byte;
@@ -104,10 +116,10 @@ int(proj_main_loop)(int argc, char *argv[]) {
    * STUFF TO DISABLE MOUSE AND MOUSE DATA REPORTING
    **/
 
-  // if (timer_unsubscribe_int()) {
-  //   printf("%s failed!", __func__);
-  //   return 1;
-  // }
+  if (timer_unsubscribe_int()) {
+    printf("%s failed!", __func__);
+    return 1;
+  }
 
   if (kbd_unsubscribe_int()) {
     printf("%s failed!", __func__);
