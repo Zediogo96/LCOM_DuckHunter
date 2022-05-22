@@ -4,14 +4,12 @@
 #include "i8042.h"
 #include "i8254.h"
 
-#include "images/ducks.xpm"
-#include "images/background.xpm"
-#include "images/crosshair.xpm"
 #include "keyboard.h"
 #include "timer.h"
 #include "utils.h"
 #include "vbe.h"
 #include "video_gr.h"
+#include "database.h"
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -54,12 +52,9 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
   uint8_t bytes[2];
 
-  xpm_image_t img, img2, img3;
-  xpm_load(ducks_xpm, XPM_8_8_8_8, &img);
-  xpm_load(background_xpm, XPM_8_8_8_8, &img2);
-  xpm_load(crosshair_xpm, XPM_8_8_8_8, &img3);
+  vg_init(MODE_1152x864_DIRECT);
 
-  vg_init(0x14C);
+  loadAllXPMs();
 
   if (timer_subscribe_int(&bit_no_timer)) {
     printf("%s failed!", __func__);
@@ -72,11 +67,6 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
   while (bytes[0] != KBD_BREAKCODE_ESC) { /* You may want to use a different condition */
 
-    
-    vg_draw_image(img, 50, 50); 
-    vg_draw_image(img3, 100, 100);
-
-
     /* Get a request message. */
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
       printf("driver_receive failed with: %d", r);
@@ -87,7 +77,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
         case HARDWARE:                             /* hardware interrupt notification */
           if (msg.m_notify.interrupts & timer_irq) {
             timer_int_handler();
-            vg_draw_image(img2, 0, 0);
+            drawBackground();
           }
           if (msg.m_notify.interrupts & kbd_irq) { /* subscribed interrupt */
             kbc_ih();
