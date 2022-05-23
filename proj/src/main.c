@@ -6,12 +6,14 @@
 
 #include "crosshair.h"
 #include "database.h"
+#include "hitboxes.h"
 #include "keyboard.h"
 #include "mouse.h"
 #include "timer.h"
 #include "utils.h"
 #include "vbe.h"
 #include "video_gr.h"
+#include "duck.h"
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -69,6 +71,8 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
   createCrosshair(db);
 
+  create_Duck(db);
+
   if (timer_subscribe_int(&bit_no_timer)) {
     printf("%s failed!", __func__);
     return 1;
@@ -99,15 +103,19 @@ int(proj_main_loop)(int argc, char *argv[]) {
             timer_int_handler();
             drawBackground();
             drawCrosshair();
+            drawDuck();
+            
+            checkDuckGotShot(db->sprites->crosshair, db->sprites->duck);
+            update_Duck(db->sprites->duck);
 
-            vg_draw_image(db->images.duck_Left, 400, 500);
-            vg_draw_image(db->images.duck_Right, 550, 500);
+            // vg_draw_image(db->images.duck_Left, 400, 500);
+            // vg_draw_image(db->images.duck_Right, 550, 500);
 
-            vg_draw_image(db->images.duck_Up_Right, 500, 200);
-            vg_draw_image(db->images.duck_Up_Left, 400, 200);
-            vg_draw_image(db->images.duck_Up, 150, 300);
-            vg_draw_image(db->images.duck_Shot, 800, 300);
-            vg_draw_image(db->images.duck_Falling, 800, 450);
+            // vg_draw_image(db->images.duck_Up_Right, 500, 200);
+            // vg_draw_image(db->images.duck_Up_Left, 400, 200);
+            // vg_draw_image(db->images.duck_Up, 150, 300);
+            // vg_draw_image(db->images.duck_Shot, 800, 300);
+            // vg_draw_image(db->images.duck_Falling, 800, 450);
           }
           if (msg.m_notify.interrupts & mouse_irq) {
             mouse_ih();

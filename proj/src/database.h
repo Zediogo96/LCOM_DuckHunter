@@ -20,6 +20,8 @@
 #include "images/Duck_Images/duck_Shot.xpm"
 #include "images/Duck_Images/duck_Falling.xpm"
 
+
+
 typedef struct
 {
   Sprite *crosshair;
@@ -52,5 +54,7 @@ void loadAllXPMs();
 void drawBackground();
 
 void drawCrosshair();
+
+void drawDuck(  );
 
 #endif // _DATABASE_H_

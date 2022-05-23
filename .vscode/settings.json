@@ -1,6 +1,13 @@
 {
     "C_Cpp.errorSquiggles": "Disabled",
     "files.associations": {
-        "lcf.h": "c"
+        "lcf.h": "c",
+        "__tree": "c",
+        "bitset": "c",
+        "functional": "c",
+        "iterator": "c",
+        "memory": "c",
+        "random": "c",
+        "tuple": "c"
     }
 }

@@ -6,8 +6,12 @@ void update_mouse(struct packet pp, Database *db) {
     db->sprites->crosshair->x += pp.delta_x;
     db->sprites->crosshair->y -= pp.delta_y;
   }
+
+  if (pp.lb) {
+    isMouseLBpressed = true;
+  }
 }
 
 void createCrosshair(Database *db) {
-  db->sprites->crosshair = create_sprite(db->images.crosshair, 300, 300, 1, 1);
+  db->sprites->crosshair = create_sprite(db->images.crosshair, 300, 300, 1, 1, default_Dir, default_State);
 }

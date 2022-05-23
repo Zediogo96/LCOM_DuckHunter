@@ -1,6 +1,6 @@
 #include "Sprite.h"
 
-Sprite *create_sprite(xpm_image_t img, int x, int y, int xspeed, int yspeed) {
+Sprite *create_sprite(xpm_image_t img, int x, int y, int xspeed, int yspeed, enum Direction direction_, enum State state_) {
   // allocate space for the "object"
   Sprite *sp = (Sprite *) malloc(sizeof(Sprite));
   // xpm_image_t img;
@@ -18,6 +18,8 @@ Sprite *create_sprite(xpm_image_t img, int x, int y, int xspeed, int yspeed) {
   sp->height = img.height;
   sp->xspeed = xspeed;
   sp->yspeed = yspeed;
+  sp->direction = direction_;
+  sp->state = state_;
 
   return sp;
 }
@@ -32,7 +34,7 @@ void destroy_sprite(Sprite *sp) {
   // should do this @ the caller
 }
 
-int draw_sprite(Sprite *sp, char *base) {
+int draw_sprite(Sprite *sp) {
   uint32_t transparent = xpm_transparency_color(XPM_8_8_8_8);
   uint32_t *color = (uint32_t *) sp->map;
 
@@ -58,3 +60,4 @@ int draw_sprite(Sprite *sp, char *base) {
 
   return 0;
 }
+
