@@ -36,12 +36,12 @@ int draw_sprite(Sprite *sp, char *base) {
   uint32_t transparent = xpm_transparency_color(XPM_8_8_8_8);
   uint32_t *color = (uint32_t *) sp->map;
 
-  for (int i = 0; i < sp->height; i++) {
+  for (int i = 0; i < sp->height; ++i) {
     if ((sp->y + i) >= (int) get_v_res())
       continue;
     else if ((sp->y + i) <= 0)
       break;
-    for (int j = 0; j < sp->width; j++) {
+    for (int j = 0; j < sp->width; ++j) {
       if ((sp->x + j) >= (int) get_h_res())
         continue;
       else if ((sp->x + j) <= 0)

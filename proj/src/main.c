@@ -97,8 +97,17 @@ int(proj_main_loop)(int argc, char *argv[]) {
           if (msg.m_notify.interrupts & timer_irq) {
 
             timer_int_handler();
-            /* drawBackground(); */
+            drawBackground();
             drawCrosshair();
+
+            vg_draw_image(db->images.duck_Left, 400, 500);
+            vg_draw_image(db->images.duck_Right, 550, 500);
+
+            vg_draw_image(db->images.duck_Up_Right, 500, 200);
+            vg_draw_image(db->images.duck_Up_Left, 400, 200);
+            vg_draw_image(db->images.duck_Up, 150, 300);
+            vg_draw_image(db->images.duck_Shot, 800, 300);
+            vg_draw_image(db->images.duck_Falling, 800, 450);
           }
           if (msg.m_notify.interrupts & mouse_irq) {
             mouse_ih();
@@ -150,13 +159,13 @@ int(proj_main_loop)(int argc, char *argv[]) {
     return 1;
   }
 
+  if (mouse_disable_reporting() != 0) {
+    printf("%s: mouse_disable_reporting() failed\n", __func__);
+  }
+
   if (mouse_unsubscribe_int()) {
     printf("%s failed!", __func__);
     return 1;
-  }
-
-  if (mouse_disable_reporting() != 0) {
-    printf("%s: mouse_disable_reporting() failed\n", __func__);
   }
 
   vg_exit();
