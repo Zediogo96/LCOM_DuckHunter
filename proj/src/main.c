@@ -6,6 +6,7 @@
 
 #include "crosshair.h"
 #include "database.h"
+#include "duck.h"
 #include "hitboxes.h"
 #include "keyboard.h"
 #include "mouse.h"
@@ -13,7 +14,6 @@
 #include "utils.h"
 #include "vbe.h"
 #include "video_gr.h"
-#include "duck.h"
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -104,7 +104,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
             drawBackground();
             drawCrosshair();
             drawDuck();
-            
+
             checkDuckGotShot(db->sprites->crosshair, db->sprites->duck);
             update_Duck(db->sprites->duck);
 

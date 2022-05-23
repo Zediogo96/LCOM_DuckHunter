@@ -32,4 +32,6 @@ void destroy_sprite(Sprite *sp);
 
 int draw_sprite(Sprite *sp);
 
+void change_Sprite_Img(Sprite *sprite, xpm_image_t img);
+
 #endif // _SPRITE_H

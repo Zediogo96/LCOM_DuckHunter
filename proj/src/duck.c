@@ -7,7 +7,7 @@ void create_Duck(Database *db) {
 
 void update_Duck(Sprite *sprite) {
   if (sprite->state == Dead) {
-    sprite->map = getDB()->images.duck_Falling.bytes;
+    change_Sprite_Img(sprite, getDB()->images.duck_Falling);
     sprite->state = Falling;
   }
 

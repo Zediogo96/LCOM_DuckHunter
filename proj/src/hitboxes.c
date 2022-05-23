@@ -8,7 +8,8 @@ bool checkHitboxCollision(Sprite *sprite1, Sprite *sprite2) {
 
 bool checkDuckGotShot(Sprite *sprite1, Sprite *sprite2) {
   if (checkHitboxCollision(sprite1, sprite2) && isMouseLBpressed) {
-    sprite2->map = getDB()->images.duck_Shot.bytes;
+    change_Sprite_Img(sprite2, getDB()->images.duck_Shot);
+
     sprite2->state = Dead;
     sprite2->direction = Down;
     return true;

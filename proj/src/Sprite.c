@@ -61,3 +61,8 @@ int draw_sprite(Sprite *sp) {
   return 0;
 }
 
+void change_Sprite_Img(Sprite *sprite, xpm_image_t img) {
+  sprite->map = img.bytes;
+  sprite->width = img.width;
+  sprite->height = img.height;
+}
