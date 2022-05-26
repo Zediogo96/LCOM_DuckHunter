@@ -39,7 +39,7 @@ void *(vg_init) (uint16_t mode) {
   h_res = inf.XResolution;
   v_res = inf.YResolution;
   bits_per_pixel = inf.BitsPerPixel;
-  bytes_per_pixel = (bits_per_pixel + 7) / 8;
+  bytes_per_pixel = (bits_per_pixel) / 8;
 
   vram_base = inf.PhysBasePtr;
   vram_size = h_res * v_res * bytes_per_pixel;

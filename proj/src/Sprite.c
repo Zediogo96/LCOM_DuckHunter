@@ -30,8 +30,7 @@ void destroy_sprite(Sprite *sp) {
   if (sp->map)
     free(sp->map);
   free(sp);
-  sp = NULL; // XXX: pointer is passed by value
-  // should do this @ the caller
+  sp = NULL;
 }
 
 int draw_sprite(Sprite *sp) {

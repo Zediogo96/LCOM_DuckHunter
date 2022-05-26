@@ -5,13 +5,14 @@
 
 enum Direction { Right,
                  Left,
-                 Up_RIght,
+                 Up_Right,
                  Up_Left,
                  Up,
                  Down,
                  default_Dir };
 enum State { Dead,
              Alive,
+             Shot,
              Falling,
              default_State };
 /**

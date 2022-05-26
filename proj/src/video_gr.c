@@ -133,8 +133,6 @@ int (vg_draw_image)(xpm_image_t img, uint16_t x, uint16_t y){
   return 0;
 }
 
-
-
 char * get_video_mem() {
   return (char*) video_mem;
 }

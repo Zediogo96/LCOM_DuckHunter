@@ -103,7 +103,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
             timer_int_handler();
             drawBackground();
             drawCrosshair();
-            drawDuck();
+            if (!(db->sprites->duck->state == Dead)) drawDuck();
 
             checkDuckGotShot(db->sprites->crosshair, db->sprites->duck);
             update_Duck(db->sprites->duck);

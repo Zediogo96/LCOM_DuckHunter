@@ -8,7 +8,6 @@
 
 #include "images/background.xpm"
 #include "images/crosshair.xpm"
-#include "images/ducks.xpm"
 
 #include "images/Duck_Images/duck_Left.xpm"
 #include "images/Duck_Images/duck_Right.xpm"

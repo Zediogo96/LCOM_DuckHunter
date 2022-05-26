@@ -25,7 +25,7 @@ static xpm_row_t const duck_Falling_xpm[] = {
 "2  c #004400",
 "3  c #004C01",
 "4  c #00420A",
-"5  c #014B0C",
+"5  c #014B0C"  ,
 "6  c #005200",
 "7  c #01540B",
 "8  c #005C0F",
