@@ -32,8 +32,8 @@ void update_Duck(Sprite *sprite) {
         if (sprite->x > 1)
           sprite->x -= sprite->xspeed;
         else {
-          change_Sprite_Img(sprite, getDB()->images.duck_Right);
-          sprite->direction = Right;
+          change_Sprite_Img(sprite, getDB()->images.duck_Up_Right);
+          sprite->direction = Up_Right;
         }
         break;
       case Right:
@@ -41,8 +41,22 @@ void update_Duck(Sprite *sprite) {
         if ((sprite->x + sprite->width) < get_h_res())
           sprite->x += sprite->xspeed;
         else {
-          change_Sprite_Img(sprite, getDB()->images.duck_Left);
-          sprite->direction = Left;
+          change_Sprite_Img(sprite, getDB()->images.duck_Up_Left);
+          sprite->direction = Up_Left;
+        }
+        break;
+
+      case Up_Left:
+        if ((sprite->x > 0) && (sprite->y > 0)) {
+          sprite->x -= sprite->xspeed;
+          sprite->y -= sprite->yspeed;
+        }
+        break;
+
+      case Up_Right:
+        if ((sprite->x + sprite->width) < get_h_res() && (sprite->y > 0)) {
+          sprite->x += sprite->xspeed;
+          sprite->y -= sprite->yspeed;
         }
         break;
 
