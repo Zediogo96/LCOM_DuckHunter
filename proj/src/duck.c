@@ -5,11 +5,35 @@
 #include <stdlib.h>
 #include <time.h>
 
-void create_Duck(Database *db) {
-  db->sprites->duck = create_sprite(db->images.duck_Up, (rand() % ((get_h_res() - 150) - 100 + 1)) + 150, 600, 4, 3, Up, Alive);
+void createDucksArray() {
+  getDB()->sprites->ducks = (Sprite **) malloc(TOTAL_NR_OF_DUCKS * sizeof(Sprite *));
+
+  for (int i = 0; i < TOTAL_NR_OF_DUCKS; ++i) getDB()->sprites->ducks[i] = NULL;
 }
 
-void update_Duck(Sprite *sprite) {
+void create_Duck() {
+
+  int i = 0;
+  while (getDB()->sprites->ducks[i] != NULL) ++i;
+
+  if (i < TOTAL_NR_OF_DUCKS)
+    getDB()->sprites->ducks[i] = create_sprite(getDB()->images.duck_Up, (rand() % ((get_h_res() - 150) - 100 + 1)) + 150, 600, 10, 10, Up, Alive);
+}
+
+void update_ducks() {
+  for (int i = 0; i < TOTAL_NR_OF_DUCKS; ++i) {
+    if (getDB()->sprites->ducks[i] != NULL) {
+      update_Duck(getDB()->sprites->ducks[i], i);
+    }
+  }
+}
+
+void update_Duck(Sprite *sprite, uint8_t idx) {
+
+  if (sprite->state == Dead) {
+    getDB()->sprites->ducks[idx] = NULL;
+    destroy_sprite(sprite);
+  }
 
   if (sprite->state == Alive) {
     switch (sprite->direction) {
@@ -75,7 +99,6 @@ void update_Duck(Sprite *sprite) {
     }
     else {
       sprite->state = Dead;
-      destroy_sprite(sprite);
     }
   }
 }

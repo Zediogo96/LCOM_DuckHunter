@@ -31,8 +31,11 @@ void drawBackground() {
 void drawCrosshair() {
   draw_sprite(db->sprites->crosshair);
 }
+void draw_ducks() {
 
-void drawDuck(Sprite* sp) {
-  /** SWITCH CASE PARA VARIAR A SPRITE SEGUNDO A DIREÇÃO????????????? **/
-  draw_sprite(db->sprites->duck);
+  for (int i = 0; i < TOTAL_NR_OF_DUCKS; ++i) {
+    if (getDB()->sprites->ducks[i] != NULL) {
+      draw_sprite(getDB()->sprites->ducks[i]);
+    }
+  }
 }

@@ -3,8 +3,12 @@
 
 #include "database.h"
 
-void create_Duck(Database *db);
+void createDucksArray();
 
-void update_Duck(Sprite *sprite);
+void create_Duck();
+
+void update_ducks();
+
+void update_Duck(Sprite *sprite, uint8_t idx);
 
 #endif

@@ -7,7 +7,7 @@ extern bool isMouseLBpressed;
 
 bool checkHitboxCollision(Sprite * sprite1, Sprite * sprite2);
 
-bool checkDuckGotShot(Sprite* sprite1, Sprite * sprite2);
+bool checkDuckGotShot(Sprite* sprite1);
 
 
 

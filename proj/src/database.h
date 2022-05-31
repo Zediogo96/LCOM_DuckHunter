@@ -19,12 +19,14 @@
 #include "images/Duck_Images/duck_Shot.xpm"
 #include "images/Duck_Images/duck_Falling.xpm"
 
+#define TOTAL_NR_OF_DUCKS 10
+
 
 
 typedef struct
 {
   Sprite *crosshair;
-  Sprite *duck;
+  Sprite **ducks;
 } Sprites;
 
 typedef struct
@@ -54,6 +56,8 @@ void drawBackground();
 
 void drawCrosshair();
 
-void drawDuck(  );
+void draw_ducks();
+
+void drawDuck(Sprite * sprite);
 
 #endif // _DATABASE_H_

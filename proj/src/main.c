@@ -71,7 +71,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
   createCrosshair(db);
 
-  create_Duck(db);
+  createDucksArray();
 
   if (timer_subscribe_int(&bit_no_timer)) {
     printf("%s failed!", __func__);
@@ -101,28 +101,26 @@ int(proj_main_loop)(int argc, char *argv[]) {
           if (msg.m_notify.interrupts & timer_irq) {
 
             timer_int_handler();
+
+            if (no_interrupts % 200 == 0) {
+              create_Duck(db);
+              no_interrupts = 0;
+            }
+
             drawBackground();
             drawCrosshair();
-            if (!(db->sprites->duck->state == Dead)) drawDuck();
-
-            checkDuckGotShot(db->sprites->crosshair, db->sprites->duck);
-            update_Duck(db->sprites->duck);
-
-            // vg_draw_image(db->images.duck_Left, 400, 500);
-            // vg_draw_image(db->images.duck_Right, 550, 500);
-
-            // vg_draw_image(db->images.duck_Up_Right, 500, 200);
-            // vg_draw_image(db->images.duck_Up_Left, 400, 200);
-            // vg_draw_image(db->images.duck_Up, 150, 300);
-            // vg_draw_image(db->images.duck_Shot, 800, 300);
-            // vg_draw_image(db->images.duck_Falling, 800, 450);
+            
+            update_ducks();
+            draw_ducks();
+            
+            checkDuckGotShot(db->sprites->crosshair);
           }
           if (msg.m_notify.interrupts & mouse_irq) {
             mouse_ih();
-            if (out_byte & BIT(3) || mouse_byte_count != 0) {
-              bytes_mouse[mouse_byte_count] = out_byte;
-              mouse_byte_count++;
-            }
+
+            bytes_mouse[mouse_byte_count] = out_byte;
+            mouse_byte_count++;
+
             if (mouse_byte_count == 3) {
               mouse_byte_count = 0;
 
