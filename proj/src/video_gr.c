@@ -1,7 +1,7 @@
 #include "video_gr.h"
 
 static void *video_mem; /* Process (virtual) address to which VRAM is mapped */
-/* static void *video_buffer; */
+static void *double_buff;
 
 static unsigned h_res;          /* Horizontal resolution in pixels */
 static unsigned v_res;          /* Vertical resolution in pixels */
@@ -44,6 +44,8 @@ void *(vg_init) (uint16_t mode) {
   vram_base = inf.PhysBasePtr;
   vram_size = h_res * v_res * bytes_per_pixel;
 
+  double_buff = malloc(vram_size);
+
   /* Allow memory mapping */
   mr.mr_base = (phys_bytes) vram_base;
   mr.mr_limit = mr.mr_base + vram_size;
@@ -76,13 +78,13 @@ void *(vg_init) (uint16_t mode) {
 
 int(change_pixel_color)(uint16_t x, uint16_t y, uint32_t color) {
 
-  if (x > h_res || y > v_res) {
+  if (x >= h_res || y >= v_res) {
     return 1;
   }
 
   uint8_t *pixel_pointer;
 
-  pixel_pointer = (uint8_t *) video_mem + (x * bytes_per_pixel) + (y * h_res * bytes_per_pixel);
+  pixel_pointer = (uint8_t *) double_buff + (x * bytes_per_pixel) + (y * h_res * bytes_per_pixel);
   uint8_t change;
 
   for (unsigned i = 0; i < bytes_per_pixel; i++) {
@@ -135,6 +137,14 @@ int (vg_draw_image)(xpm_image_t img, uint16_t x, uint16_t y){
 
 char * get_video_mem() {
   return (char*) video_mem;
+}
+
+char * get_double_buffer() {
+  return (char *) double_buff;
+}
+
+void copyDoubleBufferToMain() {
+  memcpy(video_mem, double_buff, h_res * v_res * bytes_per_pixel);
 }
 
 int get_h_res() {

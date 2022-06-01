@@ -112,6 +112,8 @@ int(proj_main_loop)(int argc, char *argv[]) {
             
             update_ducks();
             draw_ducks();
+
+            copyDoubleBufferToMain(); 
             
             checkDuckGotShot(db->sprites->crosshair);
           }

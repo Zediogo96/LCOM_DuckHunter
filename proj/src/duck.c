@@ -31,7 +31,7 @@ void update_ducks() {
 void update_Duck(Sprite *sprite, uint8_t idx) {
 
   if (sprite->state == Dead) {
-    getDB()->sprites->ducks[idx] = NULL;
+    getDB()->sprites->ducks[idx] = NULL; // To de-allocate memory within the duck array 
     destroy_sprite(sprite);
   }
 
@@ -97,8 +97,6 @@ void update_Duck(Sprite *sprite, uint8_t idx) {
     if (sprite->y < 600) {
       sprite->y = sprite->y + 5;
     }
-    else {
-      sprite->state = Dead;
-    }
-  }
+    else       sprite->state = Dead;
+    }  
 }

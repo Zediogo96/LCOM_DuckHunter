@@ -15,9 +15,15 @@ int (vg_draw_image)(xpm_image_t img, uint16_t x, uint16_t y);
 
 char * get_video_mem();
 
+char * get_double_buffer();
+
+void copyDoubleBufferToMain();
+
 int get_h_res();
 
 int get_v_res();
+
+
 
 unsigned get_bits_per_pixel();
 

@@ -25,7 +25,6 @@ Sprite *create_sprite(xpm_image_t img, int x, int y, int xspeed_, int yspeed_, e
 }
 
 void destroy_sprite(Sprite *sp) {
-
   if (sp == NULL)
     return;
 
