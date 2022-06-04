@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 
+
 void createDucksArray() {
   getDB()->sprites->ducks = (Sprite **) malloc(TOTAL_NR_OF_DUCKS * sizeof(Sprite *));
 
@@ -15,7 +16,7 @@ void create_Duck() {
 
   int i = 0;
   while (getDB()->sprites->ducks[i] != NULL) ++i;
-
+  srand(time(NULL));
   if (i < TOTAL_NR_OF_DUCKS)
     getDB()->sprites->ducks[i] = create_sprite(getDB()->images.duck_Up, (rand() % ((get_h_res() - 150) - 100 + 1)) + 150, 600, 10, 10, Up, Alive);
 }
@@ -27,9 +28,60 @@ void update_ducks() {
     }
   }
 }
+enum Direction generaterandomdir(enum Direction direction){
+  srand(time(NULL));
+  int index = rand() % 8;
+  enum Direction Up[] = {Right,Left,Up_Right,Up_Left,Up};
+  enum Direction Right[] = {Right,Up_Right};
+  enum Direction Left[] = {Left,Up_Left};
+  enum Direction upright[] = {Up_Right,Right,Up};
+  enum Direction upleft[] = {Left,Up_Left,Up};
 
+  switch (direction)
+  {
+  case Up:
+    index = rand() % 5;
+    return Up[index];
+    break;
+  case Right:
+    index = rand() % 2;
+    return Right[index];
+    break;
+  case Left:
+    index = rand() % 2;
+    return Left[index];
+    break;
+  case Up_Right:
+    index = rand() % 3;
+    return upright[index];
+    break;
+  case Up_Left:
+    index = rand() % 3;
+    return upleft[index];
+    break;     
+  default:
+    break;
+  }
+
+  
+}
+
+void change_dir(Sprite *sprite,enum Direction direction){
+
+  switch (direction)
+  {
+  case Up:
+    change_Sprite_Img(sprite, getDB()->images.duck_Up);
+    break;
+  case Left:
+    change_Sprite_Img(sprite, getDB()->images.duck_Left);
+    break;
+  default:
+    break;
+  }
+}
 void update_Duck(Sprite *sprite, uint8_t idx) {
-
+  enum Direction direction;
   if (sprite->y == 0) {
     getDB()->sprites->ducks[idx] = NULL; 
     destroy_sprite(sprite);
@@ -46,14 +98,8 @@ void update_Duck(Sprite *sprite, uint8_t idx) {
         if (sprite->y > 550)
           sprite->y -= sprite->yspeed;
         else {
-          if (sprite->x >= (get_h_res() / 2)) {
-            change_Sprite_Img(sprite, getDB()->images.duck_Right);
-            sprite->direction = Right;
-          }
-          else {
-            change_Sprite_Img(sprite, getDB()->images.duck_Left);
-            sprite->direction = Left;
-          }
+          direction = generaterandomdir(sprite->direction);
+          change_dir(sprite,direction);
         }
         break;
       case Left:
@@ -100,7 +146,7 @@ void update_Duck(Sprite *sprite, uint8_t idx) {
 
   if (sprite->state == Falling) {
     if (sprite->y < 600) {
-      sprite->y = sprite->y + 5;
+      sprite->y = sprite->y + 10;
     }
     else       sprite->state = Dead;
     }  
