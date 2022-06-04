@@ -17,7 +17,7 @@ void create_Duck() {
   while (getDB()->sprites->ducks[i] != NULL) ++i;
 
   if (i < TOTAL_NR_OF_DUCKS)
-    getDB()->sprites->ducks[i] = create_sprite(getDB()->images.duck_Up, (rand() % ((get_h_res() - 150) - 100 + 1)) + 150, 600, 10, 10, Up, Alive);
+    getDB()->sprites->ducks[i] = create_sprite(getDB()->images.duck_Up, (rand() % ((get_h_res() - 150) - 100 + 1)) + 150, 600, 5, 5, Up, Alive);
 }
 
 void update_ducks() {
@@ -45,7 +45,7 @@ void update_Duck(Sprite *sprite, uint8_t idx) {
     switch (sprite->direction) {
       case Up:
         if (sprite->y > 550)
-          sprite->y -= sprite->yspeed;
+          sprite->y -= sprite->yspeed * getDB()->gameSpeed;
         else {
           if (sprite->x >= (get_h_res() / 2)) {
             change_Sprite_Img(sprite, getDB()->images.duck_Right);
@@ -60,7 +60,7 @@ void update_Duck(Sprite *sprite, uint8_t idx) {
       case Left:
 
         if (sprite->x > 1)
-          sprite->x -= sprite->xspeed;
+          sprite->x -= sprite->xspeed * getDB()->gameSpeed;
         else {
           change_Sprite_Img(sprite, getDB()->images.duck_Up_Right);
           sprite->direction = Up_Right;
@@ -69,7 +69,7 @@ void update_Duck(Sprite *sprite, uint8_t idx) {
       case Right:
 
         if ((sprite->x + sprite->width) < get_h_res())
-          sprite->x += sprite->xspeed;
+          sprite->x += sprite->xspeed * getDB()->gameSpeed;
         else {
           change_Sprite_Img(sprite, getDB()->images.duck_Up_Left);
           sprite->direction = Up_Left;
@@ -78,15 +78,15 @@ void update_Duck(Sprite *sprite, uint8_t idx) {
 
       case Up_Left:
         if ((sprite->x > 0) && (sprite->y > 0)) {
-          sprite->x -= sprite->xspeed;
-          sprite->y -= sprite->yspeed;
+          sprite->x -= sprite->xspeed * getDB()->gameSpeed;
+          sprite->y -= sprite->yspeed * getDB()->gameSpeed;
         }
         break;
 
       case Up_Right:
-        if ((sprite->x + sprite->width) < get_h_res() && (sprite->y > 0)) {
-          sprite->x += sprite->xspeed;
-          sprite->y -= sprite->yspeed;
+        if ((sprite->x + sprite->width) <= get_h_res() && (sprite->y > 0)) {
+          sprite->x += sprite->xspeed * getDB()->gameSpeed;
+          sprite->y -= sprite->yspeed * getDB()->gameSpeed;
         }
         break;
 
@@ -103,6 +103,6 @@ void update_Duck(Sprite *sprite, uint8_t idx) {
     if (sprite->y < 600) {
       sprite->y = sprite->y + 5;
     }
-    else       sprite->state = Dead;
+    else sprite->state = Dead;
     }  
 }

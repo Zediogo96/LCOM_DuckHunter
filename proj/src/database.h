@@ -58,6 +58,7 @@ typedef struct
   Sprites *sprites;
   int score;
   int lives;
+  int gameSpeed;
 } Database;
 
 /**
@@ -82,6 +83,10 @@ void drawScoreBoard();
 void drawNumber(int number, uint16_t x_pos, uint16_t y_pos);
 
 void drawScoreDigits();
+
+void draw_fullScore();
+
+void draw_fullLives();
 
 void draw_ducks();
 

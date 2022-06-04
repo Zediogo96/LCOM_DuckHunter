@@ -105,6 +105,15 @@ int(vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
   return 0;
 }
 
+int(vg_draw_vline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
+  for (int i = 0; i < len; i++) {
+    if (change_pixel_color(x, y + i, color) != 0) {
+      return 1;
+    }
+  }
+  return 0;
+}
+
 int(vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
   for (int i = 0; i < height; i++) {
     if (vg_draw_hline(x, y + i, width, color) != 0) {

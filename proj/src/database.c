@@ -71,6 +71,20 @@ void drawScoreDigits() {
   }
 }
 
+void draw_fullScore() {
+  drawScoreBoard();
+  drawScoreDigits();
+}
+
+void draw_fullLives() {
+  vg_draw_rectangle(50, 780, 190, 60, 0x000000);
+  vg_draw_hline(49, 779, 190, 0xFFFFFF);
+  vg_draw_hline(49, 839, 190, 0xFFFFFF);
+  vg_draw_vline(49, 779, 60, 0xFFFFFF);
+  vg_draw_vline(239, 779, 60, 0xFFFFFF);
+  drawLives();
+}
+
 // Update logic here to draw only number of lives left
 void drawLives() {
   uint16_t x_pos = 70;

@@ -71,6 +71,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
   db->score = 0;
   db->lives = GAME_INIT_LIVES;
+  db->gameSpeed = 1;
 
   createCrosshair(db);
 
@@ -107,19 +108,25 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
             if (no_interrupts % 200 == 0) {
               create_Duck(db);
+              create_Duck(db);
             }
             drawBackground();
-            drawScoreBoard();
+            draw_fullScore();
             drawCrosshair();
-            vg_draw_rectangle(50, 780, 190, 60, 0x000000);
-            drawLives();
-            drawScoreDigits();
+            draw_fullLives();
 
             update_ducks();
             draw_ducks();
             copyDoubleBufferToMain();
 
             checkDuckGotShot(db->sprites->crosshair);
+
+            if (db->score >= 200 && db->score < 400)
+              db->gameSpeed = 2;
+            else if (db->score >= 400 && db->score < 600)
+              db->gameSpeed = 3;
+            else if (db->score >= 600)
+              db->gameSpeed = 4;
           }
           if (msg.m_notify.interrupts & mouse_irq) {
             mouse_ih();
