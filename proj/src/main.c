@@ -104,14 +104,17 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
             if (no_interrupts % 200 == 0) {
               create_Duck(db);
-              no_interrupts = 0;
             }
-
             drawBackground();
+            drawScoreBoard();
             drawCrosshair();
+            vg_draw_rectangle(50,780, 190, 60, 0x000000);
+            drawLives();
+            drawNumbers();
             
             update_ducks();
             draw_ducks();
+            
 
             copyDoubleBufferToMain(); 
             

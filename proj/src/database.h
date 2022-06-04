@@ -19,6 +19,11 @@
 #include "images/Duck_Images/duck_Shot.xpm"
 #include "images/Duck_Images/duck_Falling.xpm"
 
+#include "images/score.xpm"
+
+#include "images/lives.xpm"
+#include "images/Numbers/eight.xpm"
+
 #define TOTAL_NR_OF_DUCKS 10
 
 
@@ -31,7 +36,8 @@ typedef struct
 
 typedef struct
 {
-  xpm_image_t duck_Left, duck_Right, duck_Up_Right, duck_Up_Left, duck_Up , duck_Shot, duck_Falling, background, crosshair;
+  xpm_image_t duck_Left, duck_Right, duck_Up_Right, duck_Up_Left, duck_Up,
+   duck_Shot, duck_Falling, background, crosshair, scoreBoard, lives, eight;
 } GameImages;
 
 typedef struct
@@ -55,6 +61,12 @@ void loadAllXPMs();
 void drawBackground();
 
 void drawCrosshair();
+
+void drawLives();
+
+void drawScoreBoard();
+
+void drawNumbers();
 
 void draw_ducks();
 

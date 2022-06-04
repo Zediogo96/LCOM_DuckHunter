@@ -17,10 +17,12 @@ bool checkDuckGotShot(Sprite *sprite1) {
 
         getDB()->sprites->ducks[i]->state = Shot;
         getDB()->sprites->ducks[i]->direction = Down;
-        isMouseLBpressed = false;
+        
       }
     }
   }
+
+  isMouseLBpressed = false;
 
   return false;
 }

@@ -18,6 +18,12 @@ void loadAllXPMs() {
   /** ELSE **/
   xpm_load(background_xpm, XPM_8_8_8_8, &db->images.background);
   xpm_load(crosshair_xpm, XPM_8_8_8_8, &db->images.crosshair);
+  xpm_load(score_xpm, XPM_8_8_8_8, &db->images.scoreBoard);
+  xpm_load(lives_xpm, XPM_8_8_8_8, &db->images.lives);
+
+
+  // Numbers
+  xpm_load(eight_xpm, XPM_8_8_8_8, &db->images.eight);
 }
 
 Database *getDB() {
@@ -31,6 +37,20 @@ void drawBackground() {
 void drawCrosshair() {
   draw_sprite(db->sprites->crosshair);
 }
+
+void drawScoreBoard() {
+  vg_draw_image(db->images.scoreBoard, 900, 770);
+}
+
+// Update logic here to draw only number of lives left
+void drawLives() {
+  vg_draw_image(db->images.lives, 80, 790);
+}
+
+void drawNumbers() {
+  vg_draw_image(db->images.eight, 990,790);
+}
+
 void draw_ducks() {
 
   for (int i = 0; i < TOTAL_NR_OF_DUCKS; ++i) {
