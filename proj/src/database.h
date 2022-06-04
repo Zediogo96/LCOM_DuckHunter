@@ -21,6 +21,9 @@
 
 #include "images/score.xpm"
 
+#include "images/heart_depleted.xpm"
+#include "images/heart_full.xpm"
+
 #include "images/lives.xpm"
 #include "images/Numbers/zero.xpm"
 #include "images/Numbers/one.xpm"
@@ -34,6 +37,7 @@
 #include "images/Numbers/nine.xpm"
 
 #define TOTAL_NR_OF_DUCKS 10
+#define GAME_INIT_LIVES 3
 
 typedef struct
 {
@@ -44,7 +48,8 @@ typedef struct
 typedef struct
 {
   xpm_image_t duck_Left, duck_Right, duck_Up_Right, duck_Up_Left, duck_Up,
-   duck_Shot, duck_Falling, background, crosshair, scoreBoard, lives, zero, one, two, three, four, five, six, seven, eight, nine;
+   duck_Shot, duck_Falling, background, crosshair, scoreBoard, zero, one, two, three, four, five, six, seven, eight, nine,
+   heart_full, heart_dep;
 } GameImages;
 
 typedef struct
@@ -52,6 +57,7 @@ typedef struct
   GameImages images;
   Sprites *sprites;
   int score;
+  int lives;
 } Database;
 
 /**

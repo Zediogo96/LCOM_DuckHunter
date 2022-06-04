@@ -19,7 +19,8 @@ void loadAllXPMs() {
   xpm_load(background_xpm, XPM_8_8_8_8, &db->images.background);
   xpm_load(crosshair_xpm, XPM_8_8_8_8, &db->images.crosshair);
   xpm_load(score_xpm, XPM_8_8_8_8, &db->images.scoreBoard);
-  xpm_load(lives_xpm, XPM_8_8_8_8, &db->images.lives);
+  xpm_load(heart_dep_xpm, XPM_8_8_8_8, &db->images.heart_dep);
+  xpm_load(heart_full_xpm, XPM_8_8_8_8, &db->images.heart_full);
 
   // Numbers for score
   xpm_load(zero_xpm, XPM_8_8_8_8, &db->images.zero);
@@ -72,7 +73,19 @@ void drawScoreDigits() {
 
 // Update logic here to draw only number of lives left
 void drawLives() {
-  vg_draw_image(db->images.lives, 80, 790);
+  uint16_t x_pos = 70;
+  uint8_t idx = 0;
+  uint8_t start_lives = GAME_INIT_LIVES;
+  for (uint8_t i = 0; i < start_lives; ++i) {
+    if (i < getDB()->lives) {
+      vg_draw_image(db->images.heart_full, x_pos + idx, 790);
+    }
+    else {
+      vg_draw_image(db->images.heart_dep, x_pos + idx, 790);
+    }
+
+    idx += 50;
+  }
 }
 
 void drawNumber(int number, uint16_t x_pos, uint16_t y_pos) {

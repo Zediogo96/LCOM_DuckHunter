@@ -70,6 +70,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
   Database *db = getDB();
 
   db->score = 0;
+  db->lives = GAME_INIT_LIVES;
 
   createCrosshair(db);
 

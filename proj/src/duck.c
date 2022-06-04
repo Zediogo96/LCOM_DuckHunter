@@ -33,6 +33,7 @@ void update_Duck(Sprite *sprite, uint8_t idx) {
   if (sprite->y == 0) {
     getDB()->sprites->ducks[idx] = NULL; 
     destroy_sprite(sprite);
+    getDB()->lives--;
   }
 
   if (sprite->state == Dead) {
