@@ -5,7 +5,7 @@
 #include <lcom/lab3.h>
 
 int hoookid = IRQ_KB;
-bool two_byte_scan_code;
+bool two_byte_scan_code = false;
 uint8_t scancode[3];
 
 int (subscribe_kbc)(uint8_t *bit_nr){
@@ -41,7 +41,7 @@ int kbc_cmd_read(uint8_t *output){
 void (kbc_ih)(){
     scancode[2] = 0;
     uint8_t scan_code;
-    two_byte_scan_code = false;
+    
     if(check_stat_kb())
     {
         return; //error in status register
@@ -56,6 +56,7 @@ void (kbc_ih)(){
         scancode[0] = scan_code;
     }
     else if(two_byte_scan_code){
+        printf("entrou");
         scancode[1] = scan_code;
         scancode[2] = 1;
         two_byte_scan_code = false;

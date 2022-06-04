@@ -75,7 +75,7 @@ int(timer_test_int)(uint8_t time) {
                 if (msg.m_notify.interrupts & irq_set) { /* subscribed interrupt */
                       /* process it */
                     timer_int_handler();
-                    //perguntar com se faz para contar de 1 em 1 segundo
+                    // contar de 1 em 1 segundo
                     if(counter % 60 == 0){
                         
                         timer_print_elapsed_time();
