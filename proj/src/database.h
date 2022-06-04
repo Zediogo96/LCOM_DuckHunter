@@ -22,7 +22,16 @@
 #include "images/score.xpm"
 
 #include "images/lives.xpm"
+#include "images/Numbers/zero.xpm"
+#include "images/Numbers/one.xpm"
+#include "images/Numbers/two.xpm"
+#include "images/Numbers/three.xpm"
+#include "images/Numbers/four.xpm"
+#include "images/Numbers/five.xpm"
+#include "images/Numbers/six.xpm"
+#include "images/Numbers/seven.xpm"
 #include "images/Numbers/eight.xpm"
+#include "images/Numbers/nine.xpm"
 
 #define TOTAL_NR_OF_DUCKS 10
 
@@ -37,7 +46,7 @@ typedef struct
 typedef struct
 {
   xpm_image_t duck_Left, duck_Right, duck_Up_Right, duck_Up_Left, duck_Up,
-   duck_Shot, duck_Falling, background, crosshair, scoreBoard, lives, eight;
+   duck_Shot, duck_Falling, background, crosshair, scoreBoard, lives, zero, one, two, three, four, five, six, seven, eight, nine;
 } GameImages;
 
 typedef struct
@@ -66,7 +75,7 @@ void drawLives();
 
 void drawScoreBoard();
 
-void drawNumbers();
+void drawNumber(int number);
 
 void draw_ducks();
 

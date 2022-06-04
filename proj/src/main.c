@@ -110,7 +110,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
             drawCrosshair();
             vg_draw_rectangle(50,780, 190, 60, 0x000000);
             drawLives();
-            drawNumbers();
+            drawNumber(8);
             
             update_ducks();
             draw_ducks();

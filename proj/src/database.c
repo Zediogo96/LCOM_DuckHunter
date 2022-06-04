@@ -22,8 +22,17 @@ void loadAllXPMs() {
   xpm_load(lives_xpm, XPM_8_8_8_8, &db->images.lives);
 
 
-  // Numbers
+  // Numbers for score
+  xpm_load(zero_xpm, XPM_8_8_8_8, &db->images.zero);
+  xpm_load(one_xpm, XPM_8_8_8_8, &db->images.one);
+  xpm_load(two_xpm, XPM_8_8_8_8, &db->images.two);
+  xpm_load(three_xpm, XPM_8_8_8_8, &db->images.three);
+  xpm_load(four_xpm, XPM_8_8_8_8, &db->images.four);
+  xpm_load(five_xpm, XPM_8_8_8_8, &db->images.five);
+  xpm_load(six_xpm, XPM_8_8_8_8, &db->images.six);
+  xpm_load(seven_xpm, XPM_8_8_8_8, &db->images.seven);
   xpm_load(eight_xpm, XPM_8_8_8_8, &db->images.eight);
+  xpm_load(nine_xpm, XPM_8_8_8_8, &db->images.nine);
 }
 
 Database *getDB() {
@@ -47,7 +56,7 @@ void drawLives() {
   vg_draw_image(db->images.lives, 80, 790);
 }
 
-void drawNumbers() {
+void drawNumber(int n) {
   vg_draw_image(db->images.eight, 990,790);
 }
 
