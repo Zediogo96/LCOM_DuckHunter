@@ -21,7 +21,6 @@ void loadAllXPMs() {
   xpm_load(score_xpm, XPM_8_8_8_8, &db->images.scoreBoard);
   xpm_load(lives_xpm, XPM_8_8_8_8, &db->images.lives);
 
-
   // Numbers for score
   xpm_load(zero_xpm, XPM_8_8_8_8, &db->images.zero);
   xpm_load(one_xpm, XPM_8_8_8_8, &db->images.one);
@@ -51,13 +50,71 @@ void drawScoreBoard() {
   vg_draw_image(db->images.scoreBoard, 900, 770);
 }
 
+void drawScoreDigits() {
+
+  uint16_t x_pos = 1050;
+
+  int tmp = getDB()->score;
+  uint8_t idx = 0;
+
+  if (tmp == 0) {
+    drawNumber(0, x_pos, 790);
+  }
+  else {
+    while (tmp != 0) {
+      uint8_t digit = tmp % 10;
+      tmp /= 10;
+      drawNumber(digit, x_pos - idx, 790);
+      idx += 20;
+    }
+  }
+}
+
 // Update logic here to draw only number of lives left
 void drawLives() {
   vg_draw_image(db->images.lives, 80, 790);
 }
 
-void drawNumber(int n) {
-  vg_draw_image(db->images.eight, 990,790);
+void drawNumber(int number, uint16_t x_pos, uint16_t y_pos) {
+  switch (number) {
+    case 0:
+      vg_draw_image(db->images.zero, x_pos, y_pos);
+      break;
+    case 1:
+      vg_draw_image(db->images.one, x_pos, y_pos);
+      break;
+    case 2:
+      vg_draw_image(db->images.two, x_pos, y_pos);
+      break;
+
+    case 3:
+      vg_draw_image(db->images.three, x_pos, y_pos);
+      break;
+
+    case 4:
+      vg_draw_image(db->images.four, x_pos, y_pos);
+      break;
+
+    case 5:
+      vg_draw_image(db->images.five, x_pos, y_pos);
+      break;
+
+    case 6:
+      vg_draw_image(db->images.six, x_pos, y_pos);
+      break;
+
+    case 7:
+      vg_draw_image(db->images.seven, x_pos, y_pos);
+      break;
+
+    case 8:
+      vg_draw_image(db->images.eight, x_pos, y_pos);
+      break;
+
+    case 9:
+      vg_draw_image(db->images.nine, x_pos, y_pos);
+      break;
+  }
 }
 
 void draw_ducks() {

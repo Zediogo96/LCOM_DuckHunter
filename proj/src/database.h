@@ -35,8 +35,6 @@
 
 #define TOTAL_NR_OF_DUCKS 10
 
-
-
 typedef struct
 {
   Sprite *crosshair;
@@ -75,7 +73,9 @@ void drawLives();
 
 void drawScoreBoard();
 
-void drawNumber(int number);
+void drawNumber(int number, uint16_t x_pos, uint16_t y_pos);
+
+void drawScoreDigits();
 
 void draw_ducks();
 

@@ -69,6 +69,8 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
   Database *db = getDB();
 
+  db->score = 0;
+
   createCrosshair(db);
 
   createDucksArray();
@@ -108,16 +110,14 @@ int(proj_main_loop)(int argc, char *argv[]) {
             drawBackground();
             drawScoreBoard();
             drawCrosshair();
-            vg_draw_rectangle(50,780, 190, 60, 0x000000);
+            vg_draw_rectangle(50, 780, 190, 60, 0x000000);
             drawLives();
-            drawNumber(8);
-            
+            drawScoreDigits();
+
             update_ducks();
             draw_ducks();
-            
+            copyDoubleBufferToMain();
 
-            copyDoubleBufferToMain(); 
-            
             checkDuckGotShot(db->sprites->crosshair);
           }
           if (msg.m_notify.interrupts & mouse_irq) {
