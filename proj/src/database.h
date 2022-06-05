@@ -39,6 +39,8 @@
 #define TOTAL_NR_OF_DUCKS 10
 #define GAME_INIT_LIVES 3
 
+enum CurrentState { Menu, GamePlaying, GameOver, Exit};
+
 typedef struct
 {
   Sprite *crosshair;
@@ -59,6 +61,7 @@ typedef struct
   int score;
   int lives;
   int gameSpeed;
+  enum CurrentState;
 } Database;
 
 /**
