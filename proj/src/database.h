@@ -61,7 +61,7 @@ typedef struct
   int score;
   int lives;
   int gameSpeed;
-  enum CurrentState;
+  enum CurrentState currentState;
 } Database;
 
 /**
