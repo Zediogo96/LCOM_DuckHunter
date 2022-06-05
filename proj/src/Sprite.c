@@ -1,4 +1,4 @@
-#include "Sprite.h"
+#include "Include/Sprite.h"
 
 Sprite *create_sprite(xpm_image_t img, int x, int y, int xspeed_, int yspeed_, enum Direction direction_, enum State state_) {
   // allocate space for the "object"

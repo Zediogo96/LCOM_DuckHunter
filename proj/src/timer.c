@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-#include "i8254.h"
+#include "Include/i8254.h"
 #include <minix/syslib.h>
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {

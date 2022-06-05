@@ -1,5 +1,5 @@
-#include "hitboxes.h"
-#include "database.h"
+#include "Include/hitboxes.h"
+#include "Include/database.h"
 
 bool checkHitboxCollision(Sprite *sprite1, Sprite *sprite2) {
 

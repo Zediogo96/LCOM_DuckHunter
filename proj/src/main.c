@@ -1,19 +1,19 @@
 // IMPORTANT: you must include the following line in all your C files
 #include <lcom/lcf.h>
 
-#include "i8042.h"
-#include "i8254.h"
+#include "Include/i8042.h"
+#include "Include/i8254.h"
 
-#include "crosshair.h"
-#include "database.h"
-#include "duck.h"
-#include "hitboxes.h"
-#include "keyboard.h"
-#include "mouse.h"
-#include "timer.h"
-#include "utils.h"
-#include "vbe.h"
-#include "video_gr.h"
+#include "Include/crosshair.h"
+#include "Include/database.h"
+#include "Include/duck.h"
+#include "Include/hitboxes.h"
+#include "Include/keyboard.h"
+#include "Include/mouse.h"
+#include "Include/timer.h"
+#include "Include/utils.h"
+#include "Include/vbe.h"
+#include "Include/video_gr.h"
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -106,9 +106,9 @@ int(proj_main_loop)(int argc, char *argv[]) {
         case HARDWARE: /* hardware interrupt notification */
           if (msg.m_notify.interrupts & timer_irq) {
 
-            timer_int_handler();
-
             if (db->currentState == GamePlaying) {
+
+              timer_int_handler();
 
               if (no_interrupts % 200 == 0) {
                 create_Duck(db);

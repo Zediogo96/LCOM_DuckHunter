@@ -1,7 +1,7 @@
 #include <lcom/lcf.h>
 #include <minix/sysutil.h>
-#include <kbc.h>
-#include <i8042.h>
+#include "Include/kbc.h"
+#include "Include/i8042.h"
 
 static int hook_id;
 

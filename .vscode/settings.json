@@ -8,6 +8,7 @@
         "iterator": "c",
         "memory": "c",
         "random": "c",
-        "tuple": "c"
+        "tuple": "c",
+        "*.xpm": "c"
     }
 }

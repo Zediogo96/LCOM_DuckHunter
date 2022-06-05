@@ -1,4 +1,4 @@
-#include "video_gr.h"
+#include "Include/video_gr.h"
 
 static void *video_mem; /* Process (virtual) address to which VRAM is mapped */
 static void *double_buff;

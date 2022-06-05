@@ -1,5 +1,5 @@
-#include "duck.h"
-#include "database.h"
+#include "Include/duck.h"
+#include "Include/database.h"
 
 #include <stdio.h>
 #include <stdlib.h>
