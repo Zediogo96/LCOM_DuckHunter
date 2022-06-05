@@ -36,10 +36,20 @@
 #include "images/Numbers/eight.xpm"
 #include "images/Numbers/nine.xpm"
 
+#include "images/Menu/main_menu.xpm"
+#include "images/Menu/start.xpm"
+#include "images/Menu/rules.xpm"
+#include "images/Menu/exit.xpm"
+
 #define TOTAL_NR_OF_DUCKS 10
 #define GAME_INIT_LIVES 3
 
-enum CurrentState { Menu, GamePlaying, GameOver, Exit};
+enum CurrentState {
+        Menu,
+        GamePlaying,
+        GameOver,
+        Exit
+};
 
 typedef struct
 {
@@ -51,7 +61,8 @@ typedef struct
 {
   xpm_image_t duck_Left, duck_Right, duck_Up_Right, duck_Up_Left, duck_Up,
    duck_Shot, duck_Falling, background, crosshair, scoreBoard, zero, one, two, three, four, five, six, seven, eight, nine,
-   heart_full, heart_dep;
+   heart_full, heart_dep,
+   main_menu, start, rules, exit;
 } GameImages;
 
 typedef struct
@@ -62,6 +73,7 @@ typedef struct
   int lives;
   int gameSpeed;
   enum CurrentState currentState;
+  int currentSelect;
 } Database;
 
 /**
@@ -74,6 +86,8 @@ Database *getDB();
  * which makes it easier to access those images when needed.
  */
 void loadAllXPMs();
+
+void drawMainMenu();
 
 void drawBackground();
 
@@ -94,5 +108,7 @@ void draw_fullLives();
 void draw_ducks();
 
 void drawDuck(Sprite * sprite);
+
+void updateCurrentSelect(uint8_t out_b);
 
 #endif // _DATABASE_H_

@@ -8,7 +8,7 @@
 #include "i8254.h"
 #include "keyboard.h"
 
-#include "timer/timer.c"
+#include "timer.c"
 
 #include "utils.h"
 
@@ -134,7 +134,7 @@ int(kbd_test_timed_scan)(uint8_t n) {
   uint8_t timer_id = TIMER0_IRQ;
   uint8_t timer_irq_set  = BIT(timer_id);
 
-  int no_interrupts = 0;
+  no_interrupts = 0;
 
   if (timer_subscribe_int(&timer_id) != 0) {
       perror("Error ocurred while subscribing timer_bit");
