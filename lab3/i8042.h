@@ -10,7 +10,6 @@
  *
  */
 
-uint64_t no_interrupts;
 
 uint32_t timer_counter;
 

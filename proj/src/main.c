@@ -15,7 +15,6 @@
 #include "vbe.h"
 #include "video_gr.h"
 
-
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
   lcf_set_language("EN-US");
@@ -52,7 +51,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
   uint32_t kbd_irq = BIT(bit_no_kbd);
   uint32_t timer_irq = BIT(bit_no_timer);
   uint32_t mouse_irq = BIT(bit_no_mouse);
-  
+
   int r, ipc_status, size = 0;
   message msg;
 
@@ -73,6 +72,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
   db->score = 0;
   db->lives = GAME_INIT_LIVES;
   db->gameSpeed = 1;
+  db->currentState = Menu;
 
   createCrosshair(db);
 
@@ -107,32 +107,41 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
             timer_int_handler();
 
-            if (no_interrupts % 200 == 0) {
+            /* if (no_interrupts % 200 == 0) {
               create_Duck(db);
               create_Duck(db);
-            }
-            drawBackground();
-            draw_fullScore();
-            drawCrosshair();
-            vg_draw_rectangle(50,780, 190, 60, 0x000000);
-            drawLives();           
-            
-            if (no_interrupts % 30 == 0) {
-              
-              update_ducks_dir();
-            }
-            update_ducks_status();
-            draw_ducks();
-            copyDoubleBufferToMain();
+            } */
 
-            checkDuckGotShot(db->sprites->crosshair);
+            if (db->currentState == Menu) {
+              drawMainMenu();
+              copyDoubleBufferToMain();
+            }
 
-            if (db->score >= 200 && db->score < 400)
-              db->gameSpeed = 2;
-            else if (db->score >= 400 && db->score < 600)
-              db->gameSpeed = 3;
-            else if (db->score >= 600)
-              db->gameSpeed = 4;
+            else {
+              drawBackground();
+
+              draw_fullScore();
+              drawCrosshair();
+              vg_draw_rectangle(50, 780, 190, 60, 0x000000);
+              drawLives();
+
+              if (no_interrupts % 30 == 0) {
+
+                update_ducks_dir();
+              }
+              update_ducks_status();
+              draw_ducks();
+              copyDoubleBufferToMain();
+
+              checkDuckGotShot(db->sprites->crosshair);
+
+              if (db->score >= 200 && db->score < 400)
+                db->gameSpeed = 2;
+              else if (db->score >= 400 && db->score < 600)
+                db->gameSpeed = 3;
+              else if (db->score >= 600)
+                db->gameSpeed = 4;
+            }
           }
           if (msg.m_notify.interrupts & mouse_irq) {
             mouse_ih();
@@ -151,10 +160,13 @@ int(proj_main_loop)(int argc, char *argv[]) {
             kbc_ih();
             bytes[size] = out_byte;
 
+
+
             if (out_byte == 0)
               return 1;
 
             if (out_byte != 0xE0) {
+              updateCurrentSelect()
               size = 0;
             }
             else

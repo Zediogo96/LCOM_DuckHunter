@@ -33,10 +33,28 @@ void loadAllXPMs() {
   xpm_load(seven_xpm, XPM_8_8_8_8, &db->images.seven);
   xpm_load(eight_xpm, XPM_8_8_8_8, &db->images.eight);
   xpm_load(nine_xpm, XPM_8_8_8_8, &db->images.nine);
+
+  /** MENUS RELATED **/
+  xpm_load(main_menu_xpm, XPM_8_8_8_8, &db->images.main_menu);
+  xpm_load(start_xpm, XPM_8_8_8_8, &db->images.start);
+  xpm_load(exit_xpm, XPM_8_8_8_8, &db->images.exit);
 }
 
 Database *getDB() {
   return db;
+}
+
+void drawMainMenu() {
+
+  vg_draw_image(db->images.main_menu, 0, 0);
+
+  vg_draw_rectangle(460, 490, 200, 70, 0x008b8b);
+  vg_draw_image(db->images.start, 467, 495);
+
+  vg_draw_rectangle(460, 590, 200, 70, 0x008b8b);
+
+  vg_draw_rectangle(460, 690, 200, 70, 0x008b8b);
+  vg_draw_image(db->images.exit, 467, 695);
 }
 
 void drawBackground() {
@@ -152,3 +170,4 @@ void draw_ducks() {
     }
   }
 }
+
