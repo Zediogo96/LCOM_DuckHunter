@@ -15,6 +15,7 @@
 #include "vbe.h"
 #include "video_gr.h"
 
+
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
   lcf_set_language("EN-US");
@@ -51,7 +52,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
   uint32_t kbd_irq = BIT(bit_no_kbd);
   uint32_t timer_irq = BIT(bit_no_timer);
   uint32_t mouse_irq = BIT(bit_no_mouse);
-
+  
   int r, ipc_status, size = 0;
   message msg;
 
@@ -87,7 +88,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
     printf("%s failed!", __func__);
     return 1;
   }
-
+  extern int counter;
   while (bytes[0] != KBD_BREAKCODE_ESC) { /* You may want to use a different condition */
 
     /* Get a request message. */
@@ -112,7 +113,12 @@ int(proj_main_loop)(int argc, char *argv[]) {
             drawLives();
             drawNumber(8);
             
-            update_ducks();
+            
+            if (no_interrupts % 20== 0) {
+              
+              update_ducks_dir();
+            }
+            update_ducks_status();
             draw_ducks();
             
 

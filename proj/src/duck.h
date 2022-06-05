@@ -7,12 +7,16 @@ void createDucksArray();
 
 void create_Duck();
 
-void update_ducks();
+void update_ducks_status();
+
+void update_ducks_dir();
 
 void update_Duck(Sprite *sprite, uint8_t idx);
 
 enum Direction generaterandomdir(enum Direction direction);
 
 void change_dir(Sprite *sprite,enum Direction direction);
+
+void update_direction(Sprite *sprite);
 
 #endif
