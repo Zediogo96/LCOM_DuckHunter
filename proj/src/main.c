@@ -73,6 +73,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
   db->lives = GAME_INIT_LIVES;
   db->gameSpeed = 1;
   db->currentState = Menu;
+  db->currentSelect = 0;
 
   createCrosshair(db);
 
@@ -93,7 +94,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
     return 1;
   }
   extern int counter;
-  while (bytes[0] != KBD_BREAKCODE_ESC) { /* You may want to use a different condition */
+  while (db->currentState != Exit) { /* You may want to use a different condition */
 
     /* Get a request message. */
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
@@ -107,17 +108,13 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
             timer_int_handler();
 
-            /* if (no_interrupts % 200 == 0) {
-              create_Duck(db);
-              create_Duck(db);
-            } */
+            if (db->currentState == GamePlaying) {
 
-            if (db->currentState == Menu) {
-              drawMainMenu();
-              copyDoubleBufferToMain();
-            }
+              if (no_interrupts % 200 == 0) {
+                create_Duck(db);
+                create_Duck(db);
+              }
 
-            else {
               drawBackground();
 
               draw_fullScore();
@@ -129,6 +126,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
                 update_ducks_dir();
               }
+
               update_ducks_status();
               draw_ducks();
               copyDoubleBufferToMain();
@@ -141,6 +139,11 @@ int(proj_main_loop)(int argc, char *argv[]) {
                 db->gameSpeed = 3;
               else if (db->score >= 600)
                 db->gameSpeed = 4;
+            }
+
+            else if (db->currentState == Menu) {
+              drawMainMenu();
+              copyDoubleBufferToMain();
             }
           }
           if (msg.m_notify.interrupts & mouse_irq) {
@@ -160,13 +163,11 @@ int(proj_main_loop)(int argc, char *argv[]) {
             kbc_ih();
             bytes[size] = out_byte;
 
-
-
             if (out_byte == 0)
               return 1;
 
             if (out_byte != 0xE0) {
-              updateCurrentSelect()
+              updateCurrentSelect(out_byte);
               size = 0;
             }
             else

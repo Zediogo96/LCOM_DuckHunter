@@ -46,14 +46,17 @@ Database *getDB() {
 
 void drawMainMenu() {
 
+  vg_draw_image(db->images.duck_Shot, 100, 500);
+  vg_draw_image(db->images.crosshair, 100, 500);
+
   vg_draw_image(db->images.main_menu, 0, 0);
 
-  vg_draw_rectangle(460, 490, 200, 70, 0x008b8b);
+  vg_draw_rectangle(460, 490, 200, 70, (db->currentSelect == 0) ? 0x746AB0: 0x008b8b);
   vg_draw_image(db->images.start, 467, 495);
 
-  vg_draw_rectangle(460, 590, 200, 70, 0x008b8b);
+  vg_draw_rectangle(460, 590, 200, 70, (db->currentSelect == 1) ? 0x746AB0 : 0x008b8b);
 
-  vg_draw_rectangle(460, 690, 200, 70, 0x008b8b);
+  vg_draw_rectangle(460, 690, 200, 70, (db->currentSelect == 2) ? 0x746AB0 : 0x008b8b);
   vg_draw_image(db->images.exit, 467, 695);
 }
 
@@ -171,3 +174,35 @@ void draw_ducks() {
   }
 }
 
+
+void updateCurrentSelect(uint8_t out_b) {
+
+  switch (out_b) {
+    case 0xd0: // DOWN
+      if (db->currentSelect == 2)
+        db->currentSelect = 0;
+      else
+        db->currentSelect++;
+      break;
+    case 0xc8: // UP
+      if (db->currentSelect == 0)
+        db->currentSelect = 2;
+      else
+        db->currentSelect--;
+      break;
+    case 0x9c: //ENTER
+      switch(db->currentSelect) {
+        case 0:
+          db->currentState = GamePlaying;
+          break;
+        case 1:
+          break;
+        case 2:
+        db->currentState = Exit;
+        break;
+        default: break;
+      }
+    default: break;   
+    
+  }
+}

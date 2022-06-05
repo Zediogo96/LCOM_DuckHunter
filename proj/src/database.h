@@ -108,8 +108,6 @@ void draw_ducks();
 
 void drawDuck(Sprite * sprite);
 
-void updateCurrentSelect() {
-  
-}
+void updateCurrentSelect(uint8_t out_b);
 
 #endif // _DATABASE_H_
