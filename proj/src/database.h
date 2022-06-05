@@ -38,6 +38,7 @@
 
 #include "images/Menu/main_menu.xpm"
 #include "images/Menu/start.xpm"
+#include "images/Menu/rules.xpm"
 #include "images/Menu/exit.xpm"
 
 #define TOTAL_NR_OF_DUCKS 10
@@ -61,7 +62,7 @@ typedef struct
   xpm_image_t duck_Left, duck_Right, duck_Up_Right, duck_Up_Left, duck_Up,
    duck_Shot, duck_Falling, background, crosshair, scoreBoard, zero, one, two, three, four, five, six, seven, eight, nine,
    heart_full, heart_dep,
-   main_menu, start, exit;
+   main_menu, start, rules, exit;
 } GameImages;
 
 typedef struct

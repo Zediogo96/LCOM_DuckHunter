@@ -37,6 +37,7 @@ void loadAllXPMs() {
   /** MENUS RELATED **/
   xpm_load(main_menu_xpm, XPM_8_8_8_8, &db->images.main_menu);
   xpm_load(start_xpm, XPM_8_8_8_8, &db->images.start);
+  xpm_load(rules_xpm, XPM_8_8_8_8, &db->images.rules);
   xpm_load(exit_xpm, XPM_8_8_8_8, &db->images.exit);
 }
 
@@ -46,18 +47,23 @@ Database *getDB() {
 
 void drawMainMenu() {
 
-  vg_draw_image(db->images.duck_Shot, 100, 500);
-  vg_draw_image(db->images.crosshair, 100, 500);
-
   vg_draw_image(db->images.main_menu, 0, 0);
 
-  vg_draw_rectangle(460, 490, 200, 70, (db->currentSelect == 0) ? 0x746AB0: 0x008b8b);
+  vg_draw_image(db->images.duck_Shot, 120, 500);
+  vg_draw_image(db->images.crosshair, 100, 470);
+
+  vg_draw_image(db->images.duck_Up_Right, 840, 530);
+  vg_draw_image(db->images.duck_Up_Right, 920, 590);
+
+  vg_draw_rectangle(460, 490, 200, 70, (db->currentSelect == 0) ? 0x746AB0 : 0x008b8b);
   vg_draw_image(db->images.start, 467, 495);
 
   vg_draw_rectangle(460, 590, 200, 70, (db->currentSelect == 1) ? 0x746AB0 : 0x008b8b);
+  vg_draw_image(db->images.rules, 465, 595);
 
   vg_draw_rectangle(460, 690, 200, 70, (db->currentSelect == 2) ? 0x746AB0 : 0x008b8b);
-  vg_draw_image(db->images.exit, 467, 695);
+
+  vg_draw_image(db->images.exit, 465, 695);
 }
 
 void drawBackground() {
@@ -174,7 +180,6 @@ void draw_ducks() {
   }
 }
 
-
 void updateCurrentSelect(uint8_t out_b) {
 
   switch (out_b) {
@@ -190,19 +195,18 @@ void updateCurrentSelect(uint8_t out_b) {
       else
         db->currentSelect--;
       break;
-    case 0x9c: //ENTER
-      switch(db->currentSelect) {
+    case 0x9c: // ENTER
+      switch (db->currentSelect) {
         case 0:
           db->currentState = GamePlaying;
           break;
         case 1:
           break;
         case 2:
-        db->currentState = Exit;
-        break;
+          db->currentState = Exit;
+          break;
         default: break;
       }
-    default: break;   
-    
+    default: break;
   }
 }
