@@ -40,6 +40,7 @@
 #include "../images/Menu/start.xpm"
 #include "../images/Menu/rules.xpm"
 #include "../images/Menu/exit.xpm"
+#include "../images/Menu/pause.xpm"
 
 #define TOTAL_NR_OF_DUCKS 10
 #define GAME_INIT_LIVES 3
@@ -47,8 +48,10 @@
 enum CurrentState {
         Menu,
         GamePlaying,
+        GamePaused,
         GameOver,
         Exit
+    
 };
 
 typedef struct
@@ -62,7 +65,7 @@ typedef struct
   xpm_image_t duck_Left, duck_Right, duck_Up_Right, duck_Up_Left, duck_Up,
    duck_Shot, duck_Falling, background, crosshair, scoreBoard, zero, one, two, three, four, five, six, seven, eight, nine,
    heart_full, heart_dep,
-   main_menu, start, rules, exit;
+   main_menu, start, rules, exit, pause;
 } GameImages;
 
 typedef struct
@@ -110,5 +113,9 @@ void draw_ducks();
 void drawDuck(Sprite * sprite);
 
 void updateCurrentSelect(uint8_t out_b);
+
+void handlePause(uint8_t out_b);
+
+void drawPausedIndicator();
 
 #endif // _DATABASE_H_

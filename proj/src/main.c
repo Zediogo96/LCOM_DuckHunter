@@ -145,6 +145,11 @@ int(proj_main_loop)(int argc, char *argv[]) {
               drawMainMenu();
               copyDoubleBufferToMain();
             }
+            
+            else if (db->currentState == GamePaused) {
+              drawPausedIndicator();
+              copyDoubleBufferToMain();
+            }
           }
           if (msg.m_notify.interrupts & mouse_irq) {
             mouse_ih();
@@ -167,7 +172,8 @@ int(proj_main_loop)(int argc, char *argv[]) {
               return 1;
 
             if (out_byte != 0xE0) {
-              updateCurrentSelect(out_byte);
+              if (db->currentState == Menu) updateCurrentSelect(out_byte);
+              else if (db->currentState == GamePlaying || db->currentState == GamePaused) handlePause(out_byte);
               size = 0;
             }
             else

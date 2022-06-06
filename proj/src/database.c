@@ -39,6 +39,7 @@ void loadAllXPMs() {
   xpm_load(start_xpm, XPM_8_8_8_8, &db->images.start);
   xpm_load(rules_xpm, XPM_8_8_8_8, &db->images.rules);
   xpm_load(exit_xpm, XPM_8_8_8_8, &db->images.exit);
+  xpm_load(pause_xpm, XPM_8_8_8_8, &db->images.pause);
 }
 
 Database *getDB() {
@@ -46,7 +47,6 @@ Database *getDB() {
 }
 
 void drawMainMenu() {
-
   vg_draw_image(db->images.main_menu, 0, 0);
 
   vg_draw_image(db->images.duck_Shot, 120, 500);
@@ -76,6 +76,11 @@ void drawCrosshair() {
 
 void drawScoreBoard() {
   vg_draw_image(db->images.scoreBoard, 900, 770);
+}
+
+void drawPausedIndicator() {
+  vg_draw_image(db->images.pause, 400, 400);
+  
 }
 
 void drawScoreDigits() {
@@ -208,5 +213,16 @@ void updateCurrentSelect(uint8_t out_b) {
         default: break;
       }
     default: break;
+  }
+}
+
+void handlePause(uint8_t out_b) {
+  if (out_b == 0x99) {
+    if (db->currentState == GamePlaying) {
+      db->currentState = GamePaused;
+    }
+    else if (db->currentState == GamePaused) {
+      db->currentState = GamePlaying;
+    }
   }
 }
