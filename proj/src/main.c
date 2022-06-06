@@ -69,15 +69,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
   Database *db = getDB();
 
-  db->score = 0;
-  db->lives = GAME_INIT_LIVES;
-  db->gameSpeed = 1;
-  db->currentState = Menu;
-  db->currentSelect = 0;
-
-  createCrosshair(db);
-
-  createDucksArray();
+  gameInit();
 
   if (timer_subscribe_int(&bit_no_timer)) {
     printf("%s failed!", __func__);
@@ -93,7 +85,6 @@ int(proj_main_loop)(int argc, char *argv[]) {
     printf("%s failed!", __func__);
     return 1;
   }
-  extern int counter;
   while (db->currentState != Exit) { /* You may want to use a different condition */
 
     /* Get a request message. */
@@ -119,8 +110,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
               draw_fullScore();
               drawCrosshair();
-              vg_draw_rectangle(50, 780, 190, 60, 0x000000);
-              drawLives();
+              draw_fullLives();
 
               if (no_interrupts % 30 == 0) {
 
@@ -145,7 +135,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
               drawMainMenu();
               copyDoubleBufferToMain();
             }
-            
+
             else if (db->currentState == GamePaused) {
               drawPausedIndicator();
               copyDoubleBufferToMain();
@@ -172,8 +162,10 @@ int(proj_main_loop)(int argc, char *argv[]) {
               return 1;
 
             if (out_byte != 0xE0) {
-              if (db->currentState == Menu) updateCurrentSelect(out_byte);
-              else if (db->currentState == GamePlaying || db->currentState == GamePaused) handlePause(out_byte);
+              if (db->currentState == Menu)
+                updateCurrentSelect(out_byte);
+              else if (db->currentState == GamePlaying || db->currentState == GamePaused)
+                handlePause(out_byte);
               size = 0;
             }
             else

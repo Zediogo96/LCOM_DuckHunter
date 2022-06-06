@@ -46,6 +46,54 @@ Database *getDB() {
   return db;
 }
 
+void gameInit() {
+
+  db->score = 0;
+  db->lives = GAME_INIT_LIVES;
+  db->gameSpeed = 1;
+  db->currentState = Menu;
+  db->currentSelect = 0;
+
+  createDucksArray();
+  createCrosshair();
+}
+
+void gameReset() {
+
+  db->score = 0;
+  db->lives = GAME_INIT_LIVES;
+  db->gameSpeed = 1;
+
+  db->sprites->crosshair->x = 300;
+  db->sprites->crosshair->y = 300;
+
+  for (uint8_t i = 0; TOTAL_NR_OF_DUCKS; i++) {
+    if (db->sprites->ducks[i] != NULL) {
+      db->sprites->ducks[i] = NULL;
+      destroy_sprite(db->sprites->ducks[i]);
+    }
+  }
+}
+
+void createCrosshair() {
+  db->sprites->crosshair = create_sprite(db->images.crosshair, 300, 300, 1, 1, default_Dir, default_State);
+}
+
+void createDucksArray() {
+  db->sprites->ducks = (Sprite **) malloc(TOTAL_NR_OF_DUCKS * sizeof(Sprite *));
+
+  for (int i = 0; i < TOTAL_NR_OF_DUCKS; ++i) db->sprites->ducks[i] = NULL;
+}
+
+void create_Duck() {
+
+  int i = 0;
+  while (getDB()->sprites->ducks[i] != NULL) ++i;
+  srand(time(NULL));
+  if (i < TOTAL_NR_OF_DUCKS)
+    db->sprites->ducks[i] = create_sprite(db->images.duck_Up, (rand() % ((get_h_res() - 150) - 100 + 1)) + 150, 600, 5, 5, Up, Alive);
+}
+
 void drawMainMenu() {
   vg_draw_image(db->images.main_menu, 0, 0);
 
@@ -80,7 +128,6 @@ void drawScoreBoard() {
 
 void drawPausedIndicator() {
   vg_draw_image(db->images.pause, 400, 400);
-  
 }
 
 void drawScoreDigits() {
@@ -109,11 +156,11 @@ void draw_fullScore() {
 }
 
 void draw_fullLives() {
-  vg_draw_rectangle(50, 780, 190, 60, 0x000000);
   vg_draw_hline(49, 779, 190, 0xFFFFFF);
-  vg_draw_hline(49, 839, 190, 0xFFFFFF);
+  vg_draw_hline(49, 840, 190, 0xFFFFFF);
   vg_draw_vline(49, 779, 60, 0xFFFFFF);
-  vg_draw_vline(239, 779, 60, 0xFFFFFF);
+  vg_draw_vline(240, 779, 60, 0xFFFFFF);
+  vg_draw_rectangle(50, 780, 190, 60, 0x000000);
   drawLives();
 }
 

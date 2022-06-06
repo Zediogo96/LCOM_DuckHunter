@@ -13,6 +13,4 @@ bool isMouseLBpressed;
 
 void update_mouse(struct packet pp, Database *db);
 
-void createCrosshair(Database* db);
-
 #endif // CROSSHAIR

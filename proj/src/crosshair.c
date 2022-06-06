@@ -12,6 +12,4 @@ void update_mouse(struct packet pp, Database *db) {
   }
 }
 
-void createCrosshair(Database *db) {
-  db->sprites->crosshair = create_sprite(db->images.crosshair, 300, 300, 1, 1, default_Dir, default_State);
-}
+

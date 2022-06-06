@@ -90,6 +90,16 @@ Database *getDB();
  */
 void loadAllXPMs();
 
+void gameInit();
+
+void gameReset();
+
+void createCrosshair();
+
+void createDucksArray();
+
+void create_Duck();
+
 void drawMainMenu();
 
 void drawBackground();

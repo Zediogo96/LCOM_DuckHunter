@@ -3,10 +3,6 @@
 
 #include "database.h"
 
-void createDucksArray();
-
-void create_Duck();
-
 void update_ducks_status();
 
 void update_ducks_dir();
