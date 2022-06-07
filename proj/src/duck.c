@@ -58,28 +58,30 @@ enum Direction generaterandomdir(enum Direction direction) {
 
 void change_dir(Sprite *sprite, enum Direction direction) {
 
+  uint8_t speed = getDB()->gameSpeed;
+
   switch (direction) {
     case Up:
       change_Sprite_Img(sprite, getDB()->images.duck_Up);
-      sprite->y -= sprite->yspeed;
+      sprite->y -= speed;
       break;
     case Left:
       change_Sprite_Img(sprite, getDB()->images.duck_Left);
-      sprite->x -= sprite->xspeed;
+      sprite->x -= speed;
       break;
     case Right:
       change_Sprite_Img(sprite, getDB()->images.duck_Right);
-      sprite->x += sprite->xspeed;
+      sprite->x += speed;
       break;
     case Up_Left:
       change_Sprite_Img(sprite, getDB()->images.duck_Up_Left);
-      sprite->x -= sprite->xspeed;
-      sprite->y -= sprite->yspeed;
+      sprite->x -= speed;
+      sprite->y -= speed;
       break;
     case Up_Right:
       change_Sprite_Img(sprite, getDB()->images.duck_Up_Right);
-      sprite->x += sprite->xspeed;
-      sprite->y -= sprite->yspeed;
+      sprite->x += speed;
+      sprite->y -= speed;
       break;
     default:
       break;
@@ -87,12 +89,13 @@ void change_dir(Sprite *sprite, enum Direction direction) {
 }
 void update_direction(Sprite *sprite) {
   enum Direction direction;
+  uint8_t speed = getDB()->gameSpeed;
   if (sprite->state == Alive) {
 
     switch (sprite->direction) {
       case Up:
         if (sprite->y > 550)
-          sprite->y -= sprite->yspeed;
+          sprite->y -= speed;
         else {
           direction = generaterandomdir(sprite->direction);
           change_dir(sprite, direction);
@@ -113,7 +116,7 @@ void update_direction(Sprite *sprite) {
         break;
       case Right:
 
-        if ((sprite->x + sprite->width + sprite->xspeed) < get_h_res()) {
+        if ((sprite->x + sprite->width + speed) < get_h_res()) {
           direction = generaterandomdir(sprite->direction);
           change_dir(sprite, direction);
           sprite->direction = direction;
@@ -125,7 +128,7 @@ void update_direction(Sprite *sprite) {
         break;
 
       case Up_Left:
-        if ((sprite->x + sprite->xspeed > 0) && (sprite->y + sprite->yspeed > 0)) {
+        if ((sprite->x + sprite->xspeed > 0) && (sprite->y + speed > 0)) {
           direction = generaterandomdir(sprite->direction);
           change_dir(sprite, direction);
           sprite->direction = direction;
@@ -137,7 +140,7 @@ void update_direction(Sprite *sprite) {
         break;
 
       case Up_Right:
-        if ((sprite->x + sprite->width + sprite->xspeed) < get_h_res() && (sprite->y + sprite->yspeed > 0)) {
+        if ((sprite->x + sprite->width + speed) < get_h_res() && (sprite->y + speed > 0)) {
           direction = generaterandomdir(sprite->direction);
           change_dir(sprite, direction);
           sprite->direction = direction;
@@ -155,6 +158,8 @@ void update_direction(Sprite *sprite) {
 }
 void update_Duck(Sprite *sprite, uint8_t idx) {
 
+  uint8_t speed = getDB()->gameSpeed;
+
   if (sprite->y == 0) {
     getDB()->sprites->ducks[idx] = NULL;
     destroy_sprite(sprite);
@@ -169,13 +174,13 @@ void update_Duck(Sprite *sprite, uint8_t idx) {
   if (sprite->state == Alive) {
     switch (sprite->direction) {
       case Up:
-        sprite->y -= sprite->yspeed;
+        sprite->y -= speed;
 
         break;
       case Right:
 
         if ((sprite->x + sprite->width + sprite->xspeed) < get_h_res()) {
-          sprite->x += sprite->xspeed;
+          sprite->x += speed;
         }
         else {
           change_Sprite_Img(sprite, getDB()->images.duck_Up_Left);
@@ -184,7 +189,7 @@ void update_Duck(Sprite *sprite, uint8_t idx) {
         break;
       case Left:
         if (sprite->x > 1) {
-          sprite->x -= sprite->xspeed;
+          sprite->x -= speed;
         }
         else {
           change_Sprite_Img(sprite, getDB()->images.duck_Up_Right);
@@ -193,8 +198,8 @@ void update_Duck(Sprite *sprite, uint8_t idx) {
         break;
       case Up_Left:
         if ((sprite->x + sprite->xspeed > 0) && (sprite->y + sprite->yspeed > 0)) {
-          sprite->x -= sprite->xspeed;
-          sprite->y -= sprite->yspeed;
+          sprite->x -= speed;
+          sprite->y -= speed;
         }
         else {
           change_Sprite_Img(sprite, getDB()->images.duck_Up_Right);
@@ -204,8 +209,8 @@ void update_Duck(Sprite *sprite, uint8_t idx) {
         break;
       case Up_Right:
         if ((sprite->x + sprite->width + sprite->xspeed) < get_h_res() && (sprite->y + sprite->yspeed > 0)) {
-          sprite->x += sprite->xspeed;
-          sprite->y -= sprite->yspeed;
+          sprite->x += speed;
+          sprite->y -= speed;
         }
         else {
           change_Sprite_Img(sprite, getDB()->images.duck_Up_Left);

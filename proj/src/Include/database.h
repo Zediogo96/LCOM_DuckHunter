@@ -41,6 +41,7 @@
 #include "../images/Menu/rules.xpm"
 #include "../images/Menu/exit.xpm"
 #include "../images/Menu/pause.xpm"
+#include "../images/Menu/gameOver.xpm"
 
 #define TOTAL_NR_OF_DUCKS 10
 #define GAME_INIT_LIVES 3
@@ -65,7 +66,7 @@ typedef struct
   xpm_image_t duck_Left, duck_Right, duck_Up_Right, duck_Up_Left, duck_Up,
    duck_Shot, duck_Falling, background, crosshair, scoreBoard, zero, one, two, three, four, five, six, seven, eight, nine,
    heart_full, heart_dep,
-   main_menu, start, rules, exit, pause;
+   main_menu, start, rules, exit, pause, gameOver;
 } GameImages;
 
 typedef struct
@@ -73,8 +74,9 @@ typedef struct
   GameImages images;
   Sprites *sprites;
   int score;
+  int ghostScore;
   int lives;
-  int gameSpeed;
+  uint8_t gameSpeed;
   enum CurrentState currentState;
   int currentSelect;
 } Database;

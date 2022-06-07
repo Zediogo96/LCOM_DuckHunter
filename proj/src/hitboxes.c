@@ -18,6 +18,7 @@ bool checkDuckGotShot(Sprite *sprite1) {
         getDB()->sprites->ducks[i]->state = Shot;
         getDB()->sprites->ducks[i]->direction = Down;
         getDB()->score += 10;
+        getDB()->ghostScore += 10;
       }
     }
   }

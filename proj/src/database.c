@@ -40,6 +40,7 @@ void loadAllXPMs() {
   xpm_load(rules_xpm, XPM_8_8_8_8, &db->images.rules);
   xpm_load(exit_xpm, XPM_8_8_8_8, &db->images.exit);
   xpm_load(pause_xpm, XPM_8_8_8_8, &db->images.pause);
+  xpm_load(gameOver_xpm, XPM_8_8_8_8, &db->images.gameOver);
 }
 
 Database *getDB() {
@@ -50,7 +51,7 @@ void gameInit() {
 
   db->score = 0;
   db->lives = GAME_INIT_LIVES;
-  db->gameSpeed = 1;
+  db->gameSpeed = 3;
   db->currentState = Menu;
   db->currentSelect = 0;
 
@@ -61,13 +62,11 @@ void gameInit() {
 void gameReset() {
 
   db->score = 0;
+  db->ghostScore = 0;
   db->lives = GAME_INIT_LIVES;
-  db->gameSpeed = 1;
+  db->gameSpeed = 3;
 
-  db->sprites->crosshair->x = 300;
-  db->sprites->crosshair->y = 300;
-
-  for (uint8_t i = 0; TOTAL_NR_OF_DUCKS; i++) {
+  for (uint8_t i = 0; i < TOTAL_NR_OF_DUCKS; i++) {
     if (db->sprites->ducks[i] != NULL) {
       db->sprites->ducks[i] = NULL;
       destroy_sprite(db->sprites->ducks[i]);
@@ -110,7 +109,6 @@ void drawMainMenu() {
   vg_draw_image(db->images.rules, 465, 595);
 
   vg_draw_rectangle(460, 690, 200, 70, (db->currentSelect == 2) ? 0x746AB0 : 0x008b8b);
-
   vg_draw_image(db->images.exit, 465, 695);
 }
 

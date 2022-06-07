@@ -99,6 +99,12 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
             if (db->currentState == GamePlaying) {
 
+              if (db->lives == 0) {
+
+                db->currentState = GameOver;
+                
+              }
+
               timer_int_handler();
 
               if (no_interrupts % 200 == 0) {
@@ -107,28 +113,25 @@ int(proj_main_loop)(int argc, char *argv[]) {
               }
 
               drawBackground();
-
               draw_fullScore();
               drawCrosshair();
               draw_fullLives();
 
               if (no_interrupts % 30 == 0) {
-
                 update_ducks_dir();
               }
 
               update_ducks_status();
               draw_ducks();
-              copyDoubleBufferToMain();
 
               checkDuckGotShot(db->sprites->crosshair);
 
-              if (db->score >= 200 && db->score < 400)
-                db->gameSpeed = 2;
-              else if (db->score >= 400 && db->score < 600)
-                db->gameSpeed = 3;
-              else if (db->score >= 600)
-                db->gameSpeed = 4;
+              copyDoubleBufferToMain();
+
+              if (db->ghostScore == 100) {
+                db->gameSpeed++;
+                db->ghostScore = 0;
+              }
             }
 
             else if (db->currentState == Menu) {
@@ -138,6 +141,10 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
             else if (db->currentState == GamePaused) {
               drawPausedIndicator();
+              copyDoubleBufferToMain();
+            }
+            else if (db->currentState == GameOver) {
+              vg_draw_image(db->images.gameOver, 440, 310);
               copyDoubleBufferToMain();
             }
           }
@@ -164,8 +171,19 @@ int(proj_main_loop)(int argc, char *argv[]) {
             if (out_byte != 0xE0) {
               if (db->currentState == Menu)
                 updateCurrentSelect(out_byte);
-              else if (db->currentState == GamePlaying || db->currentState == GamePaused)
+              else if (db->currentState == GamePlaying || db->currentState == GamePaused) {
                 handlePause(out_byte);
+                if (out_byte == 0x81) {
+                  db->currentState = Exit;
+                }
+              }
+              else if(db->currentState == GameOver) {
+                if (out_byte == 0x9C) {
+                  gameReset();
+                  db->currentState = Menu;
+                }
+              }
+
               size = 0;
             }
             else
@@ -184,7 +202,6 @@ int(proj_main_loop)(int argc, char *argv[]) {
   /**
    * STUFF TO DISABLE MOUSE AND MOUSE DATA REPORTING
    **/
-
   if (timer_unsubscribe_int()) {
     printf("%s failed!", __func__);
     return 1;
