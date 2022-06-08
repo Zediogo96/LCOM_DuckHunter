@@ -74,6 +74,16 @@ void gameReset() {
   }
 }
 
+void gameDestroy() {
+  destroy_sprite(db->sprites->crosshair);
+  for (uint8_t i = 0; i < TOTAL_NR_OF_DUCKS; i++) {
+    if (db->sprites->ducks[i] != NULL) {
+      db->sprites->ducks[i] = NULL;
+      destroy_sprite(db->sprites->ducks[i]);
+    }
+  }
+}
+
 void createCrosshair() {
   db->sprites->crosshair = create_sprite(db->images.crosshair, 300, 300, 1, 1, default_Dir, default_State);
 }

@@ -73,12 +73,12 @@ typedef struct
 {
   GameImages images;
   Sprites *sprites;
-  int score;
-  int ghostScore;
-  int lives;
+  uint16_t score;
+  uint8_t ghostScore;
+  uint8_t lives;
   uint8_t gameSpeed;
   enum CurrentState currentState;
-  int currentSelect;
+  uint8_t currentSelect;
 } Database;
 
 /**
@@ -95,6 +95,8 @@ void loadAllXPMs();
 void gameInit();
 
 void gameReset();
+
+void gameDestroy();
 
 void createCrosshair();
 

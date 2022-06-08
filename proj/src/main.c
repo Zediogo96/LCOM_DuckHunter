@@ -102,7 +102,6 @@ int(proj_main_loop)(int argc, char *argv[]) {
               if (db->lives == 0) {
 
                 db->currentState = GameOver;
-                
               }
 
               timer_int_handler();
@@ -126,8 +125,6 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
               checkDuckGotShot(db->sprites->crosshair);
 
-              copyDoubleBufferToMain();
-
               if (db->ghostScore == 100) {
                 db->gameSpeed++;
                 db->ghostScore = 0;
@@ -136,17 +133,16 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
             else if (db->currentState == Menu) {
               drawMainMenu();
-              copyDoubleBufferToMain();
             }
 
             else if (db->currentState == GamePaused) {
               drawPausedIndicator();
-              copyDoubleBufferToMain();
             }
             else if (db->currentState == GameOver) {
               vg_draw_image(db->images.gameOver, 440, 310);
-              copyDoubleBufferToMain();
             }
+
+            copyDoubleBufferToMain();
           }
           if (msg.m_notify.interrupts & mouse_irq) {
             mouse_ih();
@@ -174,10 +170,10 @@ int(proj_main_loop)(int argc, char *argv[]) {
               else if (db->currentState == GamePlaying || db->currentState == GamePaused) {
                 handlePause(out_byte);
                 if (out_byte == 0x81) {
-                  db->currentState = Exit;
+                  db->currentState = Menu;
                 }
               }
-              else if(db->currentState == GameOver) {
+              else if (db->currentState == GameOver) {
                 if (out_byte == 0x9C) {
                   gameReset();
                   db->currentState = Menu;
@@ -220,6 +216,8 @@ int(proj_main_loop)(int argc, char *argv[]) {
     printf("%s failed!", __func__);
     return 1;
   }
+
+  gameDestroy();
 
   vg_exit();
 

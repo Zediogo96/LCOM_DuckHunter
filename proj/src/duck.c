@@ -116,7 +116,7 @@ void update_direction(Sprite *sprite) {
         break;
       case Right:
 
-        if ((sprite->x + sprite->width + speed) < get_h_res()) {
+        if ((sprite->x + sprite->width + speed) <= get_h_res()) {
           direction = generaterandomdir(sprite->direction);
           change_dir(sprite, direction);
           sprite->direction = direction;
@@ -128,7 +128,7 @@ void update_direction(Sprite *sprite) {
         break;
 
       case Up_Left:
-        if ((sprite->x + sprite->xspeed > 0) && (sprite->y + speed > 0)) {
+        if ((sprite->x + speed> 0) && (sprite->y + speed > 0)) {
           direction = generaterandomdir(sprite->direction);
           change_dir(sprite, direction);
           sprite->direction = direction;
@@ -140,7 +140,7 @@ void update_direction(Sprite *sprite) {
         break;
 
       case Up_Right:
-        if ((sprite->x + sprite->width + speed) < get_h_res() && (sprite->y + speed > 0)) {
+        if ((sprite->x + sprite->width + speed) <= get_h_res() && (sprite->y + speed > 0)) {
           direction = generaterandomdir(sprite->direction);
           change_dir(sprite, direction);
           sprite->direction = direction;
@@ -179,7 +179,7 @@ void update_Duck(Sprite *sprite, uint8_t idx) {
         break;
       case Right:
 
-        if ((sprite->x + sprite->width + sprite->xspeed) < get_h_res()) {
+        if ((sprite->x + sprite->width + speed) <= get_h_res()) {
           sprite->x += speed;
         }
         else {
@@ -197,7 +197,7 @@ void update_Duck(Sprite *sprite, uint8_t idx) {
         }
         break;
       case Up_Left:
-        if ((sprite->x + sprite->xspeed > 0) && (sprite->y + sprite->yspeed > 0)) {
+        if ((sprite->x - speed > 0) && (sprite->y + speed > 0)) {
           sprite->x -= speed;
           sprite->y -= speed;
         }
@@ -208,7 +208,7 @@ void update_Duck(Sprite *sprite, uint8_t idx) {
 
         break;
       case Up_Right:
-        if ((sprite->x + sprite->width + sprite->xspeed) < get_h_res() && (sprite->y + sprite->yspeed > 0)) {
+        if ((sprite->x + sprite->width + speed) <= get_h_res() && (sprite->y + speed > 0)) {
           sprite->x += speed;
           sprite->y -= speed;
         }
