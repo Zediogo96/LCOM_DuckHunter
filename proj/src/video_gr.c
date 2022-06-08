@@ -78,20 +78,10 @@ void *(vg_init) (uint16_t mode) {
 
 int(change_pixel_color)(uint16_t x, uint16_t y, uint32_t color) {
 
-  if (x >= h_res || y >= v_res) {
+  if (x >= h_res || y >= v_res)
     return 1;
-  }
 
-  uint8_t *pixel_pointer;
-
-  pixel_pointer = (uint8_t *) double_buff + (x * bytes_per_pixel) + (y * h_res * bytes_per_pixel);
-  uint8_t change;
-
-  for (unsigned i = 0; i < bytes_per_pixel; i++) {
-    change = color & 0xFF;
-    *(pixel_pointer + i) = change;
-    color = color >> 8;
-  }
+  memcpy((uint8_t *) double_buff + (x * bytes_per_pixel) + (y * h_res * bytes_per_pixel), &color, bytes_per_pixel);
 
   return 0;
 }
@@ -123,20 +113,19 @@ int(vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, 
   return 0;
 }
 
-
-int (vg_draw_image)(xpm_image_t img, uint16_t x, uint16_t y){
+int(vg_draw_image)(xpm_image_t img, uint16_t x, uint16_t y) {
 
   uint32_t transparent = xpm_transparency_color(XPM_8_8_8_8);
-  uint32_t* color = (uint32_t*)img.bytes;
+  uint32_t *color = (uint32_t *) img.bytes;
 
-  for(int i=0; i<img.height; i++){
-    for(int j=0; j<img.width; j++){
-      if(*color!=transparent){
-        if(change_pixel_color(x + j,y + i, *color)!=0){
+  for (int i = 0; i < img.height; i++) {
+    for (int j = 0; j < img.width; j++) {
+      if (*color != transparent) {
+        if (change_pixel_color(x + j, y + i, *color) != 0) {
           return 1;
         }
       }
-      
+
       color++;
     }
   }
@@ -144,12 +133,12 @@ int (vg_draw_image)(xpm_image_t img, uint16_t x, uint16_t y){
   return 0;
 }
 
-char * get_video_mem() {
-  return (char*) video_mem;
+void *get_video_mem() {
+  return (void *) video_mem;
 }
 
-char * get_double_buffer() {
-  return (char *) double_buff;
+void *get_double_buffer() {
+  return (void *) double_buff;
 }
 
 void copyDoubleBufferToMain() {
@@ -162,10 +151,6 @@ int get_h_res() {
 
 int get_v_res() {
   return v_res;
-}
-
-unsigned get_bits_per_pixel() {
-  return bits_per_pixel;
 }
 
 unsigned get_bytes_per_pixel() {
