@@ -17,6 +17,7 @@ void loadAllXPMs() {
 
   /** ELSE **/
   xpm_load(background_xpm, XPM_8_8_8_8, &db->images.background);
+  xpm_load(background_night_xpm, XPM_8_8_8_8, &db->images.background_night);
   xpm_load(crosshair_xpm, XPM_8_8_8_8, &db->images.crosshair);
   xpm_load(score_xpm, XPM_8_8_8_8, &db->images.scoreBoard);
   xpm_load(heart_dep_xpm, XPM_8_8_8_8, &db->images.heart_dep);
@@ -122,8 +123,13 @@ void drawMainMenu() {
   vg_draw_image(db->images.exit, 465, 695);
 }
 
-void drawBackground() {
-  vg_draw_image(db->images.background, 0, 0);
+void drawBackground(uint32_t h, uint32_t m) {
+  if ((h <= 7 && m <= 30) || (h >= 23)) {
+    vg_draw_image(db->images.background_night, 0, 0);
+  }
+  else {
+    vg_draw_image(db->images.background, 0, 0);
+  }
 }
 
 void drawCrosshair() {

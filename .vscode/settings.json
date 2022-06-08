@@ -10,6 +10,7 @@
         "random": "c",
         "tuple": "c",
         "*.xpm": "c",
-        "map": "c"
+        "map": "c",
+        "chrono": "c"
     }
 }

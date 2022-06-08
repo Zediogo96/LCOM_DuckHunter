@@ -7,6 +7,7 @@
 #include "video_gr.h"
 
 #include "../images/background.xpm"
+#include "../images/background_night.xpm"
 #include "../images/crosshair.xpm"
 
 #include "../images/Duck_Images/duck_Left.xpm"
@@ -52,7 +53,6 @@ enum CurrentState {
         GamePaused,
         GameOver,
         Exit
-    
 };
 
 typedef struct
@@ -64,7 +64,9 @@ typedef struct
 typedef struct
 {
   xpm_image_t duck_Left, duck_Right, duck_Up_Right, duck_Up_Left, duck_Up,
-   duck_Shot, duck_Falling, background, crosshair, scoreBoard, zero, one, two, three, four, five, six, seven, eight, nine,
+   duck_Shot, duck_Falling, background, background_night,
+   crosshair, scoreBoard,
+   zero, one, two, three, four, five, six, seven, eight, nine,
    heart_full, heart_dep,
    main_menu, start, rules, exit, pause, gameOver;
 } GameImages;
@@ -106,7 +108,7 @@ void create_Duck();
 
 void drawMainMenu();
 
-void drawBackground();
+void drawBackground(uint32_t h, uint32_t m);
 
 void drawCrosshair();
 
