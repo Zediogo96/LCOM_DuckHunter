@@ -29,10 +29,9 @@ void destroy_sprite(Sprite *sp) {
     return;
 
   free(sp->map);
-  
+
   free(sp);
   sp = NULL;
-  
 }
 
 int draw_sprite(Sprite *sp) {
@@ -42,13 +41,11 @@ int draw_sprite(Sprite *sp) {
   for (int i = 0; i < sp->height; ++i) {
     if ((sp->y + i) >= (int) get_v_res())
       continue;
-    else if ((sp->y + i) <= 0)
-      break;
+
     for (int j = 0; j < sp->width; ++j) {
       if ((sp->x + j) >= (int) get_h_res())
         continue;
-      else if ((sp->x + j) <= 0)
-        break;
+
       if (*color != transparent) {
         if (change_pixel_color(sp->x + j, sp->y + i, *color) != 0) {
           return 1;
