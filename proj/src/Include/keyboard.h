@@ -1,6 +1,9 @@
 #ifndef _KEYBOARD_H_
 #define _KEYBOARD_H_
 
+#include <lcom/lcf.h>
+#include <minix/sysutil.h>
+#include "Include/i8042.h"
 
 /**
  * Subscribe to keyboard interrupts

@@ -14,6 +14,7 @@
 #include "Include/utils.h"
 #include "Include/vbe.h"
 #include "Include/video_gr.h"
+#include "rtc.h"
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -40,14 +41,15 @@ int main(int argc, char *argv[]) {
 }
 
 extern uint8_t out_byte;
+
 uint64_t no_interrupts = 0; // prob change inside the loop
+uint32_t hours = 0, minutes = 0;
 
 int(proj_main_loop)(int argc, char *argv[]) {
 
   uint8_t bit_no_kbd = KBD_IRQ;
   uint8_t bit_no_timer = TIMER0_IRQ;
   uint8_t bit_no_mouse = MOUSE_IRQ;
-
   uint32_t kbd_irq = BIT(bit_no_kbd);
   uint32_t timer_irq = BIT(bit_no_timer);
   uint32_t mouse_irq = BIT(bit_no_mouse);
@@ -71,6 +73,8 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
   gameInit();
 
+  /* get_hour(&min, &hours); */
+
   if (timer_subscribe_int(&bit_no_timer)) {
     printf("%s failed!", __func__);
     return 1;
@@ -85,8 +89,11 @@ int(proj_main_loop)(int argc, char *argv[]) {
     printf("%s failed!", __func__);
     return 1;
   }
+
+  getCurrentTime(&hours, &minutes);
   while (db->currentState != Exit) { /* You may want to use a different condition */
 
+    
     /* Get a request message. */
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
       printf("driver_receive failed with: %d", r);
@@ -95,6 +102,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
     if (is_ipc_notify(ipc_status)) { /* received notification */
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: /* hardware interrupt notification */
+
           if (msg.m_notify.interrupts & timer_irq) {
 
             if (db->currentState == GamePlaying) {
@@ -111,7 +119,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
                 create_Duck(db);
               }
 
-              drawBackground();
+              drawBackground(hours, minutes);
               draw_fullScore();
               drawCrosshair();
               draw_fullLives();
@@ -185,6 +193,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
             else
               size++;
           }
+
           break;
         default:
           break; /* no other notifications expected: do nothing */

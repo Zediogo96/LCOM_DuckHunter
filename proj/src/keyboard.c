@@ -1,7 +1,6 @@
-#include <lcom/lcf.h>
-#include <minix/sysutil.h>
+
 #include "Include/keyboard.h"
-#include "Include/i8042.h"
+
 
 static int hook_id;
 
