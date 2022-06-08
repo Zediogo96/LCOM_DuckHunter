@@ -9,6 +9,7 @@
         "memory": "c",
         "random": "c",
         "tuple": "c",
-        "*.xpm": "c"
+        "*.xpm": "c",
+        "map": "c"
     }
 }

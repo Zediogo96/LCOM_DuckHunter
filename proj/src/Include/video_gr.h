@@ -14,19 +14,15 @@ int (vg_draw_vline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
 int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color);
 int (vg_draw_image)(xpm_image_t img, uint16_t x, uint16_t y);
 
-char * get_video_mem();
+void * get_video_mem();
 
-char * get_double_buffer();
+void * get_double_buffer();
 
 void copyDoubleBufferToMain();
 
 int get_h_res();
 
 int get_v_res();
-
-
-
-unsigned get_bits_per_pixel();
 
 unsigned get_bytes_per_pixel();
 
