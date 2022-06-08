@@ -3,9 +3,12 @@
 
 bool checkHitboxCollision(Sprite *sprite1, Sprite *sprite2) {
 
-  if ((sprite1->x + sprite1->width) < sprite2->x || (sprite2->x + sprite2->width) < sprite1->x || (sprite1->y + sprite1->height) < sprite2->y || (sprite2->y + sprite2->height) < sprite1->y)
-    return false;
-  return true;
+  uint16_t half_x = sprite1->width / 2;
+  uint16_t half_y = sprite1->height / 2;
+
+  if (sprite2->x <= sprite1->x + half_x && sprite2->x >= sprite1->x - half_x && sprite2->y <= sprite1->y + half_y && sprite2->y >= sprite1->y - half_y) return true;
+
+  return false;
 }
 
 bool checkDuckGotShot(Sprite *sprite1) {
