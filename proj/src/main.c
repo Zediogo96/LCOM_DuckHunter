@@ -178,13 +178,13 @@ int(proj_main_loop)(int argc, char *argv[]) {
                 updateCurrentSelect(out_byte);
               else if (db->currentState == GamePlaying || db->currentState == GamePaused) {
                 handlePause(out_byte);
-                if (out_byte == 0x81) {
+                if (out_byte == KBD_BREAKCODE_ESC) {
                   gameReset();
                   db->currentState = Menu;
                 }
               }
               else if (db->currentState == GameOver) {
-                if (out_byte == 0x9C) {
+                if (out_byte == KBD_BREAKCODE_ESC) {
                   gameReset();
                   db->currentState = Menu;
                 }

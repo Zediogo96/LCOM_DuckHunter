@@ -5,6 +5,7 @@
 
 #include "Sprite.h"
 #include "video_gr.h"
+#include "keyboard.h"
 
 #include "../images/background.xpm"
 #include "../images/background_night.xpm"

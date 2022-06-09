@@ -249,19 +249,19 @@ void draw_ducks() {
 void updateCurrentSelect(uint8_t out_b) {
 
   switch (out_b) {
-    case 0xd0: // DOWN
+    case KBD_BREAKCODE_ARROW_DOWN: // DOWN
       if (db->currentSelect == 2)
         db->currentSelect = 0;
       else
         db->currentSelect++;
       break;
-    case 0xc8: // UP
+    case KBD_BREAKCODE_ARROW_UP: // UP
       if (db->currentSelect == 0)
         db->currentSelect = 2;
       else
         db->currentSelect--;
       break;
-    case 0x9c: // ENTER
+    case KBD_BREAKCODE_ENTER: // ENTER
       switch (db->currentSelect) {
         case 0:
           db->currentState = GamePlaying;
@@ -278,7 +278,7 @@ void updateCurrentSelect(uint8_t out_b) {
 }
 
 void handlePause(uint8_t out_b) {
-  if (out_b == 0x99) {
+  if (out_b == KBD_BREAKCODE_P) {
     if (db->currentState == GamePlaying) {
       db->currentState = GamePaused;
     }
