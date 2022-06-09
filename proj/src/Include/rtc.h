@@ -19,7 +19,7 @@
 #define RTC_REG_ADDRESS 0x70
 #define RTC_REG_DATA 0x71
 
-int isBCD();
+bool isBCD();
 
 uint32_t BCD_2_Binary(uint32_t bcd);
 

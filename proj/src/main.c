@@ -10,11 +10,11 @@
 #include "Include/hitboxes.h"
 #include "Include/keyboard.h"
 #include "Include/mouse.h"
+#include "Include/rtc.h"
 #include "Include/timer.h"
 #include "Include/utils.h"
 #include "Include/vbe.h"
 #include "Include/video_gr.h"
-#include "Include/rtc.h"
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -90,10 +90,10 @@ int(proj_main_loop)(int argc, char *argv[]) {
     return 1;
   }
 
-  getCurrentTime(&hours, &minutes);
   while (db->currentState != Exit) { /* You may want to use a different condition */
 
-    
+    getCurrentTime(&hours, &minutes);
+
     /* Get a request message. */
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
       printf("driver_receive failed with: %d", r);
@@ -123,7 +123,6 @@ int(proj_main_loop)(int argc, char *argv[]) {
               drawCrosshair();
               draw_fullScore();
               draw_fullLives();
-              
 
               if (no_interrupts % 30 == 0) {
                 update_ducks_dir();

@@ -124,12 +124,18 @@ void drawMainMenu() {
 }
 
 void drawBackground(uint32_t h, uint32_t m) {
-  if ((h <= 7 && m <= 30) || (h >= 22)) {
+  h = (h + 11) % 24;
+  m = (m + 5) % 60;
+  if ((h <= 14 && m <= 30) || (h >= 22)) {
     vg_draw_image(db->images.background_night, 0, 0);
   }
   else {
     vg_draw_image(db->images.background, 0, 0);
   }
+/*   drawNumber(h / 10, 50, 100);
+  drawNumber(h % 10, 100, 100);
+  drawNumber(m / 10, 150,100);
+  drawNumber(m % 10, 200,100); */
 }
 
 void drawCrosshair() {
