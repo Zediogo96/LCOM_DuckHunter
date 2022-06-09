@@ -1,5 +1,5 @@
 #include <lcom/lcf.h>
-#include "rtc.h"
+#include "Include/rtc.h"
 #include "util.h"
 
 int isBCD() {

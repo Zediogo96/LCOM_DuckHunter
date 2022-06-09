@@ -14,7 +14,7 @@
 #include "Include/utils.h"
 #include "Include/vbe.h"
 #include "Include/video_gr.h"
-#include "rtc.h"
+#include "Include/rtc.h"
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)

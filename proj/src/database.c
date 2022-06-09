@@ -124,7 +124,7 @@ void drawMainMenu() {
 }
 
 void drawBackground(uint32_t h, uint32_t m) {
-  if (h == 1 && m == 49) {
+  if ((h <= 7 && m <= 30) || (h >= 22)) {
     vg_draw_image(db->images.background_night, 0, 0);
   }
   else {
