@@ -184,9 +184,13 @@ int(proj_main_loop)(int argc, char *argv[]) {
                 }
               }
               else if (db->currentState == GameOver) {
-                if (out_byte == KBD_BREAKCODE_ESC) {
+                if (out_byte == KBD_BREAKCODE_ENTER) {
                   gameReset();
                   db->currentState = Menu;
+                }
+                if (out_byte == KBD_BREAKCODE_R) {
+                  gameReset();
+                  db->currentState = GamePlaying;
                 }
               }
 

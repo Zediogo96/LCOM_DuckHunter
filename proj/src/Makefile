@@ -8,7 +8,7 @@ SRCS = main.c timer.c keyboard.c mouse.c utils.c video_gr.c  vbe.c crosshair.c d
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set
-CFLAGS += -pedantic # S-D __LCOM_OPTIMIZED
+CFLAGS += -pedantic -D __LCOM_OPTIMIZED
 
 # list of library dependen		cies (for Lab 2, only LCF library)
 DPADD += ${LIBLCF}
