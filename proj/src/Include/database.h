@@ -44,6 +44,7 @@
 #include "../images/Menu/exit.xpm"
 #include "../images/Menu/pause.xpm"
 #include "../images/Menu/gameOver.xpm"
+#include "../images/Menu/gameOver_text.xpm"
 
 #define TOTAL_NR_OF_DUCKS 10
 #define GAME_INIT_LIVES 3
@@ -69,7 +70,7 @@ typedef struct
    crosshair, scoreBoard,
    zero, one, two, three, four, five, six, seven, eight, nine,
    heart_full, heart_dep,
-   main_menu, start, rules, exit, pause, gameOver;
+   main_menu, start, rules, exit, pause, gameOver, gameOver_text;
 } GameImages;
 
 typedef struct

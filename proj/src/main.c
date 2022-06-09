@@ -50,9 +50,11 @@ int(proj_main_loop)(int argc, char *argv[]) {
   uint8_t bit_no_kbd = KBD_IRQ;
   uint8_t bit_no_timer = TIMER0_IRQ;
   uint8_t bit_no_mouse = MOUSE_IRQ;
+  uint8_t bit_no_rtc = RTC_IRQ;
   uint32_t kbd_irq = BIT(bit_no_kbd);
   uint32_t timer_irq = BIT(bit_no_timer);
   uint32_t mouse_irq = BIT(bit_no_mouse);
+  uint32_t rtc_irq = BIT(bit_no_rtc);
 
   int r, ipc_status, size = 0;
   message msg;
@@ -73,6 +75,8 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
   gameInit();
 
+  rtc_init();
+
   /* get_hour(&min, &hours); */
 
   if (timer_subscribe_int(&bit_no_timer)) {
@@ -90,10 +94,11 @@ int(proj_main_loop)(int argc, char *argv[]) {
     return 1;
   }
 
+  if (rtc_subscribe_int(&bit_no_rtc))
+    return 1;
+
   while (db->currentState != Exit) { /* You may want to use a different condition */
-
-    getCurrentTime(&hours, &minutes);
-
+   getCurrentTime(&hours, &minutes);
     /* Get a request message. */
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
       printf("driver_receive failed with: %d", r);
@@ -102,7 +107,9 @@ int(proj_main_loop)(int argc, char *argv[]) {
     if (is_ipc_notify(ipc_status)) { /* received notification */
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: /* hardware interrupt notification */
-
+          if (msg.m_notify.interrupts & rtc_irq) {
+           
+          }
           if (msg.m_notify.interrupts & timer_irq) {
 
             if (db->currentState == GamePlaying) {
@@ -148,6 +155,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
             }
             else if (db->currentState == GameOver) {
               vg_draw_image(db->images.gameOver, 440, 310);
+              vg_draw_image(db->images.gameOver_text, 250, 500);
             }
 
             copyDoubleBufferToMain();
@@ -183,7 +191,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
                 }
               }
               else if (db->currentState == GameOver) {
-                if (out_byte == KBD_BREAKCODE_ENTER) {
+                if (out_byte == KBD_BREAKCODE_ESC) {
                   gameReset();
                   db->currentState = Menu;
                 }

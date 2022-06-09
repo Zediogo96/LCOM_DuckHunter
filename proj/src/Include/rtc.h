@@ -4,6 +4,8 @@
 #include <lcom/lcf.h>
 #include <minix/sysutil.h>
 
+#define RTC_IRQ 8
+
 #define RTC_HOUR 0x04
 #define RTC_MIN 0x02
 #define RTC_SEC 0x00
@@ -19,7 +21,13 @@
 #define RTC_REG_ADDRESS 0x70
 #define RTC_REG_DATA 0x71
 
-bool isBCD();
+int rtc_subscribe_int(uint8_t *bit_no);
+
+int rtc_unsubscribe_int();
+
+void rtc_init();
+
+void convertTimePortugal(uint32_t * hours, uint32_t * minutes);
 
 uint32_t BCD_2_Binary(uint32_t bcd);
 
