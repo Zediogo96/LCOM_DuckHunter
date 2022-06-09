@@ -120,9 +120,10 @@ int(proj_main_loop)(int argc, char *argv[]) {
               }
 
               drawBackground(hours, minutes);
-              draw_fullScore();
               drawCrosshair();
+              draw_fullScore();
               draw_fullLives();
+              
 
               if (no_interrupts % 30 == 0) {
                 update_ducks_dir();
@@ -178,6 +179,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
               else if (db->currentState == GamePlaying || db->currentState == GamePaused) {
                 handlePause(out_byte);
                 if (out_byte == 0x81) {
+                  gameReset();
                   db->currentState = Menu;
                 }
               }

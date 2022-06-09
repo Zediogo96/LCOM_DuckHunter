@@ -124,7 +124,7 @@ void drawMainMenu() {
 }
 
 void drawBackground(uint32_t h, uint32_t m) {
-  if ((h <= 7 && m <= 30) || (h >= 23)) {
+  if (h == 1 && m == 49) {
     vg_draw_image(db->images.background_night, 0, 0);
   }
   else {
@@ -141,7 +141,7 @@ void drawScoreBoard() {
 }
 
 void drawPausedIndicator() {
-  vg_draw_image(db->images.pause, 400, 400);
+  vg_draw_image(db->images.pause, 400, 350);
 }
 
 void drawScoreDigits() {

@@ -3,10 +3,10 @@
 
 bool checkHitboxCollision(Sprite *sprite1, Sprite *sprite2) {
 
-  uint16_t half_x = sprite1->width / 2;
-  uint16_t half_y = sprite1->height / 2;
+  uint16_t half_x = (sprite1->width / 2) - 1;
+  uint16_t half_y = (sprite1->height / 2) - 1;
 
-  if (sprite2->x <= sprite1->x + half_x && sprite2->x >= sprite1->x - half_x && sprite2->y <= sprite1->y + half_y && sprite2->y >= sprite1->y - half_y) return true;
+  if (sprite2->x < sprite1->x + half_x && sprite2->x > sprite1->x - half_x && sprite2->y < sprite1->y + half_y && sprite2->y > sprite1->y - half_y) return true;
 
   return false;
 }
