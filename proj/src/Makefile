@@ -1,6 +1,8 @@
 # name of the program (Minix service)
 PROG=proj
 
+.PATH: ${.CURDIR}/Devices
+
 # source code files to be compiled
 SRCS = main.c timer.c keyboard.c mouse.c utils.c video_gr.c  vbe.c crosshair.c database.c Sprite.c hitboxes.c duck.c rtc.c
 

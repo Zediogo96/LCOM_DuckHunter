@@ -1,6 +1,6 @@
 #include <lcom/lcf.h>
 #include <minix/sysutil.h>
-#include "Include/vbe.h"
+#include "../Include/vbe.h"
 
 int vbe_call(struct reg86 * r) {
   /* Make the BIOS call */
