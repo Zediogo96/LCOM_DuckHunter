@@ -7,23 +7,8 @@ static unsigned h_res;          /* Horizontal resolution in pixels */
 static unsigned v_res;          /* Vertical resolution in pixels */
 static unsigned bits_per_pixel; /* Number of VRAM bits per pixel */
 static unsigned bytes_per_pixel;
-/* static enum xpm_image_type img_type;
-static unsigned phys_base_ptr; */
-static vbe_mode_info_t inf;
 
-/**
- * @file video_gr.c
- * @author your name (you@domain.com)
- * @brief Initializes the video module in graphics mode.
-        Uses the VBE INT 0x10 interface to set the desired graphics mode using a linear frame buffer, maps VRAM to the process' address space and initializes static global variables
-        with the resolution of the screen, and the color depth (i.e the no. of bits per pixel).
-        Initially, you should call function vbe_get_mode_info() provided by the LCF, to get this information. Later, you can implement your own version of this function.
- * @version 0.1
- * @date 2022-05-16
- *
- * @copyright Copyright (c) 2022
- *
- */
+static vbe_mode_info_t inf;
 
 void *(vg_init) (uint16_t mode) {
   if (vbe_get_mode_info(mode, &inf) != 0) { // if Operation fail
@@ -87,7 +72,7 @@ int(change_pixel_color)(uint16_t x, uint16_t y, uint32_t color) {
 }
 
 int(vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
-  for (int i = 0; i < len; i++) {
+  for (uint16_t i = 0; i < len; i++) {
     if (change_pixel_color(x + i, y, color) != 0) {
       return 1;
     }
@@ -96,7 +81,7 @@ int(vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
 }
 
 int(vg_draw_vline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
-  for (int i = 0; i < len; i++) {
+  for (uint16_t i = 0; i < len; i++) {
     if (change_pixel_color(x, y + i, color) != 0) {
       return 1;
     }
@@ -105,7 +90,7 @@ int(vg_draw_vline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
 }
 
 int(vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
-  for (int i = 0; i < height; i++) {
+  for (uint16_t i = 0; i < height; i++) {
     if (vg_draw_hline(x, y + i, width, color) != 0) {
       return 1;
     }
@@ -118,8 +103,8 @@ int(vg_draw_image)(xpm_image_t img, uint16_t x, uint16_t y) {
   uint32_t transparent = xpm_transparency_color(XPM_8_8_8_8);
   uint32_t *color = (uint32_t *) img.bytes;
 
-  for (int i = 0; i < img.height; i++) {
-    for (int j = 0; j < img.width; j++) {
+  for (uint16_t i = 0; i < img.height; i++) {
+    for (uint16_t j = 0; j < img.width; j++) {
       if (*color != transparent) {
         if (change_pixel_color(x + j, y + i, *color) != 0) {
           return 1;

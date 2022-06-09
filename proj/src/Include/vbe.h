@@ -32,8 +32,4 @@
 
 #define LINEAR_BUFFER BIT(14);
 
-void *vbe_map_vram(unsigned int phys_base_ptr, unsigned int vram_size);
-
-int vbe_set_mode(uint16_t mode);
-
 #endif // __VBE_H__

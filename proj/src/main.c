@@ -98,7 +98,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
     return 1;
 
   while (db->currentState != Exit) { /* You may want to use a different condition */
-   getCurrentTime(&hours, &minutes);
+    getCurrentTime(&hours, &minutes);
     /* Get a request message. */
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
       printf("driver_receive failed with: %d", r);
@@ -108,7 +108,6 @@ int(proj_main_loop)(int argc, char *argv[]) {
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: /* hardware interrupt notification */
           if (msg.m_notify.interrupts & rtc_irq) {
-           
           }
           if (msg.m_notify.interrupts & timer_irq) {
 
@@ -148,6 +147,10 @@ int(proj_main_loop)(int argc, char *argv[]) {
 
             else if (db->currentState == Menu) {
               drawMainMenu();
+            }
+            else if (db->currentState == Menu_Rules) {
+              vg_draw_rectangle(300, 450, 550, 350, 0x000000);
+              vg_draw_image(db->images.rules_text, 270, 500);
             }
 
             else if (db->currentState == GamePaused) {
@@ -198,6 +201,11 @@ int(proj_main_loop)(int argc, char *argv[]) {
                 if (out_byte == KBD_BREAKCODE_R) {
                   gameReset();
                   db->currentState = GamePlaying;
+                }
+              }
+              else if (db->currentState == Menu_Rules) {
+                if (out_byte == KBD_BREAKCODE_ESC) {
+                  db->currentState = Menu;
                 }
               }
 

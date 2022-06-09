@@ -41,6 +41,7 @@
 #include "../images/Menu/main_menu.xpm"
 #include "../images/Menu/start.xpm"
 #include "../images/Menu/rules.xpm"
+#include "../images/Menu/rules_text.xpm"
 #include "../images/Menu/exit.xpm"
 #include "../images/Menu/pause.xpm"
 #include "../images/Menu/gameOver.xpm"
@@ -51,6 +52,7 @@
 
 enum CurrentState {
         Menu,
+        Menu_Rules,
         GamePlaying,
         GamePaused,
         GameOver,
@@ -70,7 +72,7 @@ typedef struct
    crosshair, scoreBoard,
    zero, one, two, three, four, five, six, seven, eight, nine,
    heart_full, heart_dep,
-   main_menu, start, rules, exit, pause, gameOver, gameOver_text;
+   main_menu, start, rules, rules_text, exit, pause, gameOver, gameOver_text;
 } GameImages;
 
 typedef struct

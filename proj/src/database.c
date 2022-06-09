@@ -39,6 +39,7 @@ void loadAllXPMs() {
   xpm_load(main_menu_xpm, XPM_8_8_8_8, &db->images.main_menu);
   xpm_load(start_xpm, XPM_8_8_8_8, &db->images.start);
   xpm_load(rules_xpm, XPM_8_8_8_8, &db->images.rules);
+  xpm_load(rules_text_xpm, XPM_8_8_8_8, &db->images.rules_text);
   xpm_load(exit_xpm, XPM_8_8_8_8, &db->images.exit);
   xpm_load(pause_xpm, XPM_8_8_8_8, &db->images.pause);
   xpm_load(gameOver_xpm, XPM_8_8_8_8, &db->images.gameOver);
@@ -284,6 +285,7 @@ void updateCurrentSelect(uint8_t out_b) {
           db->currentState = GamePlaying;
           break;
         case 1:
+          db->currentState = Menu_Rules;
           break;
         case 2:
           db->currentState = Exit;
