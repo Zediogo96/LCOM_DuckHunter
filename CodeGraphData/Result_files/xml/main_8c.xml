@@ -1,0 +1,494 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="main_8c" kind="file">
+    <compoundname>main.c</compoundname>
+    <includes local="no">lcom/lcf.h</includes>
+    <includes local="yes">Include/i8042.h</includes>
+    <includes local="yes">Include/i8254.h</includes>
+    <includes local="yes">Include/crosshair.h</includes>
+    <includes local="yes">Include/database.h</includes>
+    <includes local="yes">Include/duck.h</includes>
+    <includes local="yes">Include/hitboxes.h</includes>
+    <includes local="yes">Include/keyboard.h</includes>
+    <includes local="yes">Include/mouse.h</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/Include/i8042.h</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/Include/kbc.h</includes>
+    <includes local="no">minix/sysutil.h</includes>
+    <includes local="yes">Include/rtc.h</includes>
+    <includes local="yes">Include/timer.h</includes>
+    <includes local="yes">Include/utils.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includes local="yes">Include/vbe.h</includes>
+    <includes local="yes">Include/video_gr.h</includes>
+    <incdepgraph>
+      <node id="70">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/Include/i8042.h</label>
+      </node>
+      <node id="65">
+        <label>Include/database.h</label>
+      </node>
+      <node id="74">
+        <label>Include/timer.h</label>
+      </node>
+      <node id="76">
+        <label>stdint.h</label>
+      </node>
+      <node id="78">
+        <label>Include/video_gr.h</label>
+      </node>
+      <node id="67">
+        <label>Include/hitboxes.h</label>
+      </node>
+      <node id="73">
+        <label>Include/rtc.h</label>
+      </node>
+      <node id="66">
+        <label>Include/duck.h</label>
+      </node>
+      <node id="71">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/Include/kbc.h</label>
+      </node>
+      <node id="75">
+        <label>Include/utils.h</label>
+      </node>
+      <node id="61">
+        <label>lcom/lcf.h</label>
+      </node>
+      <node id="72">
+        <label>minix/sysutil.h</label>
+      </node>
+      <node id="62">
+        <label>Include/i8042.h</label>
+      </node>
+      <node id="68">
+        <label>Include/keyboard.h</label>
+      </node>
+      <node id="64">
+        <label>Include/crosshair.h</label>
+      </node>
+      <node id="63">
+        <label>Include/i8254.h</label>
+      </node>
+      <node id="77">
+        <label>Include/vbe.h</label>
+      </node>
+      <node id="60">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/main.c</label>
+        <link refid="main.c"/>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="62" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="68" relation="include">
+        </childnode>
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
+        <childnode refid="74" relation="include">
+        </childnode>
+        <childnode refid="75" relation="include">
+        </childnode>
+        <childnode refid="76" relation="include">
+        </childnode>
+        <childnode refid="77" relation="include">
+        </childnode>
+        <childnode refid="78" relation="include">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>Include/mouse.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="main_8c_1ae87fa6c999831cb82183e2293cb7b4c8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t out_byte</definition>
+        <argsstring></argsstring>
+        <name>out_byte</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/main.c" line="43" column="1"/>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1a00108dcde3e43ced41d2c1b5d40aa139" prot="public" static="no" mutable="no">
+        <type>uint64_t</type>
+        <definition>uint64_t no_interrupts</definition>
+        <argsstring></argsstring>
+        <name>no_interrupts</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/main.c" line="45" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/main.c" bodystart="45" bodyend="-1"/>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1af5561af906efc39d2ece55211ad03ce4" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t hours</definition>
+        <argsstring></argsstring>
+        <name>hours</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/main.c" line="46" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/main.c" bodystart="46" bodyend="-1"/>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1a2dcb690348d97b756f4d165c80c9af7d" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t minutes</definition>
+        <argsstring></argsstring>
+        <name>minutes</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/main.c" line="46" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/main.c" bodystart="46" bodyend="-1"/>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/main.c" line="19" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/main.c" bodystart="19" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int()</type>
+        <definition>int() proj_main_loop</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>proj_main_loop</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>STUFF TO DISABLE MOUSE AND MOUSE DATA REPORTING</para>        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/main.c" line="48" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/main.c" bodystart="48" bodyend="239"/>
+        <references refid="hitboxes_8c_1a4fd8478f0a41064533c224cf8feee0b3" compoundref="hitboxes_8c" startline="14" endline="32">checkDuckGotShot</references>
+        <references refid="database_8c_1ae22efbef048670adabc68ecaab67c42b" compoundref="database_8c" startline="100" endline="107">create_Duck</references>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <references refid="database_8c_1ad915b0e6f90c8c9e759721a8460445f7" compoundref="database_8c" startline="253" endline="260">draw_ducks</references>
+        <references refid="database_8c_1ab2934b49bac7f51e4058d3a835144b62" compoundref="database_8c" startline="185" endline="192">draw_fullLives</references>
+        <references refid="database_8c_1a215b20c63b6a2c0195d8427175eb51df" compoundref="database_8c" startline="180" endline="183">draw_fullScore</references>
+        <references refid="database_8c_1adc58be11cfe2a830a542f9a28689b373" compoundref="database_8c" startline="128" endline="150">drawBackground</references>
+        <references refid="database_8c_1a16e95c1aa375ed27180585335be4c819" compoundref="database_8c" startline="152" endline="154">drawCrosshair</references>
+        <references refid="database_8c_1a06326bc3ce2fdfe90cb6eb3172159fd0" compoundref="database_8c" startline="109" endline="126">drawMainMenu</references>
+        <references refid="database_8c_1ac70383bc44397bae7328828a2b4da5ba" compoundref="database_8c" startline="156" endline="158">drawPausedIndicator</references>
+        <references refid="database_8c_1a046399e2d517fd587a23bcd0b0e23ab9" compoundref="database_8c" startline="80" endline="88">gameDestroy</references>
+        <references refid="database_8c_1a43ae9a7f0ac55585ed6375c580abcaf0" compoundref="database_8c" startline="53" endline="63">gameInit</references>
+        <references refid="database_8c_1a213945eb102ff02fa211dd75a6472d42" compoundref="database_8c" startline="65" endline="78">gameReset</references>
+        <references refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" compoundref="database_8c" startline="49" endline="51">getDB</references>
+        <references refid="database_8c_1adbb25b728882daefa526016418937059" compoundref="database_8c" startline="294" endline="303">handlePause</references>
+        <references refid="main_8c_1af5561af906efc39d2ece55211ad03ce4" compoundref="main_8c" startline="46">hours</references>
+        <references refid="database_8c_1a239c6955f86a6904b5c1e76b04caf864" compoundref="database_8c" startline="5" endline="47">loadAllXPMs</references>
+        <references refid="main_8c_1a2dcb690348d97b756f4d165c80c9af7d" compoundref="main_8c" startline="46">minutes</references>
+        <references refid="main_8c_1a00108dcde3e43ced41d2c1b5d40aa139" compoundref="main_8c" startline="45">no_interrupts</references>
+        <references refid="main_8c_1ae87fa6c999831cb82183e2293cb7b4c8">out_byte</references>
+        <references refid="duck_8c_1a2f080265a124f25eab5788756b387fb6" compoundref="duck_8c" startline="15" endline="21">update_ducks_dir</references>
+        <references refid="duck_8c_1af40a5fbbe5535ae021b5110b70cb0a31" compoundref="duck_8c" startline="8" endline="14">update_ducks_status</references>
+        <references refid="crosshair_8c_1a05052261ddd9061cb3e50efc17d6fe75" compoundref="crosshair_8c" startline="3" endline="14">update_mouse</references>
+        <references refid="database_8c_1af261a3939826ab05988ab67767de075e" compoundref="database_8c" startline="262" endline="292">updateCurrentSelect</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>IMPORTANT:<sp/>you<sp/>must<sp/>include<sp/>the<sp/>following<sp/>line<sp/>in<sp/>all<sp/>your<sp/>C<sp/>files</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;lcom/lcf.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Include/i8042.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Include/i8254.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Include/crosshair.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Include/database.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Include/duck.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Include/hitboxes.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Include/keyboard.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Include/mouse.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Include/rtc.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Include/timer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Include/utils.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Include/vbe.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Include/video_gr.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>sets<sp/>the<sp/>language<sp/>of<sp/>LCF<sp/>messages<sp/>(can<sp/>be<sp/>either<sp/>EN-US<sp/>or<sp/>PT-PT)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>lcf_set_language(</highlight><highlight class="stringliteral">&quot;EN-US&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>enables<sp/>to<sp/>log<sp/>function<sp/>invocations<sp/>that<sp/>are<sp/>being<sp/>&quot;wrapped&quot;<sp/>by<sp/>LCF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>[comment<sp/>this<sp/>out<sp/>if<sp/>you<sp/>don&apos;t<sp/>want/need<sp/>it]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/>lcf_trace_calls(</highlight><highlight class="stringliteral">&quot;/home/lcom/labs/proj/trace.txt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>enables<sp/>to<sp/>save<sp/>the<sp/>output<sp/>of<sp/>printf<sp/>function<sp/>calls<sp/>on<sp/>a<sp/>file</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>[comment<sp/>this<sp/>out<sp/>if<sp/>you<sp/>don&apos;t<sp/>want/need<sp/>it]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>lcf_log_output(</highlight><highlight class="stringliteral">&quot;/home/lcom/labs/proj/output.txt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>handles<sp/>control<sp/>over<sp/>to<sp/>LCF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>[LCF<sp/>handles<sp/>command<sp/>line<sp/>arguments<sp/>and<sp/>invokes<sp/>the<sp/>right<sp/>function]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(lcf_start(argc,<sp/>argv))</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>LCF<sp/>clean<sp/>up<sp/>tasks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>[must<sp/>be<sp/>the<sp/>last<sp/>statement<sp/>before<sp/>return]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>lcf_cleanup();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="main_8c_1ae87fa6c999831cb82183e2293cb7b4c8" kindref="member">out_byte</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="main_8c_1a00108dcde3e43ced41d2c1b5d40aa139" refkind="member"><highlight class="normal">uint64_t<sp/><ref refid="main_8c_1a00108dcde3e43ced41d2c1b5d40aa139" kindref="member">no_interrupts</ref><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>prob<sp/>change<sp/>inside<sp/>the<sp/>loop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="main_8c_1a2dcb690348d97b756f4d165c80c9af7d" refkind="member"><highlight class="normal">uint32_t<sp/><ref refid="main_8c_1af5561af906efc39d2ece55211ad03ce4" kindref="member">hours</ref><sp/>=<sp/>0,<sp/><ref refid="main_8c_1a2dcb690348d97b756f4d165c80c9af7d" kindref="member">minutes</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" refkind="member"><highlight class="normal">int(<ref refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" kindref="member">proj_main_loop</ref>)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>uint8_t<sp/>bit_no_kbd<sp/>=<sp/>KBD_IRQ;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>uint8_t<sp/>bit_no_timer<sp/>=<sp/>TIMER0_IRQ;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>uint8_t<sp/>bit_no_mouse<sp/>=<sp/>MOUSE_IRQ;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>uint32_t<sp/>kbd_irq<sp/>=<sp/>BIT(bit_no_kbd);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>uint32_t<sp/>timer_irq<sp/>=<sp/>BIT(bit_no_timer);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>uint32_t<sp/>mouse_irq<sp/>=<sp/>BIT(bit_no_mouse);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>r,<sp/>ipc_status,<sp/>size<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>message<sp/>msg;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/>uint8_t<sp/>bytes[2];</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>Mouse<sp/>Handling</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>uint8_t<sp/>mouse_byte_count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">packet<sp/>pp;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/>uint8_t<sp/>bytes_mouse[3];</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>mouse_enable_data_reporting();<sp/></highlight><highlight class="comment">//<sp/>Still<sp/>using<sp/>LCF<sp/>version</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>vg_init(MODE_1152x864_DIRECT);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1a239c6955f86a6904b5c1e76b04caf864" kindref="member">loadAllXPMs</ref>();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>Database<sp/>*<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref><sp/>=<sp/><ref refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" kindref="member">getDB</ref>();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1a43ae9a7f0ac55585ed6375c580abcaf0" kindref="member">gameInit</ref>();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>get_hour(&amp;min,<sp/>&amp;hours);<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(timer_subscribe_int(&amp;bit_no_timer))<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s<sp/>failed!&quot;</highlight><highlight class="normal">,<sp/>__func__);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(kbd_subscribe_int(&amp;bit_no_kbd))<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s<sp/>failed!&quot;</highlight><highlight class="normal">,<sp/>__func__);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mouse_subscribe_int(&amp;bit_no_mouse))<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s<sp/>failed!&quot;</highlight><highlight class="normal">,<sp/>__func__);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(db-&gt;currentState<sp/>!=<sp/>Exit)<sp/>{<sp/></highlight><highlight class="comment">/*<sp/>You<sp/>may<sp/>want<sp/>to<sp/>use<sp/>a<sp/>different<sp/>condition<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>getCurrentTime(&amp;<ref refid="main_8c_1af5561af906efc39d2ece55211ad03ce4" kindref="member">hours</ref>,<sp/>&amp;<ref refid="main_8c_1a2dcb690348d97b756f4d165c80c9af7d" kindref="member">minutes</ref>);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Get<sp/>a<sp/>request<sp/>message.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((r<sp/>=<sp/>driver_receive(ANY,<sp/>&amp;msg,<sp/>&amp;ipc_status))<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;driver_receive<sp/>failed<sp/>with:<sp/>%d&quot;</highlight><highlight class="normal">,<sp/>r);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(is_ipc_notify(ipc_status))<sp/>{<sp/></highlight><highlight class="comment">/*<sp/>received<sp/>notification<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(_ENDPOINT_P(msg.m_source))<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>HARDWARE:<sp/></highlight><highlight class="comment">/*<sp/>hardware<sp/>interrupt<sp/>notification<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(msg.m_notify.interrupts<sp/>&amp;<sp/>timer_irq)<sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(db-&gt;currentState<sp/>==<sp/>GamePlaying)<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(db-&gt;lives<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>db-&gt;currentState<sp/>=<sp/>GameOver;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timer_int_handler();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8c_1a00108dcde3e43ced41d2c1b5d40aa139" kindref="member">no_interrupts</ref><sp/>%<sp/>200<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1ae22efbef048670adabc68ecaab67c42b" kindref="member">create_Duck</ref>(db);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1ae22efbef048670adabc68ecaab67c42b" kindref="member">create_Duck</ref>(db);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1adc58be11cfe2a830a542f9a28689b373" kindref="member">drawBackground</ref>(<ref refid="main_8c_1af5561af906efc39d2ece55211ad03ce4" kindref="member">hours</ref>,<sp/><ref refid="main_8c_1a2dcb690348d97b756f4d165c80c9af7d" kindref="member">minutes</ref>);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1a16e95c1aa375ed27180585335be4c819" kindref="member">drawCrosshair</ref>();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1a215b20c63b6a2c0195d8427175eb51df" kindref="member">draw_fullScore</ref>();</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1ab2934b49bac7f51e4058d3a835144b62" kindref="member">draw_fullLives</ref>();</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8c_1a00108dcde3e43ced41d2c1b5d40aa139" kindref="member">no_interrupts</ref><sp/>%<sp/>30<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="duck_8c_1a2f080265a124f25eab5788756b387fb6" kindref="member">update_ducks_dir</ref>();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="duck_8c_1af40a5fbbe5535ae021b5110b70cb0a31" kindref="member">update_ducks_status</ref>();</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1ad915b0e6f90c8c9e759721a8460445f7" kindref="member">draw_ducks</ref>();</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="hitboxes_8c_1a4fd8478f0a41064533c224cf8feee0b3" kindref="member">checkDuckGotShot</ref>(db-&gt;sprites-&gt;crosshair);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(db-&gt;ghostScore<sp/>==<sp/>100)<sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>db-&gt;gameSpeed++;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>db-&gt;ghostScore<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(db-&gt;currentState<sp/>==<sp/>Menu)<sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1a06326bc3ce2fdfe90cb6eb3172159fd0" kindref="member">drawMainMenu</ref>();</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(db-&gt;currentState<sp/>==<sp/>GamePaused)<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1ac70383bc44397bae7328828a2b4da5ba" kindref="member">drawPausedIndicator</ref>();</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(db-&gt;currentState<sp/>==<sp/>GameOver)<sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vg_draw_image(db-&gt;images.gameOver,<sp/>440,<sp/>310);</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>copyDoubleBufferToMain();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(msg.m_notify.interrupts<sp/>&amp;<sp/>mouse_irq)<sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mouse_ih();</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bytes_mouse[mouse_byte_count]<sp/>=<sp/><ref refid="main_8c_1ae87fa6c999831cb82183e2293cb7b4c8" kindref="member">out_byte</ref>;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mouse_byte_count++;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mouse_byte_count<sp/>==<sp/>3)<sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mouse_byte_count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pp<sp/>=<sp/>process_packets(bytes_mouse);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="crosshair_8c_1a05052261ddd9061cb3e50efc17d6fe75" kindref="member">update_mouse</ref>(pp,<sp/>db);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(msg.m_notify.interrupts<sp/>&amp;<sp/>kbd_irq)<sp/>{<sp/></highlight><highlight class="comment">/*<sp/>subscribed<sp/>interrupt<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>kbc_ih();</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>bytes[size]<sp/>=<sp/><ref refid="main_8c_1ae87fa6c999831cb82183e2293cb7b4c8" kindref="member">out_byte</ref>;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8c_1ae87fa6c999831cb82183e2293cb7b4c8" kindref="member">out_byte</ref><sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8c_1ae87fa6c999831cb82183e2293cb7b4c8" kindref="member">out_byte</ref><sp/>!=<sp/>0xE0)<sp/>{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(db-&gt;currentState<sp/>==<sp/>Menu)</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1af261a3939826ab05988ab67767de075e" kindref="member">updateCurrentSelect</ref>(<ref refid="main_8c_1ae87fa6c999831cb82183e2293cb7b4c8" kindref="member">out_byte</ref>);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(db-&gt;currentState<sp/>==<sp/>GamePlaying<sp/>||<sp/>db-&gt;currentState<sp/>==<sp/>GamePaused)<sp/>{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1adbb25b728882daefa526016418937059" kindref="member">handlePause</ref>(<ref refid="main_8c_1ae87fa6c999831cb82183e2293cb7b4c8" kindref="member">out_byte</ref>);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8c_1ae87fa6c999831cb82183e2293cb7b4c8" kindref="member">out_byte</ref><sp/>==<sp/>KBD_BREAKCODE_ESC)<sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1a213945eb102ff02fa211dd75a6472d42" kindref="member">gameReset</ref>();</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>db-&gt;currentState<sp/>=<sp/>Menu;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(db-&gt;currentState<sp/>==<sp/>GameOver)<sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8c_1ae87fa6c999831cb82183e2293cb7b4c8" kindref="member">out_byte</ref><sp/>==<sp/>KBD_BREAKCODE_ENTER)<sp/>{</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1a213945eb102ff02fa211dd75a6472d42" kindref="member">gameReset</ref>();</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>db-&gt;currentState<sp/>=<sp/>Menu;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="main_8c_1ae87fa6c999831cb82183e2293cb7b4c8" kindref="member">out_byte</ref><sp/>==<sp/>KBD_BREAKCODE_R)<sp/>{</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1a213945eb102ff02fa211dd75a6472d42" kindref="member">gameReset</ref>();</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>db-&gt;currentState<sp/>=<sp/>GamePlaying;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size++;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">/*<sp/>no<sp/>other<sp/>notifications<sp/>expected:<sp/>do<sp/>nothing<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="comment">/*<sp/>received<sp/>a<sp/>standard<sp/>message,<sp/>not<sp/>a<sp/>notification<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>no<sp/>standard<sp/>messages<sp/>expected:<sp/>do<sp/>nothing<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(timer_unsubscribe_int())<sp/>{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s<sp/>failed!&quot;</highlight><highlight class="normal">,<sp/>__func__);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(kbd_unsubscribe_int())<sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s<sp/>failed!&quot;</highlight><highlight class="normal">,<sp/>__func__);</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mouse_disable_reporting()<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s:<sp/>mouse_disable_reporting()<sp/>failed\n&quot;</highlight><highlight class="normal">,<sp/>__func__);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mouse_unsubscribe_int())<sp/>{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/>printf(</highlight><highlight class="stringliteral">&quot;%s<sp/>failed!&quot;</highlight><highlight class="normal">,<sp/>__func__);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1a046399e2d517fd587a23bcd0b0e23ab9" kindref="member">gameDestroy</ref>();</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/>vg_exit();</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/main.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="hitboxes_8c" kind="file">
+    <compoundname>hitboxes.c</compoundname>
+    <includes local="yes">Include/hitboxes.h</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/Include/crosshair.h</includes>
+    <includes local="yes">Include/database.h</includes>
+    <incdepgraph>
+      <node id="58">
+        <label>Include/database.h</label>
+      </node>
+      <node id="56">
+        <label>Include/hitboxes.h</label>
+      </node>
+      <node id="57">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/Include/crosshair.h</label>
+      </node>
+      <node id="55">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/hitboxes.c</label>
+        <link refid="hitboxes.c"/>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="hitboxes_8c_1a8b4280de09891907b184c9df9100a0f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool checkHitboxCollision</definition>
+        <argsstring>(Sprite *sprite1, Sprite *sprite2)</argsstring>
+        <name>checkHitboxCollision</name>
+        <param>
+          <type>Sprite *</type>
+          <declname>sprite1</declname>
+        </param>
+        <param>
+          <type>Sprite *</type>
+          <declname>sprite2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/hitboxes.c" line="4" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/hitboxes.c" bodystart="4" bodyend="12"/>
+        <referencedby refid="hitboxes_8c_1a4fd8478f0a41064533c224cf8feee0b3" compoundref="hitboxes_8c" startline="14" endline="32">checkDuckGotShot</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="hitboxes_8c_1a4fd8478f0a41064533c224cf8feee0b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool checkDuckGotShot</definition>
+        <argsstring>(Sprite *sprite1)</argsstring>
+        <name>checkDuckGotShot</name>
+        <param>
+          <type>Sprite *</type>
+          <declname>sprite1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/hitboxes.c" line="14" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/hitboxes.c" bodystart="14" bodyend="32"/>
+        <references refid="_sprite_8c_1af14295fd1fbc31a8f2f8b3e2e056d64b" compoundref="_sprite_8c" startline="62" endline="66">change_Sprite_Img</references>
+        <references refid="hitboxes_8c_1a8b4280de09891907b184c9df9100a0f5" compoundref="hitboxes_8c" startline="4" endline="12">checkHitboxCollision</references>
+        <references refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" compoundref="database_8c" startline="49" endline="51">getDB</references>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;Include/hitboxes.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Include/database.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="hitboxes_8c_1a8b4280de09891907b184c9df9100a0f5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="hitboxes_8c_1a8b4280de09891907b184c9df9100a0f5" kindref="member">checkHitboxCollision</ref>(Sprite<sp/>*sprite1,<sp/>Sprite<sp/>*sprite2)<sp/>{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/>uint16_t<sp/>half_x<sp/>=<sp/>(sprite1-&gt;width<sp/>/<sp/>2)<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/>uint16_t<sp/>half_y<sp/>=<sp/>(sprite1-&gt;height<sp/>/<sp/>2)<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sprite2-&gt;x<sp/>&lt;<sp/>sprite1-&gt;x<sp/>+<sp/>half_x<sp/>&amp;&amp;<sp/>sprite2-&gt;x<sp/>&gt;<sp/>sprite1-&gt;x<sp/>-<sp/>half_x<sp/>&amp;&amp;<sp/>sprite2-&gt;y<sp/>&lt;<sp/>sprite1-&gt;y<sp/>+<sp/>half_y<sp/>&amp;&amp;<sp/>sprite2-&gt;y<sp/>&gt;<sp/>sprite1-&gt;y<sp/>-<sp/>half_y)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="hitboxes_8c_1a4fd8478f0a41064533c224cf8feee0b3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="hitboxes_8c_1a4fd8478f0a41064533c224cf8feee0b3" kindref="member">checkDuckGotShot</ref>(Sprite<sp/>*sprite1)<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>TOTAL_NR_OF_DUCKS;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" kindref="member">getDB</ref>()-&gt;sprites-&gt;ducks[i]<sp/>!=<sp/>NULL<sp/>&amp;&amp;<sp/><ref refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" kindref="member">getDB</ref>()-&gt;sprites-&gt;ducks[i]-&gt;state<sp/>==<sp/>Alive)<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="hitboxes_8c_1a8b4280de09891907b184c9df9100a0f5" kindref="member">checkHitboxCollision</ref>(sprite1,<sp/><ref refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" kindref="member">getDB</ref>()-&gt;sprites-&gt;ducks[i])<sp/>&amp;&amp;<sp/>isMouseLBpressed)<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_sprite_8c_1af14295fd1fbc31a8f2f8b3e2e056d64b" kindref="member">change_Sprite_Img</ref>(<ref refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" kindref="member">getDB</ref>()-&gt;sprites-&gt;ducks[i],<sp/><ref refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" kindref="member">getDB</ref>()-&gt;images.duck_Shot);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" kindref="member">getDB</ref>()-&gt;sprites-&gt;ducks[i]-&gt;state<sp/>=<sp/>Shot;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" kindref="member">getDB</ref>()-&gt;sprites-&gt;ducks[i]-&gt;direction<sp/>=<sp/>Down;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" kindref="member">getDB</ref>()-&gt;score<sp/>+=<sp/>10;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" kindref="member">getDB</ref>()-&gt;ghostScore<sp/>+=<sp/>10;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>isMouseLBpressed<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/hitboxes.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,710 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="database_8c" kind="file">
+    <compoundname>database.c</compoundname>
+    <includes local="yes">Include/database.h</includes>
+    <incdepgraph>
+      <node id="45">
+        <label>Include/database.h</label>
+      </node>
+      <node id="44">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c</label>
+        <link refid="database.c"/>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" prot="public" static="yes" mutable="no">
+        <type>Database *</type>
+        <definition>Database* db</definition>
+        <argsstring></argsstring>
+        <name>db</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="3" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="3" bodyend="-1"/>
+        <referencedby refid="database_8c_1ae22efbef048670adabc68ecaab67c42b" compoundref="database_8c" startline="100" endline="107">create_Duck</referencedby>
+        <referencedby refid="database_8c_1abba601c16d2694fdfaf8eca49c3e6f9c" compoundref="database_8c" startline="90" endline="92">createCrosshair</referencedby>
+        <referencedby refid="database_8c_1a458b268a89897b46478df04e971ddb2a" compoundref="database_8c" startline="94" endline="98">createDucksArray</referencedby>
+        <referencedby refid="database_8c_1a215b20c63b6a2c0195d8427175eb51df" compoundref="database_8c" startline="180" endline="183">draw_fullScore</referencedby>
+        <referencedby refid="database_8c_1adc58be11cfe2a830a542f9a28689b373" compoundref="database_8c" startline="128" endline="150">drawBackground</referencedby>
+        <referencedby refid="database_8c_1a16e95c1aa375ed27180585335be4c819" compoundref="database_8c" startline="152" endline="154">drawCrosshair</referencedby>
+        <referencedby refid="database_8c_1aef49b8738d933f1ed49ab2f71a0acfb8" compoundref="database_8c" startline="195" endline="209">drawLives</referencedby>
+        <referencedby refid="database_8c_1a06326bc3ce2fdfe90cb6eb3172159fd0" compoundref="database_8c" startline="109" endline="126">drawMainMenu</referencedby>
+        <referencedby refid="database_8c_1ae468fff2c640fbd5cbfea0a16e2d3ec9" compoundref="database_8c" startline="211" endline="251">drawNumber</referencedby>
+        <referencedby refid="database_8c_1ac70383bc44397bae7328828a2b4da5ba" compoundref="database_8c" startline="156" endline="158">drawPausedIndicator</referencedby>
+        <referencedby refid="database_8c_1a046399e2d517fd587a23bcd0b0e23ab9" compoundref="database_8c" startline="80" endline="88">gameDestroy</referencedby>
+        <referencedby refid="database_8c_1a43ae9a7f0ac55585ed6375c580abcaf0" compoundref="database_8c" startline="53" endline="63">gameInit</referencedby>
+        <referencedby refid="database_8c_1a213945eb102ff02fa211dd75a6472d42" compoundref="database_8c" startline="65" endline="78">gameReset</referencedby>
+        <referencedby refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" compoundref="database_8c" startline="49" endline="51">getDB</referencedby>
+        <referencedby refid="database_8c_1adbb25b728882daefa526016418937059" compoundref="database_8c" startline="294" endline="303">handlePause</referencedby>
+        <referencedby refid="database_8c_1a239c6955f86a6904b5c1e76b04caf864" compoundref="database_8c" startline="5" endline="47">loadAllXPMs</referencedby>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+        <referencedby refid="database_8c_1af261a3939826ab05988ab67767de075e" compoundref="database_8c" startline="262" endline="292">updateCurrentSelect</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="database_8c_1a239c6955f86a6904b5c1e76b04caf864" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void loadAllXPMs</definition>
+        <argsstring>()</argsstring>
+        <name>loadAllXPMs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>LOADS RELATED TO DUCKS</para><para>ELSE</para><para>MENUS RELATED </para>        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="5" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="5" bodyend="47"/>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Database *</type>
+        <definition>Database* getDB</definition>
+        <argsstring>()</argsstring>
+        <name>getDB</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="49" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="49" bodyend="51"/>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <referencedby refid="duck_8c_1aa57a346d4d9ecd332bd7068e6d24b860" compoundref="duck_8c" startline="59" endline="89">change_dir</referencedby>
+        <referencedby refid="hitboxes_8c_1a4fd8478f0a41064533c224cf8feee0b3" compoundref="hitboxes_8c" startline="14" endline="32">checkDuckGotShot</referencedby>
+        <referencedby refid="database_8c_1ae22efbef048670adabc68ecaab67c42b" compoundref="database_8c" startline="100" endline="107">create_Duck</referencedby>
+        <referencedby refid="database_8c_1ad915b0e6f90c8c9e759721a8460445f7" compoundref="database_8c" startline="253" endline="260">draw_ducks</referencedby>
+        <referencedby refid="database_8c_1aef49b8738d933f1ed49ab2f71a0acfb8" compoundref="database_8c" startline="195" endline="209">drawLives</referencedby>
+        <referencedby refid="database_8c_1afb713d578bc26fb2108e79aa8dc0bc72" compoundref="database_8c" startline="160" endline="178">drawScoreDigits</referencedby>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+        <referencedby refid="duck_8c_1a808a9aa7d7b3a927b55122d0560da032" compoundref="duck_8c" startline="90" endline="158">update_direction</referencedby>
+        <referencedby refid="duck_8c_1a719cabe8173fc0ffb53a96991e80584a" compoundref="duck_8c" startline="159" endline="238">update_Duck</referencedby>
+        <referencedby refid="duck_8c_1a2f080265a124f25eab5788756b387fb6" compoundref="duck_8c" startline="15" endline="21">update_ducks_dir</referencedby>
+        <referencedby refid="duck_8c_1af40a5fbbe5535ae021b5110b70cb0a31" compoundref="duck_8c" startline="8" endline="14">update_ducks_status</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1a43ae9a7f0ac55585ed6375c580abcaf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gameInit</definition>
+        <argsstring>()</argsstring>
+        <name>gameInit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="53" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="53" bodyend="63"/>
+        <references refid="database_8c_1abba601c16d2694fdfaf8eca49c3e6f9c" compoundref="database_8c" startline="90" endline="92">createCrosshair</references>
+        <references refid="database_8c_1a458b268a89897b46478df04e971ddb2a" compoundref="database_8c" startline="94" endline="98">createDucksArray</references>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1a213945eb102ff02fa211dd75a6472d42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gameReset</definition>
+        <argsstring>()</argsstring>
+        <name>gameReset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="65" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="65" bodyend="78"/>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <references refid="_sprite_8c_1af16c6befaac9ffb673b9e3c798d542ed" compoundref="_sprite_8c" startline="27" endline="35">destroy_sprite</references>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1a046399e2d517fd587a23bcd0b0e23ab9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gameDestroy</definition>
+        <argsstring>()</argsstring>
+        <name>gameDestroy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="80" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="80" bodyend="88"/>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <references refid="_sprite_8c_1af16c6befaac9ffb673b9e3c798d542ed" compoundref="_sprite_8c" startline="27" endline="35">destroy_sprite</references>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1abba601c16d2694fdfaf8eca49c3e6f9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void createCrosshair</definition>
+        <argsstring>()</argsstring>
+        <name>createCrosshair</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="90" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="90" bodyend="92"/>
+        <references refid="_sprite_8c_1a79eca493e1fc1880af8aa60352725228" compoundref="_sprite_8c" startline="3" endline="25">create_sprite</references>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <referencedby refid="database_8c_1a43ae9a7f0ac55585ed6375c580abcaf0" compoundref="database_8c" startline="53" endline="63">gameInit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1a458b268a89897b46478df04e971ddb2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void createDucksArray</definition>
+        <argsstring>()</argsstring>
+        <name>createDucksArray</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="94" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="94" bodyend="98"/>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <referencedby refid="database_8c_1a43ae9a7f0ac55585ed6375c580abcaf0" compoundref="database_8c" startline="53" endline="63">gameInit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1ae22efbef048670adabc68ecaab67c42b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void create_Duck</definition>
+        <argsstring>()</argsstring>
+        <name>create_Duck</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="100" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="100" bodyend="107"/>
+        <references refid="_sprite_8c_1a79eca493e1fc1880af8aa60352725228" compoundref="_sprite_8c" startline="3" endline="25">create_sprite</references>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <references refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" compoundref="database_8c" startline="49" endline="51">getDB</references>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1a06326bc3ce2fdfe90cb6eb3172159fd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawMainMenu</definition>
+        <argsstring>()</argsstring>
+        <name>drawMainMenu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="109" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="109" bodyend="126"/>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1adc58be11cfe2a830a542f9a28689b373" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawBackground</definition>
+        <argsstring>(uint32_t h, uint32_t m)</argsstring>
+        <name>drawBackground</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>m</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="128" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="128" bodyend="150"/>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1a16e95c1aa375ed27180585335be4c819" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawCrosshair</definition>
+        <argsstring>()</argsstring>
+        <name>drawCrosshair</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="152" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="152" bodyend="154"/>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <references refid="_sprite_8c_1a6c75fbf31230126d2f19b29deaf24b2f" compoundref="_sprite_8c" startline="37" endline="60">draw_sprite</references>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1ac70383bc44397bae7328828a2b4da5ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawPausedIndicator</definition>
+        <argsstring>()</argsstring>
+        <name>drawPausedIndicator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="156" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="156" bodyend="158"/>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1afb713d578bc26fb2108e79aa8dc0bc72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawScoreDigits</definition>
+        <argsstring>()</argsstring>
+        <name>drawScoreDigits</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="160" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="160" bodyend="178"/>
+        <references refid="database_8c_1ae468fff2c640fbd5cbfea0a16e2d3ec9" compoundref="database_8c" startline="211" endline="251">drawNumber</references>
+        <references refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" compoundref="database_8c" startline="49" endline="51">getDB</references>
+        <referencedby refid="database_8c_1a215b20c63b6a2c0195d8427175eb51df" compoundref="database_8c" startline="180" endline="183">draw_fullScore</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1a215b20c63b6a2c0195d8427175eb51df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void draw_fullScore</definition>
+        <argsstring>()</argsstring>
+        <name>draw_fullScore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="180" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="180" bodyend="183"/>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <references refid="database_8c_1afb713d578bc26fb2108e79aa8dc0bc72" compoundref="database_8c" startline="160" endline="178">drawScoreDigits</references>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1ab2934b49bac7f51e4058d3a835144b62" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void draw_fullLives</definition>
+        <argsstring>()</argsstring>
+        <name>draw_fullLives</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="185" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="185" bodyend="192"/>
+        <references refid="database_8c_1aef49b8738d933f1ed49ab2f71a0acfb8" compoundref="database_8c" startline="195" endline="209">drawLives</references>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1aef49b8738d933f1ed49ab2f71a0acfb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawLives</definition>
+        <argsstring>()</argsstring>
+        <name>drawLives</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="195" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="195" bodyend="209"/>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <references refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" compoundref="database_8c" startline="49" endline="51">getDB</references>
+        <referencedby refid="database_8c_1ab2934b49bac7f51e4058d3a835144b62" compoundref="database_8c" startline="185" endline="192">draw_fullLives</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1ae468fff2c640fbd5cbfea0a16e2d3ec9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void drawNumber</definition>
+        <argsstring>(int number, uint16_t x_pos, uint16_t y_pos)</argsstring>
+        <name>drawNumber</name>
+        <param>
+          <type>int</type>
+          <declname>number</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>x_pos</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>y_pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="211" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="211" bodyend="251"/>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <referencedby refid="database_8c_1afb713d578bc26fb2108e79aa8dc0bc72" compoundref="database_8c" startline="160" endline="178">drawScoreDigits</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1ad915b0e6f90c8c9e759721a8460445f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void draw_ducks</definition>
+        <argsstring>()</argsstring>
+        <name>draw_ducks</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="253" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="253" bodyend="260"/>
+        <references refid="_sprite_8c_1a6c75fbf31230126d2f19b29deaf24b2f" compoundref="_sprite_8c" startline="37" endline="60">draw_sprite</references>
+        <references refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" compoundref="database_8c" startline="49" endline="51">getDB</references>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1af261a3939826ab05988ab67767de075e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void updateCurrentSelect</definition>
+        <argsstring>(uint8_t out_b)</argsstring>
+        <name>updateCurrentSelect</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>out_b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="262" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="262" bodyend="292"/>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="database_8c_1adbb25b728882daefa526016418937059" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void handlePause</definition>
+        <argsstring>(uint8_t out_b)</argsstring>
+        <name>handlePause</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>out_b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" line="294" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c" bodystart="294" bodyend="303"/>
+        <references refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" compoundref="database_8c" startline="3">db</references>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;Include/database.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>Database<sp/>*<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5" refid="database_8c_1a239c6955f86a6904b5c1e76b04caf864" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1a239c6955f86a6904b5c1e76b04caf864" kindref="member">loadAllXPMs</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref><sp/>=<sp/>(Database<sp/>*)<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(Database));</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;sprites<sp/>=<sp/>(Sprites<sp/>*)<sp/>malloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(Sprites));</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/>xpm_load(duck_Left_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.duck_Left);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/>xpm_load(duck_Right_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.duck_Right);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/>xpm_load(duck_Up_Right_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.duck_Up_Right);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/>xpm_load(duck_Up_Left_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.duck_Up_Left);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/>xpm_load(duck_Up_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.duck_Up);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/>xpm_load(duck_Shot_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.duck_Shot);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/>xpm_load(duck_Falling_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.duck_Falling);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/>xpm_load(background_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.background);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>xpm_load(background_night_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.background_night);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>xpm_load(crosshair_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.crosshair);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/>xpm_load(score_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.scoreBoard);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>xpm_load(heart_dep_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.heart_dep);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/>xpm_load(heart_full_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.heart_full);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Numbers<sp/>for<sp/>score</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>xpm_load(zero_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.zero);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/>xpm_load(one_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.one);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>xpm_load(two_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.two);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/>xpm_load(three_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.three);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>xpm_load(four_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.four);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>xpm_load(five_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.five);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>xpm_load(six_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.six);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>xpm_load(seven_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.seven);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>xpm_load(eight_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.eight);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>xpm_load(nine_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.nine);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>xpm_load(main_menu_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.main_menu);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>xpm_load(start_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.start);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>xpm_load(rules_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.rules);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>xpm_load(rules_text_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.rules_text);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/>xpm_load(exit_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.exit);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>xpm_load(pause_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.pause);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>xpm_load(gameOver_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.gameOver);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>xpm_load(gameOver_text_xpm,<sp/>XPM_8_8_8_8,<sp/>&amp;<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.gameOver_text);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" refkind="member"><highlight class="normal">Database<sp/>*<ref refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" kindref="member">getDB</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="database_8c_1a43ae9a7f0ac55585ed6375c580abcaf0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1a43ae9a7f0ac55585ed6375c580abcaf0" kindref="member">gameInit</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;score<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;lives<sp/>=<sp/>GAME_INIT_LIVES;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;gameSpeed<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentState<sp/>=<sp/>Menu;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentSelect<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1a458b268a89897b46478df04e971ddb2a" kindref="member">createDucksArray</ref>();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1abba601c16d2694fdfaf8eca49c3e6f9c" kindref="member">createCrosshair</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="database_8c_1a213945eb102ff02fa211dd75a6472d42" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1a213945eb102ff02fa211dd75a6472d42" kindref="member">gameReset</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;score<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;ghostScore<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;lives<sp/>=<sp/>GAME_INIT_LIVES;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;gameSpeed<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint8_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>TOTAL_NR_OF_DUCKS;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;sprites-&gt;ducks[i]<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;sprites-&gt;ducks[i]<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_sprite_8c_1af16c6befaac9ffb673b9e3c798d542ed" kindref="member">destroy_sprite</ref>(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;sprites-&gt;ducks[i]);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="database_8c_1a046399e2d517fd587a23bcd0b0e23ab9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1a046399e2d517fd587a23bcd0b0e23ab9" kindref="member">gameDestroy</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><ref refid="_sprite_8c_1af16c6befaac9ffb673b9e3c798d542ed" kindref="member">destroy_sprite</ref>(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;sprites-&gt;crosshair);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint8_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>TOTAL_NR_OF_DUCKS;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;sprites-&gt;ducks[i]<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;sprites-&gt;ducks[i]<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_sprite_8c_1af16c6befaac9ffb673b9e3c798d542ed" kindref="member">destroy_sprite</ref>(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;sprites-&gt;ducks[i]);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="database_8c_1abba601c16d2694fdfaf8eca49c3e6f9c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1abba601c16d2694fdfaf8eca49c3e6f9c" kindref="member">createCrosshair</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;sprites-&gt;crosshair<sp/>=<sp/><ref refid="_sprite_8c_1a79eca493e1fc1880af8aa60352725228" kindref="member">create_sprite</ref>(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.crosshair,<sp/>300,<sp/>300,<sp/>1,<sp/>1,<sp/>default_Dir,<sp/>default_State);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="database_8c_1a458b268a89897b46478df04e971ddb2a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1a458b268a89897b46478df04e971ddb2a" kindref="member">createDucksArray</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;sprites-&gt;ducks<sp/>=<sp/>(Sprite<sp/>**)<sp/>malloc(TOTAL_NR_OF_DUCKS<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(Sprite<sp/>*));</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>TOTAL_NR_OF_DUCKS;<sp/>++i)<sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;sprites-&gt;ducks[i]<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="database_8c_1ae22efbef048670adabc68ecaab67c42b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1ae22efbef048670adabc68ecaab67c42b" kindref="member">create_Duck</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" kindref="member">getDB</ref>()-&gt;sprites-&gt;ducks[i]<sp/>!=<sp/>NULL)<sp/>++i;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>srand(time(NULL));</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>&lt;<sp/>TOTAL_NR_OF_DUCKS)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;sprites-&gt;ducks[i]<sp/>=<sp/><ref refid="_sprite_8c_1a79eca493e1fc1880af8aa60352725228" kindref="member">create_sprite</ref>(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.duck_Up,<sp/>(rand()<sp/>%<sp/>((get_h_res()<sp/>-<sp/>150)<sp/>-<sp/>100<sp/>+<sp/>1))<sp/>+<sp/>150,<sp/>600,<sp/>5,<sp/>5,<sp/>Up,<sp/>Alive);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="database_8c_1a06326bc3ce2fdfe90cb6eb3172159fd0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1a06326bc3ce2fdfe90cb6eb3172159fd0" kindref="member">drawMainMenu</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.main_menu,<sp/>0,<sp/>0);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.duck_Shot,<sp/>120,<sp/>500);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.crosshair,<sp/>100,<sp/>470);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.duck_Up_Right,<sp/>840,<sp/>530);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.duck_Up_Right,<sp/>920,<sp/>590);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>vg_draw_rectangle(460,<sp/>490,<sp/>200,<sp/>70,<sp/>(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentSelect<sp/>==<sp/>0)<sp/>?<sp/>0x746AB0<sp/>:<sp/>0x008b8b);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.start,<sp/>467,<sp/>495);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>vg_draw_rectangle(460,<sp/>590,<sp/>200,<sp/>70,<sp/>(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentSelect<sp/>==<sp/>1)<sp/>?<sp/>0x746AB0<sp/>:<sp/>0x008b8b);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.rules,<sp/>465,<sp/>595);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>vg_draw_rectangle(460,<sp/>690,<sp/>200,<sp/>70,<sp/>(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentSelect<sp/>==<sp/>2)<sp/>?<sp/>0x746AB0<sp/>:<sp/>0x008b8b);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.exit,<sp/>465,<sp/>695);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="database_8c_1adc58be11cfe2a830a542f9a28689b373" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1adc58be11cfe2a830a542f9a28689b373" kindref="member">drawBackground</ref>(uint32_t<sp/>h,<sp/>uint32_t<sp/>m)<sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>h<sp/>=<sp/>(h<sp/>+<sp/>11)<sp/>%<sp/>24;</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/><sp/>m<sp/>=<sp/>(m<sp/>+<sp/>5)<sp/>%<sp/>60;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((h<sp/>&lt;=<sp/>14<sp/>&amp;&amp;<sp/>m<sp/>&lt;=<sp/>30)<sp/>||<sp/>(h<sp/>&gt;=<sp/>22))<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.background_night,<sp/>0,<sp/>0);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.background,<sp/>0,<sp/>0);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="141"><highlight class="comment"></highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/><sp/>drawNumber(h<sp/>/<sp/>10,<sp/>250,<sp/>100);</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/><sp/>drawNumber(h<sp/>%<sp/>10,<sp/>300,<sp/>100);</highlight></codeline>
+<codeline lineno="144"><highlight class="comment"></highlight></codeline>
+<codeline lineno="145"><highlight class="comment"><sp/><sp/>drawNumber(m<sp/>/<sp/>10,<sp/>450,<sp/>100);</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/><sp/>drawNumber(m<sp/>%<sp/>10,<sp/>500,<sp/>100);<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*drawNumber(m<sp/>/<sp/>10,<sp/>150,100);</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/><sp/>drawNumber(m<sp/>%<sp/>10,<sp/>200,100);<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="database_8c_1a16e95c1aa375ed27180585335be4c819" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1a16e95c1aa375ed27180585335be4c819" kindref="member">drawCrosshair</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><ref refid="_sprite_8c_1a6c75fbf31230126d2f19b29deaf24b2f" kindref="member">draw_sprite</ref>(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;sprites-&gt;crosshair);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="database_8c_1ac70383bc44397bae7328828a2b4da5ba" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1ac70383bc44397bae7328828a2b4da5ba" kindref="member">drawPausedIndicator</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.pause,<sp/>400,<sp/>350);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="database_8c_1afb713d578bc26fb2108e79aa8dc0bc72" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1afb713d578bc26fb2108e79aa8dc0bc72" kindref="member">drawScoreDigits</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/>uint16_t<sp/>x_pos<sp/>=<sp/>1050;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tmp<sp/>=<sp/><ref refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" kindref="member">getDB</ref>()-&gt;score;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/>uint8_t<sp/>idx<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(tmp<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="database_8c_1ae468fff2c640fbd5cbfea0a16e2d3ec9" kindref="member">drawNumber</ref>(0,<sp/>x_pos,<sp/>790);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(tmp<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>uint8_t<sp/>digit<sp/>=<sp/>tmp<sp/>%<sp/>10;</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>tmp<sp/>/=<sp/>10;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1ae468fff2c640fbd5cbfea0a16e2d3ec9" kindref="member">drawNumber</ref>(digit,<sp/>x_pos<sp/>-<sp/>idx,<sp/>790);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>idx<sp/>+=<sp/>20;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180" refid="database_8c_1a215b20c63b6a2c0195d8427175eb51df" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1a215b20c63b6a2c0195d8427175eb51df" kindref="member">draw_fullScore</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.scoreBoard,<sp/>900,<sp/>770);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1afb713d578bc26fb2108e79aa8dc0bc72" kindref="member">drawScoreDigits</ref>();</highlight></codeline>
+<codeline lineno="183"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185" refid="database_8c_1ab2934b49bac7f51e4058d3a835144b62" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1ab2934b49bac7f51e4058d3a835144b62" kindref="member">draw_fullLives</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/>vg_draw_hline(49,<sp/>779,<sp/>190,<sp/>0xFFFFFF);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/>vg_draw_hline(49,<sp/>840,<sp/>190,<sp/>0xFFFFFF);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/>vg_draw_vline(49,<sp/>779,<sp/>60,<sp/>0xFFFFFF);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/>vg_draw_vline(240,<sp/>779,<sp/>60,<sp/>0xFFFFFF);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/>vg_draw_rectangle(50,<sp/>780,<sp/>190,<sp/>60,<sp/>0x000000);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><ref refid="database_8c_1aef49b8738d933f1ed49ab2f71a0acfb8" kindref="member">drawLives</ref>();</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Update<sp/>logic<sp/>here<sp/>to<sp/>draw<sp/>only<sp/>number<sp/>of<sp/>lives<sp/>left</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="database_8c_1aef49b8738d933f1ed49ab2f71a0acfb8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1aef49b8738d933f1ed49ab2f71a0acfb8" kindref="member">drawLives</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/>uint16_t<sp/>x_pos<sp/>=<sp/>70;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/>uint8_t<sp/>idx<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/>uint8_t<sp/>start_lives<sp/>=<sp/>GAME_INIT_LIVES;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(uint8_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>start_lives;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(i<sp/>&lt;<sp/><ref refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" kindref="member">getDB</ref>()-&gt;lives)<sp/>{</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.heart_full,<sp/>x_pos<sp/>+<sp/>idx,<sp/>790);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.heart_dep,<sp/>x_pos<sp/>+<sp/>idx,<sp/>790);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>idx<sp/>+=<sp/>50;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211" refid="database_8c_1ae468fff2c640fbd5cbfea0a16e2d3ec9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1ae468fff2c640fbd5cbfea0a16e2d3ec9" kindref="member">drawNumber</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>number,<sp/>uint16_t<sp/>x_pos,<sp/>uint16_t<sp/>y_pos)<sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(number)<sp/>{</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>0:</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.zero,<sp/>x_pos,<sp/>y_pos);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>1:</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.one,<sp/>x_pos,<sp/>y_pos);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>2:</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.two,<sp/>x_pos,<sp/>y_pos);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>3:</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.three,<sp/>x_pos,<sp/>y_pos);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>4:</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.four,<sp/>x_pos,<sp/>y_pos);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>5:</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.five,<sp/>x_pos,<sp/>y_pos);</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>6:</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.six,<sp/>x_pos,<sp/>y_pos);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>7:</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.seven,<sp/>x_pos,<sp/>y_pos);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>8:</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.eight,<sp/>x_pos,<sp/>y_pos);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>9:</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>vg_draw_image(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;images.nine,<sp/>x_pos,<sp/>y_pos);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253" refid="database_8c_1ad915b0e6f90c8c9e759721a8460445f7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1ad915b0e6f90c8c9e759721a8460445f7" kindref="member">draw_ducks</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>TOTAL_NR_OF_DUCKS;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" kindref="member">getDB</ref>()-&gt;sprites-&gt;ducks[i]<sp/>!=<sp/>NULL)<sp/>{</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_sprite_8c_1a6c75fbf31230126d2f19b29deaf24b2f" kindref="member">draw_sprite</ref>(<ref refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" kindref="member">getDB</ref>()-&gt;sprites-&gt;ducks[i]);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262" refid="database_8c_1af261a3939826ab05988ab67767de075e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1af261a3939826ab05988ab67767de075e" kindref="member">updateCurrentSelect</ref>(uint8_t<sp/>out_b)<sp/>{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(out_b)<sp/>{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>KBD_BREAKCODE_ARROW_DOWN:<sp/></highlight><highlight class="comment">//<sp/>DOWN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentSelect<sp/>==<sp/>2)</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentSelect<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentSelect++;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>KBD_BREAKCODE_ARROW_UP:<sp/></highlight><highlight class="comment">//<sp/>UP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentSelect<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentSelect<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentSelect--;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>KBD_BREAKCODE_ENTER:<sp/></highlight><highlight class="comment">//<sp/>ENTER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentSelect)<sp/>{</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>0:</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentState<sp/>=<sp/>GamePlaying;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>1:</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentState<sp/>=<sp/>Menu_Rules;</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>2:</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentState<sp/>=<sp/>Exit;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:<sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="292"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294" refid="database_8c_1adbb25b728882daefa526016418937059" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="database_8c_1adbb25b728882daefa526016418937059" kindref="member">handlePause</ref>(uint8_t<sp/>out_b)<sp/>{</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(out_b<sp/>==<sp/>KBD_BREAKCODE_P)<sp/>{</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentState<sp/>==<sp/>GamePlaying)<sp/>{</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentState<sp/>=<sp/>GamePaused;</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentState<sp/>==<sp/>GamePaused)<sp/>{</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>-&gt;currentState<sp/>=<sp/>GamePlaying;</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="303"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/database.c"/>
+  </compounddef>
+</doxygen>

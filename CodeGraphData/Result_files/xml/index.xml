@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.6">
+  <compound refid="crosshair_8c" kind="file"><name>crosshair.c</name>
+    <member refid="crosshair_8c_1a05052261ddd9061cb3e50efc17d6fe75" kind="function"><name>update_mouse</name></member>
+  </compound>
+  <compound refid="database_8c" kind="file"><name>database.c</name>
+    <member refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kind="variable"><name>db</name></member>
+    <member refid="database_8c_1a239c6955f86a6904b5c1e76b04caf864" kind="function"><name>loadAllXPMs</name></member>
+    <member refid="database_8c_1a0ea5af80828aef26e9467fe4d9445cb6" kind="function"><name>getDB</name></member>
+    <member refid="database_8c_1a43ae9a7f0ac55585ed6375c580abcaf0" kind="function"><name>gameInit</name></member>
+    <member refid="database_8c_1a213945eb102ff02fa211dd75a6472d42" kind="function"><name>gameReset</name></member>
+    <member refid="database_8c_1a046399e2d517fd587a23bcd0b0e23ab9" kind="function"><name>gameDestroy</name></member>
+    <member refid="database_8c_1abba601c16d2694fdfaf8eca49c3e6f9c" kind="function"><name>createCrosshair</name></member>
+    <member refid="database_8c_1a458b268a89897b46478df04e971ddb2a" kind="function"><name>createDucksArray</name></member>
+    <member refid="database_8c_1ae22efbef048670adabc68ecaab67c42b" kind="function"><name>create_Duck</name></member>
+    <member refid="database_8c_1a06326bc3ce2fdfe90cb6eb3172159fd0" kind="function"><name>drawMainMenu</name></member>
+    <member refid="database_8c_1adc58be11cfe2a830a542f9a28689b373" kind="function"><name>drawBackground</name></member>
+    <member refid="database_8c_1a16e95c1aa375ed27180585335be4c819" kind="function"><name>drawCrosshair</name></member>
+    <member refid="database_8c_1ac70383bc44397bae7328828a2b4da5ba" kind="function"><name>drawPausedIndicator</name></member>
+    <member refid="database_8c_1afb713d578bc26fb2108e79aa8dc0bc72" kind="function"><name>drawScoreDigits</name></member>
+    <member refid="database_8c_1a215b20c63b6a2c0195d8427175eb51df" kind="function"><name>draw_fullScore</name></member>
+    <member refid="database_8c_1ab2934b49bac7f51e4058d3a835144b62" kind="function"><name>draw_fullLives</name></member>
+    <member refid="database_8c_1aef49b8738d933f1ed49ab2f71a0acfb8" kind="function"><name>drawLives</name></member>
+    <member refid="database_8c_1ae468fff2c640fbd5cbfea0a16e2d3ec9" kind="function"><name>drawNumber</name></member>
+    <member refid="database_8c_1ad915b0e6f90c8c9e759721a8460445f7" kind="function"><name>draw_ducks</name></member>
+    <member refid="database_8c_1af261a3939826ab05988ab67767de075e" kind="function"><name>updateCurrentSelect</name></member>
+    <member refid="database_8c_1adbb25b728882daefa526016418937059" kind="function"><name>handlePause</name></member>
+  </compound>
+  <compound refid="duck_8c" kind="file"><name>duck.c</name>
+    <member refid="duck_8c_1af40a5fbbe5535ae021b5110b70cb0a31" kind="function"><name>update_ducks_status</name></member>
+    <member refid="duck_8c_1a2f080265a124f25eab5788756b387fb6" kind="function"><name>update_ducks_dir</name></member>
+    <member refid="duck_8c_1afea24b1ffe1b97369a4d2e9b24c6d62e" kind="function"><name>generate_random_dir</name></member>
+    <member refid="duck_8c_1aa57a346d4d9ecd332bd7068e6d24b860" kind="function"><name>change_dir</name></member>
+    <member refid="duck_8c_1a808a9aa7d7b3a927b55122d0560da032" kind="function"><name>update_direction</name></member>
+    <member refid="duck_8c_1a719cabe8173fc0ffb53a96991e80584a" kind="function"><name>update_Duck</name></member>
+  </compound>
+  <compound refid="hitboxes_8c" kind="file"><name>hitboxes.c</name>
+    <member refid="hitboxes_8c_1a8b4280de09891907b184c9df9100a0f5" kind="function"><name>checkHitboxCollision</name></member>
+    <member refid="hitboxes_8c_1a4fd8478f0a41064533c224cf8feee0b3" kind="function"><name>checkDuckGotShot</name></member>
+  </compound>
+  <compound refid="main_8c" kind="file"><name>main.c</name>
+    <member refid="main_8c_1ae87fa6c999831cb82183e2293cb7b4c8" kind="variable"><name>out_byte</name></member>
+    <member refid="main_8c_1a00108dcde3e43ced41d2c1b5d40aa139" kind="variable"><name>no_interrupts</name></member>
+    <member refid="main_8c_1af5561af906efc39d2ece55211ad03ce4" kind="variable"><name>hours</name></member>
+    <member refid="main_8c_1a2dcb690348d97b756f4d165c80c9af7d" kind="variable"><name>minutes</name></member>
+    <member refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+    <member refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" kind="function"><name>proj_main_loop</name></member>
+  </compound>
+  <compound refid="_sprite_8c" kind="file"><name>Sprite.c</name>
+    <member refid="_sprite_8c_1a79eca493e1fc1880af8aa60352725228" kind="function"><name>create_sprite</name></member>
+    <member refid="_sprite_8c_1af16c6befaac9ffb673b9e3c798d542ed" kind="function"><name>destroy_sprite</name></member>
+    <member refid="_sprite_8c_1a6c75fbf31230126d2f19b29deaf24b2f" kind="function"><name>draw_sprite</name></member>
+    <member refid="_sprite_8c_1af14295fd1fbc31a8f2f8b3e2e056d64b" kind="function"><name>change_Sprite_Img</name></member>
+  </compound>
+  <compound refid="utils_8c" kind="file"><name>utils.c</name>
+    <member refid="utils_8c_1a81621440b3d65680979425e39aa8c789" kind="function"><name>util_get_LSB</name></member>
+    <member refid="utils_8c_1a6a880076cd2ec468834438b6e0c58836" kind="function"><name>util_get_MSB</name></member>
+    <member refid="utils_8c_1a79a031a8611f5b2d6afa4158e92b0fb4" kind="function"><name>util_sys_inb</name></member>
+    <member refid="utils_8c_1ab64c4dca50d091656fd1ff5df7fbcba6" kind="function"><name>isMakeCode</name></member>
+  </compound>
+  <compound refid="dir_275089585c7fc1b5fd5d7d42c69cb1da" kind="dir"><name>D:</name>
+  </compound>
+  <compound refid="dir_00aee742dc309fb5d8d171bdd29b8b9e" kind="dir"><name>D:/uni/lcom/MINIX-LCOM/shared/g03</name>
+  </compound>
+  <compound refid="dir_66081063446e0fa06991e22c46a1343e" kind="dir"><name>D:/uni/lcom</name>
+  </compound>
+  <compound refid="dir_7260b8979acabaeb0e62aff0ba6d9ce1" kind="dir"><name>D:/uni/lcom/MINIX-LCOM</name>
+  </compound>
+  <compound refid="dir_2361346921c30eae7e689e3dbd375c0c" kind="dir"><name>D:/uni/lcom/MINIX-LCOM/shared/g03/proj</name>
+  </compound>
+  <compound refid="dir_124af844a99ae9a45da07a7b48abda02" kind="dir"><name>D:/uni/lcom/MINIX-LCOM/shared</name>
+  </compound>
+  <compound refid="dir_c9e511c33bdbbea04c64c4047231f01f" kind="dir"><name>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src</name>
+  </compound>
+  <compound refid="dir_2c9d856972c8ce3f1ad61d5e9f3c9e83" kind="dir"><name>D:/uni</name>
+  </compound>
+</doxygenindex>

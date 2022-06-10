@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="crosshair_8c" kind="file">
+    <compoundname>crosshair.c</compoundname>
+    <includes local="yes">Include/crosshair.h</includes>
+    <includes local="no">lcom/lcf.h</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/Include/Sprite.h</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/Include/video_gr.h</includes>
+    <includes local="no">machine/int86.h</includes>
+    <includes local="no">minix/sysutil.h</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/Include/database.h</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/Include/kbc.h</includes>
+    <includes local="yes">Include/i8042.h</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/background.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/background_night.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/crosshair.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Duck_Images/duck_Left.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Duck_Images/duck_Right.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Duck_Images/duck_Up_Left.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Duck_Images/duck_Up_Right.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Duck_Images/duck_Falling.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Duck_Images/duck_Shot.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Duck_Images/duck_Up.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/score.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/heart_depleted.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/heart_full.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/eight.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/five.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/four.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/nine.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/one.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/seven.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/six.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/three.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/two.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/zero.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/lives.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Menu/exit.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Menu/gameOver.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Menu/gameOver_text.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Menu/main_menu.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Menu/pause.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Menu/rules.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Menu/rules_text.xpm</includes>
+    <includes local="yes">D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Menu/start.xpm</includes>
+    <includes local="no">stdio.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/background.xpm</label>
+      </node>
+      <node id="37">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Menu/main_menu.xpm</label>
+      </node>
+      <node id="38">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Menu/pause.xpm</label>
+      </node>
+      <node id="3">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/Include/Sprite.h</label>
+      </node>
+      <node id="14">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Duck_Images/duck_Right.xpm</label>
+      </node>
+      <node id="16">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Duck_Images/duck_Up_Right.xpm</label>
+      </node>
+      <node id="20">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/score.xpm</label>
+      </node>
+      <node id="23">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/eight.xpm</label>
+      </node>
+      <node id="25">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/four.xpm</label>
+      </node>
+      <node id="24">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/five.xpm</label>
+      </node>
+      <node id="34">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Menu/exit.xpm</label>
+      </node>
+      <node id="26">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/nine.xpm</label>
+      </node>
+      <node id="39">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Menu/rules.xpm</label>
+      </node>
+      <node id="31">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/two.xpm</label>
+      </node>
+      <node id="13">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Duck_Images/duck_Left.xpm</label>
+      </node>
+      <node id="11">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/background_night.xpm</label>
+      </node>
+      <node id="22">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/heart_full.xpm</label>
+      </node>
+      <node id="32">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/zero.xpm</label>
+      </node>
+      <node id="36">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Menu/gameOver_text.xpm</label>
+      </node>
+      <node id="8">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/Include/kbc.h</label>
+      </node>
+      <node id="15">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Duck_Images/duck_Up_Left.xpm</label>
+      </node>
+      <node id="2">
+        <label>lcom/lcf.h</label>
+      </node>
+      <node id="6">
+        <label>minix/sysutil.h</label>
+      </node>
+      <node id="17">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Duck_Images/duck_Falling.xpm</label>
+      </node>
+      <node id="40">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Menu/rules_text.xpm</label>
+      </node>
+      <node id="7">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/Include/database.h</label>
+      </node>
+      <node id="9">
+        <label>Include/i8042.h</label>
+      </node>
+      <node id="0">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/crosshair.c</label>
+        <link refid="crosshair.c"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/six.xpm</label>
+      </node>
+      <node id="28">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/seven.xpm</label>
+      </node>
+      <node id="27">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/one.xpm</label>
+      </node>
+      <node id="35">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Menu/gameOver.xpm</label>
+      </node>
+      <node id="30">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Numbers/three.xpm</label>
+      </node>
+      <node id="1">
+        <label>Include/crosshair.h</label>
+      </node>
+      <node id="41">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Menu/start.xpm</label>
+      </node>
+      <node id="21">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/heart_depleted.xpm</label>
+      </node>
+      <node id="19">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Duck_Images/duck_Up.xpm</label>
+      </node>
+      <node id="18">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/Duck_Images/duck_Shot.xpm</label>
+      </node>
+      <node id="12">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/crosshair.xpm</label>
+      </node>
+      <node id="33">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/images/lives.xpm</label>
+      </node>
+      <node id="42">
+        <label>stdio.h</label>
+      </node>
+      <node id="4">
+        <label>D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/Include/video_gr.h</label>
+      </node>
+      <node id="5">
+        <label>machine/int86.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="crosshair_8c_1a05052261ddd9061cb3e50efc17d6fe75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void update_mouse</definition>
+        <argsstring>(struct packet pp, Database *db)</argsstring>
+        <name>update_mouse</name>
+        <param>
+          <type>struct packet</type>
+          <declname>pp</declname>
+        </param>
+        <param>
+          <type>Database *</type>
+          <declname>db</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/crosshair.c" line="3" column="1" bodyfile="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/crosshair.c" bodystart="3" bodyend="14"/>
+        <referencedby refid="main_8c_1a2a16f651eccbd248e1ad3b3b924b143b" compoundref="main_8c" startline="48" endline="239">proj_main_loop</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;Include/crosshair.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="crosshair_8c_1a05052261ddd9061cb3e50efc17d6fe75" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="crosshair_8c_1a05052261ddd9061cb3e50efc17d6fe75" kindref="member">update_mouse</ref>(</highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>packet<sp/>pp,<sp/>Database<sp/>*<ref refid="database_8c_1abeb4b65a273f01a4dee88c9a9dd4c435" kindref="member">db</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pp.delta_x<sp/>!=<sp/>0<sp/>||<sp/>pp.delta_y<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(db-&gt;sprites-&gt;crosshair-&gt;x<sp/>+<sp/>pp.delta_x<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>((db-&gt;sprites-&gt;crosshair-&gt;x<sp/>+<sp/>db-&gt;sprites-&gt;crosshair-&gt;width)<sp/>+<sp/>pp.delta_x<sp/><sp/>&lt;=<sp/>get_h_res()))<sp/>db-&gt;sprites-&gt;crosshair-&gt;x<sp/>+=<sp/>pp.delta_x;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(db-&gt;sprites-&gt;crosshair-&gt;y<sp/>-<sp/>pp.delta_y<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>((db-&gt;sprites-&gt;crosshair-&gt;y<sp/>+<sp/>db-&gt;sprites-&gt;crosshair-&gt;height)<sp/><sp/>-<sp/>pp.delta_y<sp/>&lt;=<sp/>get_v_res()))<sp/>db-&gt;sprites-&gt;crosshair-&gt;y<sp/>-=<sp/>pp.delta_y;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pp.lb)<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>isMouseLBpressed<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="D:/uni/lcom/MINIX-LCOM/shared/g03/proj/src/crosshair.c"/>
+  </compounddef>
+</doxygen>
