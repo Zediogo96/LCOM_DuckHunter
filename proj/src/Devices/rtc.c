@@ -21,7 +21,6 @@ int rtc_unsubscribe_int() {
   return 0;
 }
 
-
 int(rtc_read_register)(uint32_t reg, uint8_t *data) {
   if (sys_outb(RTC_REG_ADDRESS, reg))
     return 1;
@@ -59,7 +58,7 @@ void convertTimePortugal(uint32_t *hours, uint32_t *minutes) {
 uint32_t BCD_2_Binary(uint32_t bcd) {
   uint32_t binary;
 
-  binary = (((bcd) & 0xF0) >> 4) * 10 + ((bcd) & 0x0F);
+  binary = (((bcd) &0xF0) >> 4) * 10 + ((bcd) &0x0F);
 
   return binary;
 }
@@ -67,7 +66,6 @@ uint32_t BCD_2_Binary(uint32_t bcd) {
 void getCurrentTime(uint32_t *hours, uint32_t *minutes) {
 
   uint32_t h = 0, m = 0;
-
 
   sys_outb(RTC_REG_ADDRESS, RTC_HOUR);
   sys_inb(RTC_REG_DATA, &h);

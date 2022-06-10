@@ -12,16 +12,16 @@ int(util_get_MSB)(uint16_t val, uint8_t *msb) {
   return 1;
 }
 
-int (util_sys_inb)(int port, uint8_t *value) {
-  
-    uint32_t value32;
+int(util_sys_inb)(int port, uint8_t *value) {
 
-    int status = sys_inb(port, &value32);
-    *value = (uint8_t) value32; // Only assigns the first 8 bits
+  uint32_t value32;
 
-    return status;
+  int status = sys_inb(port, &value32);
+  *value = (uint8_t) value32; // Only assigns the first 8 bits
+
+  return status;
 }
 
-bool (isMakeCode)(uint8_t scan_code) {
+bool(isMakeCode)(uint8_t scan_code) {
   return !(scan_code & BIT(7));
 }

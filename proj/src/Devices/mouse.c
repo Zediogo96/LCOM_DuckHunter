@@ -64,10 +64,14 @@ struct packet process_packets(uint8_t *bytes) {
 int mouse_disable_reporting() {
   for (int i = 0; i < 5; ++i) {
     /** It's the same command as the keyboard one **/
-    if (kbc_issue_command(WRITE_BYTE_TO_MOUSE, KBC_CMD_REG)) return 1; 
-    if (kbc_issue_command(DISABLE_DATA_REPORTING, KBC_OUTPUT_BUF)) return 1;
-    if (util_sys_inb(KBC_OUTPUT_BUF, &out_byte)) return 1;
-    if (out_byte == ACK) return 0;
+    if (kbc_issue_command(WRITE_BYTE_TO_MOUSE, KBC_CMD_REG))
+      return 1;
+    if (kbc_issue_command(DISABLE_DATA_REPORTING, KBC_OUTPUT_BUF))
+      return 1;
+    if (util_sys_inb(KBC_OUTPUT_BUF, &out_byte))
+      return 1;
+    if (out_byte == ACK)
+      return 0;
     tickdelay(micros_to_ticks(DELAY_US));
   }
   printf("%s: disable mouse data reporting failed \n", __func__);

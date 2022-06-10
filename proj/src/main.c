@@ -8,12 +8,12 @@
 #include "Include/database.h"
 #include "Include/duck.h"
 #include "Include/hitboxes.h"
-#include "Include/keyboard.h"
+#include "Include/kbc.h"
 #include "Include/mouse.h"
 #include "Include/rtc.h"
 #include "Include/timer.h"
 #include "Include/utils.h"
-#include "Include/vbe.h"
+
 #include "Include/video_gr.h"
 
 int main(int argc, char *argv[]) {
@@ -43,18 +43,18 @@ int main(int argc, char *argv[]) {
 extern uint8_t out_byte;
 
 uint64_t no_interrupts = 0; // prob change inside the loop
-uint32_t hours = 0, minutes = 0;
+uint32_t hours = 0, minutes = 0, seconds = 0;
 
 int(proj_main_loop)(int argc, char *argv[]) {
 
   uint8_t bit_no_kbd = KBD_IRQ;
   uint8_t bit_no_timer = TIMER0_IRQ;
   uint8_t bit_no_mouse = MOUSE_IRQ;
-  uint8_t bit_no_rtc = RTC_IRQ;
+
   uint32_t kbd_irq = BIT(bit_no_kbd);
   uint32_t timer_irq = BIT(bit_no_timer);
   uint32_t mouse_irq = BIT(bit_no_mouse);
-  uint32_t rtc_irq = BIT(bit_no_rtc);
+
 
   int r, ipc_status, size = 0;
   message msg;
@@ -84,7 +84,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
     return 1;
   }
 
-  if (kbd_subscribe_int(&bit_no_kbd)) {
+  if (kbc_subscribe_int(&bit_no_kbd)) {
     printf("%s failed!", __func__);
     return 1;
   }
@@ -94,9 +94,8 @@ int(proj_main_loop)(int argc, char *argv[]) {
     return 1;
   }
 
-  if (rtc_subscribe_int(&bit_no_rtc))
-    return 1;
-
+  timer_set_frequency(TIMER0_IRQ, 60);
+  
   while (db->currentState != Exit) { /* You may want to use a different condition */
     getCurrentTime(&hours, &minutes);
     /* Get a request message. */
@@ -107,8 +106,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
     if (is_ipc_notify(ipc_status)) { /* received notification */
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: /* hardware interrupt notification */
-          if (msg.m_notify.interrupts & rtc_irq) {
-          }
+          
           if (msg.m_notify.interrupts & timer_irq) {
 
             if (db->currentState == GamePlaying) {
@@ -233,7 +231,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
     return 1;
   }
 
-  if (kbd_unsubscribe_int()) {
+  if (kbc_unsubscribe_int()) {
     printf("%s failed!", __func__);
     return 1;
   }

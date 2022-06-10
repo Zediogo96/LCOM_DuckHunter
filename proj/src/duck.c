@@ -19,7 +19,7 @@ void update_ducks_dir() {
     }
   }
 }
-enum Direction generaterandomdir(enum Direction direction) {
+enum Direction generate_random_dir(enum Direction direction) {
   srand(time(NULL));
   int index = rand() % 8;
   enum Direction up[] = {Right, Left, Up_Right, Up_Left, Up};
@@ -97,7 +97,7 @@ void update_direction(Sprite *sprite) {
         if (sprite->y > 550)
           sprite->y -= speed;
         else {
-          direction = generaterandomdir(sprite->direction);
+          direction = generate_random_dir(sprite->direction);
           change_dir(sprite, direction);
           sprite->direction = direction;
         }
@@ -105,7 +105,7 @@ void update_direction(Sprite *sprite) {
       case Left:
 
         if (sprite->x > 1) {
-          direction = generaterandomdir(sprite->direction);
+          direction = generate_random_dir(sprite->direction);
           change_dir(sprite, direction);
           sprite->direction = direction;
         }
@@ -117,7 +117,7 @@ void update_direction(Sprite *sprite) {
       case Right:
 
         if ((sprite->x + sprite->width + speed) <= get_h_res()) {
-          direction = generaterandomdir(sprite->direction);
+          direction = generate_random_dir(sprite->direction);
           change_dir(sprite, direction);
           sprite->direction = direction;
         }
@@ -129,7 +129,7 @@ void update_direction(Sprite *sprite) {
 
       case Up_Left:
         if ((sprite->x + speed> 0) && (sprite->y + speed > 0)) {
-          direction = generaterandomdir(sprite->direction);
+          direction = generate_random_dir(sprite->direction);
           change_dir(sprite, direction);
           sprite->direction = direction;
         }
@@ -141,7 +141,7 @@ void update_direction(Sprite *sprite) {
 
       case Up_Right:
         if ((sprite->x + sprite->width + speed) <= get_h_res() && (sprite->y + speed > 0)) {
-          direction = generaterandomdir(sprite->direction);
+          direction = generate_random_dir(sprite->direction);
           change_dir(sprite, direction);
           sprite->direction = direction;
         }

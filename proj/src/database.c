@@ -44,7 +44,6 @@ void loadAllXPMs() {
   xpm_load(pause_xpm, XPM_8_8_8_8, &db->images.pause);
   xpm_load(gameOver_xpm, XPM_8_8_8_8, &db->images.gameOver);
   xpm_load(gameOver_text_xpm, XPM_8_8_8_8, &db->images.gameOver_text);
-  
 }
 
 Database *getDB() {
@@ -154,10 +153,6 @@ void drawCrosshair() {
   draw_sprite(db->sprites->crosshair);
 }
 
-void drawScoreBoard() {
-  vg_draw_image(db->images.scoreBoard, 900, 770);
-}
-
 void drawPausedIndicator() {
   vg_draw_image(db->images.pause, 400, 350);
 }
@@ -183,7 +178,7 @@ void drawScoreDigits() {
 }
 
 void draw_fullScore() {
-  drawScoreBoard();
+  vg_draw_image(db->images.scoreBoard, 900, 770);
   drawScoreDigits();
 }
 
