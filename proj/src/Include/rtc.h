@@ -4,8 +4,6 @@
 #include <lcom/lcf.h>
 #include <minix/sysutil.h>
 
-#define RTC_IRQ 8
-
 #define RTC_HOUR 0x04
 #define RTC_MIN 0x02
 #define RTC_SEC 0x00
@@ -21,16 +19,28 @@
 #define RTC_REG_ADDRESS 0x70
 #define RTC_REG_DATA 0x71
 
-int rtc_subscribe_int(uint8_t *bit_no);
+/**
+ * @brief Auxiliar function to determine if the information read from the RTC is in BCD.
+ *
+ * @return true if it's in BCD
+ * @return else false
+ */
+bool isBCD();
 
-int rtc_unsubscribe_int();
-
-void rtc_init();
-
-void convertTimePortugal(uint32_t * hours, uint32_t * minutes);
-
+/**
+ * @brief Auxiliar function to convert from BCD to Binary.
+ *
+ * @param bcd number to be converted
+ * @return uint32_t number converted
+ */
 uint32_t BCD_2_Binary(uint32_t bcd);
 
-void getCurrentTime(uint32_t* hours, uint32_t* minutes);
+/**
+ * @brief Get the current time from the RTC, handling necessary conversions due to the data being presented in BCD mode and 12h format.
+ * Handles special case when the MSB of the BCD number is 0x08.
+ * @param hours 
+ * @param minutes 
+ */
+void getCurrentTime(uint8_t *hours, uint8_t *minutes);
 
 #endif

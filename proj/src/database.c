@@ -125,28 +125,21 @@ void drawMainMenu() {
   vg_draw_image(db->images.exit, 465, 695);
 }
 
-void drawBackground(uint32_t h, uint32_t m) {
+void drawBackground(uint8_t h, uint8_t m) {
 
-  /* h = (h + 11) % 24;
-  m = (m + 5) % 60; */
-
-  if ((h <= 14 && m <= 30) || (h >= 22)) {
+  if ((h <= 7 && m <= 30) || (h >= 15 && m >= 30)) {
     vg_draw_image(db->images.background_night, 0, 0);
   }
   else {
     vg_draw_image(db->images.background, 0, 0);
   }
-
-  /*
-
+/* 
   drawNumber(h / 10, 250, 100);
   drawNumber(h % 10, 300, 100);
 
   drawNumber(m / 10, 450, 100);
   drawNumber(m % 10, 500, 100); */
 
-  /*drawNumber(m / 10, 150,100);
-  drawNumber(m % 10, 200,100); */
 }
 
 void drawCrosshair() {

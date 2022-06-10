@@ -162,7 +162,7 @@ void drawMainMenu();
  * @param h hours
  * @param m minutes
  */
-void drawBackground(uint32_t h, uint32_t m);
+void drawBackground(uint8_t h, uint8_t m);
 
 /**
  * @brief Draws the crosshair sprite

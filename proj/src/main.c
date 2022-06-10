@@ -43,7 +43,7 @@ int main(int argc, char *argv[]) {
 extern uint8_t out_byte;
 
 uint64_t no_interrupts = 0; // prob change inside the loop
-uint32_t hours = 0, minutes = 0, seconds = 0;
+uint8_t hours = 0, minutes = 0, seconds = 0;
 
 int(proj_main_loop)(int argc, char *argv[]) {
 
@@ -54,7 +54,6 @@ int(proj_main_loop)(int argc, char *argv[]) {
   uint32_t kbd_irq = BIT(bit_no_kbd);
   uint32_t timer_irq = BIT(bit_no_timer);
   uint32_t mouse_irq = BIT(bit_no_mouse);
-
 
   int r, ipc_status, size = 0;
   message msg;
@@ -74,11 +73,6 @@ int(proj_main_loop)(int argc, char *argv[]) {
   Database *db = getDB();
 
   gameInit();
-
-  rtc_init();
-
-  /* get_hour(&min, &hours); */
-
   if (timer_subscribe_int(&bit_no_timer)) {
     printf("%s failed!", __func__);
     return 1;
@@ -95,7 +89,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
   }
 
   timer_set_frequency(TIMER0_IRQ, 60);
-  
+
   while (db->currentState != Exit) { /* You may want to use a different condition */
     getCurrentTime(&hours, &minutes);
     /* Get a request message. */
@@ -106,7 +100,7 @@ int(proj_main_loop)(int argc, char *argv[]) {
     if (is_ipc_notify(ipc_status)) { /* received notification */
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE: /* hardware interrupt notification */
-          
+
           if (msg.m_notify.interrupts & timer_irq) {
 
             if (db->currentState == GamePlaying) {

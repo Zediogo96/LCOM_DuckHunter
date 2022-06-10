@@ -11,6 +11,8 @@
         "tuple": "c",
         "*.xpm": "c",
         "map": "c",
-        "chrono": "c"
+        "chrono": "c",
+        "string": "c",
+        "vector": "c"
     }
 }
