@@ -1,0 +1,4 @@
+<map id="drawNumber" name="drawNumber">
+<area shape="rect" id="node1" title="Function used to draw a xpm_image based on the number it&#39;s given." alt="" coords="169,5,264,32"/>
+<area shape="rect" id="node2" href="$database_8c.html#afb713d578bc26fb2108e79aa8dc0bc72" title="Function that used to draw all the score digits." alt="" coords="5,5,121,32"/>
+</map>

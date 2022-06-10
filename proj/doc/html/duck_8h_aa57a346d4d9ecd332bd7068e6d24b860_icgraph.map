@@ -1,0 +1,5 @@
+<map id="change_dir" name="change_dir">
+<area shape="rect" id="node1" title="Function used to update a sprite image and position." alt="" coords="343,5,428,32"/>
+<area shape="rect" id="node2" href="$duck_8c.html#a808a9aa7d7b3a927b55122d0560da032" title="Auxiliar function used to update a sprite direction given the random direction that it gets from gene..." alt="" coords="177,5,295,32"/>
+<area shape="rect" id="node3" href="$duck_8c.html#a2f080265a124f25eab5788756b387fb6" title="Function to encapsulate the try to give the duck a random direction if given conditions are met." alt="" coords="5,5,129,32"/>
+</map>

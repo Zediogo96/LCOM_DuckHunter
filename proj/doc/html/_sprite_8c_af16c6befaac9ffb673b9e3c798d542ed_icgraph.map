@@ -1,0 +1,6 @@
+<map id="destroy_sprite" name="destroy_sprite">
+<area shape="rect" id="node1" title="Deletes the sprite, freeing all the memory that was allocated for it." alt="" coords="347,31,451,57"/>
+<area shape="rect" id="node2" href="$database_8c.html#a046399e2d517fd587a23bcd0b0e23ab9" title="Auxiliar function to free memory allocated for the game." alt="" coords="200,5,299,32"/>
+<area shape="rect" id="node3" href="$duck_8c.html#a719cabe8173fc0ffb53a96991e80584a" title="Updates the duck position, state and direction." alt="" coords="200,56,299,83"/>
+<area shape="rect" id="node4" href="$duck_8c.html#af40a5fbbe5535ae021b5110b70cb0a31" title="Function to encapsulate the update of every duck position, state and direction, that is currently all..." alt="" coords="5,56,152,83"/>
+</map>

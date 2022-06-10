@@ -1,0 +1,4 @@
+<map id="drawLives" name="drawLives">
+<area shape="rect" id="node1" title="Function that is used to draw the full hearts or depleted hearts, based on the current number of live..." alt="" coords="155,5,233,32"/>
+<area shape="rect" id="node2" href="$database_8c.html#ab2934b49bac7f51e4058d3a835144b62" title="Function that encapsulates all the other functions needed to draw the lives board." alt="" coords="5,5,107,32"/>
+</map>

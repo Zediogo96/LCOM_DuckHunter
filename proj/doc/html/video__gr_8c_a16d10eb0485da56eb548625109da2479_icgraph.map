@@ -1,0 +1,11 @@
+<map id="vg_draw_image" name="vg_draw_image">
+<area shape="rect" id="node1" title="Draws a xpm image." alt="" coords="360,132,471,159"/>
+<area shape="rect" id="node2" href="$database_8c.html#a215b20c63b6a2c0195d8427175eb51df" title="Function that encapsulates all the other functions needed to draw the score." alt="" coords="187,5,294,32"/>
+<area shape="rect" id="node3" href="$database_8c.html#a533d1eda9e2daa267c62ad53dcfaadab" title="Draws the background image according to the hours and minutes read from the RTC." alt="" coords="181,56,300,83"/>
+<area shape="rect" id="node4" href="$database_8c.html#aef49b8738d933f1ed49ab2f71a0acfb8" title="Function that is used to draw the full hearts or depleted hearts, based on the current number of live..." alt="" coords="201,107,280,133"/>
+<area shape="rect" id="node6" href="$database_8c.html#a06326bc3ce2fdfe90cb6eb3172159fd0" title="Function that encapsulates all the functions needs to draw the main menu." alt="" coords="186,157,295,184"/>
+<area shape="rect" id="node7" href="$database_8c.html#ae468fff2c640fbd5cbfea0a16e2d3ec9" title="Function used to draw a xpm_image based on the number it&#39;s given." alt="" coords="193,208,288,235"/>
+<area shape="rect" id="node9" href="$database_8c.html#ac70383bc44397bae7328828a2b4da5ba" title="Draws the paused image." alt="" coords="169,259,312,285"/>
+<area shape="rect" id="node5" href="$database_8c.html#ab2934b49bac7f51e4058d3a835144b62" title="Function that encapsulates all the other functions needed to draw the lives board." alt="" coords="13,107,114,133"/>
+<area shape="rect" id="node8" href="$database_8c.html#afb713d578bc26fb2108e79aa8dc0bc72" title="Function that used to draw all the score digits." alt="" coords="5,208,121,235"/>
+</map>

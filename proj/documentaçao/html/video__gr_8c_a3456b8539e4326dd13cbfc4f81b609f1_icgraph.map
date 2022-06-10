@@ -1,0 +1,10 @@
+<map id="get_h_res" name="get_h_res">
+<area shape="rect" id="node1" title="Get the h_res value." alt="" coords="365,107,444,133"/>
+<area shape="rect" id="node2" href="$_sprite_8c.html#a6c75fbf31230126d2f19b29deaf24b2f" title="Draws the sprite to the double buffer." alt="" coords="215,56,303,83"/>
+<area shape="rect" id="node5" href="$duck_8c.html#a808a9aa7d7b3a927b55122d0560da032" title="Auxiliar function used to update a sprite direction given the random direction that it gets from gene..." alt="" coords="200,107,317,133"/>
+<area shape="rect" id="node7" href="$duck_8c.html#a719cabe8173fc0ffb53a96991e80584a" title="Updates the duck position, state and direction." alt="" coords="209,157,308,184"/>
+<area shape="rect" id="node3" href="$database_8c.html#ad915b0e6f90c8c9e759721a8460445f7" title="Function that draws all the duck sprites from the duck array." alt="" coords="33,5,124,32"/>
+<area shape="rect" id="node4" href="$database_8c.html#a16e95c1aa375ed27180585335be4c819" title="Draws the crosshair sprite." alt="" coords="27,56,131,83"/>
+<area shape="rect" id="node6" href="$duck_8c.html#a2f080265a124f25eab5788756b387fb6" title="Function to encapsulate the try to give the duck a random direction if given conditions are met." alt="" coords="17,107,141,133"/>
+<area shape="rect" id="node8" href="$duck_8c.html#af40a5fbbe5535ae021b5110b70cb0a31" title="Function to encapsulate the update of every duck position, state and direction, that is currently all..." alt="" coords="5,157,152,184"/>
+</map>

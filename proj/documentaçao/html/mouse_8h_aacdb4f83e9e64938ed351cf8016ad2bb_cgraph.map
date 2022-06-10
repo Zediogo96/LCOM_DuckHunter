@@ -1,0 +1,5 @@
+<map id="mouse_disable_reporting" name="mouse_disable_reporting">
+<area shape="rect" id="node1" title="Function to disable mouse data reporting." alt="" coords="5,31,172,57"/>
+<area shape="rect" id="node2" href="$kbc_8c.html#abf7e97dd9a8cfe7951fbd34b53a720e6" title="Function to issue an command to a specific port." alt="" coords="220,5,365,32"/>
+<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Auxiliar function to extract a 32 bit number to a bit and pass that information converted into a 8 bi..." alt="" coords="413,31,504,57"/>
+</map>

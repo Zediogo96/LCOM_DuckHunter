@@ -1,0 +1,5 @@
+<map id="drawBackground" name="drawBackground">
+<area shape="rect" id="node1" title="Draws the background image according to the hours and minutes read from the RTC." alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node2" href="$video__gr_8c.html#a16d10eb0485da56eb548625109da2479" title="Draws a xpm image." alt="" coords="172,5,283,32"/>
+<area shape="rect" id="node3" href="$video__gr_8c.html#a40a9a53f98c0f310f15090d887338dbe" title="Changes a pixel color in the double buffer by using memcpy()" alt="" coords="331,5,464,32"/>
+</map>

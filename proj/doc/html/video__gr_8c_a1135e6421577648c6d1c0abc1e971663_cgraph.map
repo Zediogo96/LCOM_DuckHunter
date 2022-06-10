@@ -1,0 +1,4 @@
+<map id="vg_draw_vline" name="vg_draw_vline">
+<area shape="rect" id="node1" title="Draws a vertical line, with a given length and color." alt="" coords="5,5,105,32"/>
+<area shape="rect" id="node2" href="$video__gr_8c.html#a40a9a53f98c0f310f15090d887338dbe" title="Changes a pixel color in the double buffer by using memcpy()" alt="" coords="153,5,287,32"/>
+</map>

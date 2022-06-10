@@ -1,0 +1,5 @@
+<map id="drawNumber" name="drawNumber">
+<area shape="rect" id="node1" title="Function used to draw a xpm_image based on the number it&#39;s given." alt="" coords="5,5,100,32"/>
+<area shape="rect" id="node2" href="$video__gr_8c.html#a16d10eb0485da56eb548625109da2479" title="Draws a xpm image." alt="" coords="148,5,259,32"/>
+<area shape="rect" id="node3" href="$video__gr_8c.html#a40a9a53f98c0f310f15090d887338dbe" title="Changes a pixel color in the double buffer by using memcpy()" alt="" coords="307,5,440,32"/>
+</map>

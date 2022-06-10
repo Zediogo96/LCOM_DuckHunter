@@ -1,0 +1,5 @@
+<map id="getCurrentTime" name="getCurrentTime">
+<area shape="rect" id="node1" title="Get the current time from the RTC, handling necessary conversions due to the data being presented in ..." alt="" coords="5,31,116,57"/>
+<area shape="rect" id="node2" href="$rtc_8c.html#aea287ec4363661b82ad9bf7f4600b5fe" title="Auxiliar function to convert from BCD to Binary." alt="" coords="164,5,271,32"/>
+<area shape="rect" id="node3" href="$rtc_8c.html#a91994172a375afa5dfd71c7ee92e93a1" title="Auxiliar function to determine if the information read from the RTC is in BCD." alt="" coords="188,56,247,83"/>
+</map>

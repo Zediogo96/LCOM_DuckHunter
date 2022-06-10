@@ -1,0 +1,4 @@
+<map id="vg_draw_image" name="vg_draw_image">
+<area shape="rect" id="node1" title="Draws a xpm image." alt="" coords="5,5,116,32"/>
+<area shape="rect" id="node2" href="$video__gr_8c.html#a40a9a53f98c0f310f15090d887338dbe" title="Changes a pixel color in the double buffer by using memcpy()" alt="" coords="164,5,297,32"/>
+</map>

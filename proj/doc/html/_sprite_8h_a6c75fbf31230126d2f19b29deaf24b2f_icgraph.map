@@ -1,0 +1,5 @@
+<map id="draw_sprite" name="draw_sprite">
+<area shape="rect" id="node1" title="Draws the sprite to the double buffer." alt="" coords="157,31,245,57"/>
+<area shape="rect" id="node2" href="$database_8c.html#ad915b0e6f90c8c9e759721a8460445f7" title="Function that draws all the duck sprites from the duck array." alt="" coords="12,5,103,32"/>
+<area shape="rect" id="node3" href="$database_8c.html#a16e95c1aa375ed27180585335be4c819" title="Draws the crosshair sprite." alt="" coords="5,56,109,83"/>
+</map>

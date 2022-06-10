@@ -1,0 +1,5 @@
+<map id="drawPausedIndicator" name="drawPausedIndicator">
+<area shape="rect" id="node1" title="Draws the paused image." alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node2" href="$video__gr_8c.html#a16d10eb0485da56eb548625109da2479" title="Draws a xpm image." alt="" coords="196,5,307,32"/>
+<area shape="rect" id="node3" href="$video__gr_8c.html#a40a9a53f98c0f310f15090d887338dbe" title="Changes a pixel color in the double buffer by using memcpy()" alt="" coords="355,5,488,32"/>
+</map>

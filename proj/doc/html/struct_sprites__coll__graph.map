@@ -1,0 +1,4 @@
+<map id="Sprites" name="Sprites">
+<area shape="rect" id="node1" title="Struct that encapsulates sprites used by the game." alt="" coords="15,277,78,355"/>
+<area shape="rect" id="node2" href="$struct_sprite.html" title="Struct to keep all the relevant information of an Sprite." alt="" coords="5,5,88,200"/>
+</map>

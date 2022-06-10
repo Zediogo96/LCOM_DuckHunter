@@ -1,0 +1,9 @@
+<map id="update_ducks_dir" name="update_ducks_dir">
+<area shape="rect" id="node1" title="Function to encapsulate the try to give the duck a random direction if given conditions are met." alt="" coords="5,31,129,57"/>
+<area shape="rect" id="node2" href="$database_8c.html#a5120243e5ca027b6f460c9d0e6042282" title="To facilitate using db in another file (note that it&#39;s static)" alt="" coords="571,5,629,32"/>
+<area shape="rect" id="node3" href="$duck_8c.html#a808a9aa7d7b3a927b55122d0560da032" title="Auxiliar function used to update a sprite direction given the random direction that it gets from gene..." alt="" coords="177,81,295,108"/>
+<area shape="rect" id="node4" href="$duck_8c.html#aa57a346d4d9ecd332bd7068e6d24b860" title="Function used to update a sprite image and position." alt="" coords="371,56,457,83"/>
+<area shape="rect" id="node5" href="$_sprite_8c.html#af14295fd1fbc31a8f2f8b3e2e056d64b" title="Auxiliar function used to change the current sprite image." alt="" coords="533,81,667,108"/>
+<area shape="rect" id="node6" href="$duck_8c.html#afea24b1ffe1b97369a4d2e9b24c6d62e" title="Auxiliar function used to create a new random direction to the duck given it&#39;s current position." alt="" coords="343,157,485,184"/>
+<area shape="rect" id="node7" href="$video__gr_8c.html#a3456b8539e4326dd13cbfc4f81b609f1" title="Get the h_res value." alt="" coords="375,208,453,235"/>
+</map>

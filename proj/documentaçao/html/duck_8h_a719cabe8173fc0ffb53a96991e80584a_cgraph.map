@@ -1,0 +1,7 @@
+<map id="update_Duck" name="update_Duck">
+<area shape="rect" id="node1" title="Updates the duck position, state and direction." alt="" coords="5,81,104,108"/>
+<area shape="rect" id="node2" href="$_sprite_8c.html#af14295fd1fbc31a8f2f8b3e2e056d64b" title="Auxiliar function used to change the current sprite image." alt="" coords="152,5,285,32"/>
+<area shape="rect" id="node3" href="$_sprite_8c.html#af16c6befaac9ffb673b9e3c798d542ed" title="Deletes the sprite, freeing all the memory that was allocated for it." alt="" coords="167,56,271,83"/>
+<area shape="rect" id="node4" href="$video__gr_8c.html#a3456b8539e4326dd13cbfc4f81b609f1" title="Get the h_res value." alt="" coords="179,107,258,133"/>
+<area shape="rect" id="node5" href="$database_8c.html#a5120243e5ca027b6f460c9d0e6042282" title="To facilitate using db in another file (note that it&#39;s static)" alt="" coords="189,157,248,184"/>
+</map>

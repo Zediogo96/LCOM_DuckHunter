@@ -1,0 +1,18 @@
+<map id="change_pixel_color" name="change_pixel_color">
+<area shape="rect" id="node1" title="Changes a pixel color in the double buffer by using memcpy()" alt="" coords="519,183,652,209"/>
+<area shape="rect" id="node2" href="$_sprite_8c.html#a6c75fbf31230126d2f19b29deaf24b2f" title="Draws the sprite to the double buffer." alt="" coords="371,56,459,83"/>
+<area shape="rect" id="node5" href="$video__gr_8c.html#a5e5b25bd525250f61f40b9e9f212d5e6" title="Draws a horizontal line, with a given length and color." alt="" coords="364,157,467,184"/>
+<area shape="rect" id="node8" href="$video__gr_8c.html#a16d10eb0485da56eb548625109da2479" title="Draws a xpm image." alt="" coords="360,360,471,387"/>
+<area shape="rect" id="node16" href="$video__gr_8c.html#a1135e6421577648c6d1c0abc1e971663" title="Draws a vertical line, with a given length and color." alt="" coords="365,208,465,235"/>
+<area shape="rect" id="node3" href="$database_8c.html#ad915b0e6f90c8c9e759721a8460445f7" title="Function that draws all the duck sprites from the duck array." alt="" coords="195,56,286,83"/>
+<area shape="rect" id="node4" href="$database_8c.html#a16e95c1aa375ed27180585335be4c819" title="Draws the crosshair sprite." alt="" coords="189,5,293,32"/>
+<area shape="rect" id="node6" href="$database_8c.html#ab2934b49bac7f51e4058d3a835144b62" title="Function that encapsulates all the other functions needed to draw the lives board." alt="" coords="13,183,114,209"/>
+<area shape="rect" id="node7" href="$video__gr_8c.html#a99d2da2559e11200c6b40c469e9977ec" title="Draws a rectangle with a given width, height and color, with it&#39;s top left corner at coordinates (x,..." alt="" coords="177,157,305,184"/>
+<area shape="rect" id="node9" href="$database_8c.html#a215b20c63b6a2c0195d8427175eb51df" title="Function that encapsulates all the other functions needed to draw the score." alt="" coords="187,461,294,488"/>
+<area shape="rect" id="node10" href="$database_8c.html#a533d1eda9e2daa267c62ad53dcfaadab" title="Draws the background image according to the hours and minutes read from the RTC." alt="" coords="181,309,300,336"/>
+<area shape="rect" id="node11" href="$database_8c.html#aef49b8738d933f1ed49ab2f71a0acfb8" title="Function that is used to draw the full hearts or depleted hearts, based on the current number of live..." alt="" coords="201,259,280,285"/>
+<area shape="rect" id="node12" href="$database_8c.html#a06326bc3ce2fdfe90cb6eb3172159fd0" title="Function that encapsulates all the functions needs to draw the main menu." alt="" coords="186,360,295,387"/>
+<area shape="rect" id="node13" href="$database_8c.html#ae468fff2c640fbd5cbfea0a16e2d3ec9" title="Function used to draw a xpm_image based on the number it&#39;s given." alt="" coords="193,512,288,539"/>
+<area shape="rect" id="node15" href="$database_8c.html#ac70383bc44397bae7328828a2b4da5ba" title="Draws the paused image." alt="" coords="169,411,312,437"/>
+<area shape="rect" id="node14" href="$database_8c.html#afb713d578bc26fb2108e79aa8dc0bc72" title="Function that used to draw all the score digits." alt="" coords="5,512,121,539"/>
+</map>

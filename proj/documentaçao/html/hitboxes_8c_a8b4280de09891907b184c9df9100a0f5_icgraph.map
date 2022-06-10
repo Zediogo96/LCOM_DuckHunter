@@ -1,0 +1,4 @@
+<map id="checkHitboxCollision" name="checkHitboxCollision">
+<area shape="rect" id="node1" title="Auxiliar function that checks if it occurs a collision between the center of the sprite 1 and sprite ..." alt="" coords="188,5,331,32"/>
+<area shape="rect" id="node2" href="$hitboxes_8c.html#a4fd8478f0a41064533c224cf8feee0b3" title="Function to check for every duck if they collided with the center of crosshair (sprite1) while mouse ..." alt="" coords="5,5,140,32"/>
+</map>

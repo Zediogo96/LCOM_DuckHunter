@@ -1,0 +1,5 @@
+<map id="drawMainMenu" name="drawMainMenu">
+<area shape="rect" id="node1" title="Function that encapsulates all the functions needs to draw the main menu." alt="" coords="5,5,115,32"/>
+<area shape="rect" id="node2" href="$video__gr_8c.html#a16d10eb0485da56eb548625109da2479" title="Draws a xpm image." alt="" coords="163,5,273,32"/>
+<area shape="rect" id="node3" href="$video__gr_8c.html#a40a9a53f98c0f310f15090d887338dbe" title="Changes a pixel color in the double buffer by using memcpy()" alt="" coords="321,5,455,32"/>
+</map>

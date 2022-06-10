@@ -1,0 +1,4 @@
+<map id="BCD_2_Binary" name="BCD_2_Binary">
+<area shape="rect" id="node1" title="Auxiliar function to convert from BCD to Binary." alt="" coords="164,5,271,32"/>
+<area shape="rect" id="node2" href="$rtc_8c.html#acece5c129e4498b96bcfbb82973feb11" title="Get the current time from the RTC, handling necessary conversions due to the data being presented in ..." alt="" coords="5,5,116,32"/>
+</map>

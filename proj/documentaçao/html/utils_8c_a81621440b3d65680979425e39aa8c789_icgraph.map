@@ -1,0 +1,4 @@
+<map id="util_get_LSB" name="util_get_LSB">
+<area shape="rect" id="node1" title="Returns the least significant byte of the 16 bits integer." alt="" coords="192,5,288,32"/>
+<area shape="rect" id="node2" href="$timer_8c.html#af2c04fa8e97ffa748fd3f612886a92a7" title="Changes the operating frequency of a timer." alt="" coords="5,5,144,32"/>
+</map>

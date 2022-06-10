@@ -1,0 +1,10 @@
+<map id="util_sys_inb" name="util_sys_inb">
+<area shape="rect" id="node1" title="Auxiliar function to extract a 32 bit number to a bit and pass that information converted into a 8 bi..." alt="" coords="413,81,504,108"/>
+<area shape="rect" id="node2" href="$kbc_8c.html#abf7e97dd9a8cfe7951fbd34b53a720e6" title="Function to issue an command to a specific port." alt="" coords="220,5,365,32"/>
+<area shape="rect" id="node3" href="$mouse_8c.html#aacdb4f83e9e64938ed351cf8016ad2bb" title="Function to disable mouse data reporting." alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node4" href="$kbc_8c.html#a3e0dcbc6f00b8e485e307b5589dd2c3c" title="Function to read the data from the KBC and pass it to the OUT BYTE. Checks if the input is full befor..." alt="" coords="239,107,346,133"/>
+<area shape="rect" id="node7" href="$timer_8c.html#a703c60b40c8c49607d6ecb6fef82d27a" title="Reads the timer configuration (status) via a read&#45;back command." alt="" coords="239,157,346,184"/>
+<area shape="rect" id="node5" href="$kbc_8c.html#aea970a154161a35f6894898a092ed70a" title="Function to check if there was any informationr read to the OUT BYTE. If not waits for a specified ti..." alt="" coords="59,56,119,83"/>
+<area shape="rect" id="node6" href="$mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title=" " alt="" coords="49,107,128,133"/>
+<area shape="rect" id="node8" href="$timer_8c.html#af2c04fa8e97ffa748fd3f612886a92a7" title="Changes the operating frequency of a timer." alt="" coords="19,157,158,184"/>
+</map>

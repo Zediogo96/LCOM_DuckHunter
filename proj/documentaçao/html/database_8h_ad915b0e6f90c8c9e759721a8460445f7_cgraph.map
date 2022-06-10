@@ -1,0 +1,8 @@
+<map id="draw_ducks" name="draw_ducks">
+<area shape="rect" id="node1" title="Function that draws all the duck sprites from the duck array." alt="" coords="5,81,96,108"/>
+<area shape="rect" id="node2" href="$_sprite_8c.html#a6c75fbf31230126d2f19b29deaf24b2f" title="Draws the sprite to the double buffer." alt="" coords="144,56,232,83"/>
+<area shape="rect" id="node6" href="$database_8c.html#a5120243e5ca027b6f460c9d0e6042282" title="To facilitate using db in another file (note that it&#39;s static)" alt="" coords="159,107,217,133"/>
+<area shape="rect" id="node3" href="$video__gr_8c.html#a40a9a53f98c0f310f15090d887338dbe" title="Changes a pixel color in the double buffer by using memcpy()" alt="" coords="280,5,413,32"/>
+<area shape="rect" id="node4" href="$video__gr_8c.html#a3456b8539e4326dd13cbfc4f81b609f1" title="Get the h_res value." alt="" coords="307,56,386,83"/>
+<area shape="rect" id="node5" href="$video__gr_8c.html#aa6c3dbf699d3dda9444bdcd71bf85234" title="Get the v_res value." alt="" coords="308,107,385,133"/>
+</map>

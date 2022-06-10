@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['score_0',['score',['../struct_database.html#ab0f6ab469e4f27aed971a82e856945b8',1,'Database']]],
+  ['scoreboard_1',['scoreBoard',['../struct_game_images.html#a109a18b6dfe41aef6b6db67dc0cf2c25',1,'GameImages']]],
+  ['seconds_2',['seconds',['../main_8c.html#a46729a903be1a03cdb248fb48d84d4f5',1,'main.c']]],
+  ['set_5fdefault_3',['SET_DEFAULT',['../group__i8254.html#ga550bae197ecf122ec6360f436fe6b950',1,'i8042.h']]],
+  ['set_5fstream_5fmode_4',['SET_STREAM_MODE',['../group__i8254.html#gaabf49b4a4d8ad72d202c8a7197058e35',1,'i8042.h']]],
+  ['set_5fvbe_5fmode_5',['SET_VBE_MODE',['../video__gr_8h.html#ab32156e1d72cb92b120bb16883c87eea',1,'video_gr.h']]],
+  ['seven_6',['seven',['../struct_game_images.html#ad3af128b4628c91b43a3f5d1f014e543',1,'GameImages']]],
+  ['shot_7',['Shot',['../_sprite_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8a2208288bd19bf943af4c51fb2294e1cd',1,'Sprite.h']]],
+  ['six_8',['six',['../struct_game_images.html#a1fe7784c6cf5cff30b00f030f4f62298',1,'GameImages']]],
+  ['speaker_5fctrl_9',['SPEAKER_CTRL',['../group__i8254.html#ga51b3a5e3d4811ca063fe25e35560ab40',1,'i8254.h']]],
+  ['sprite_10',['Sprite',['../struct_sprite.html',1,'']]],
+  ['sprite_2ec_11',['Sprite.c',['../_sprite_8c.html',1,'']]],
+  ['sprite_2eh_12',['Sprite.h',['../_sprite_8h.html',1,'']]],
+  ['sprites_13',['Sprites',['../struct_sprites.html',1,'']]],
+  ['sprites_14',['sprites',['../struct_database.html#a46380c9cc4a61eb094d6b17421eff6d5',1,'Database']]],
+  ['start_15',['start',['../struct_game_images.html#ad5badaf8cb036f83fa61a0d521328927',1,'GameImages']]],
+  ['state_16',['state',['../struct_sprite.html#a0db44bec6a2ebf1a0cc819b5c9191cee',1,'Sprite']]],
+  ['state_17',['State',['../_sprite_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8',1,'Sprite.h']]]
+];
