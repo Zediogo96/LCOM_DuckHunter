@@ -1,5 +1,0 @@
-<map id="change_dir" name="change_dir">
-<area shape="rect" id="node1" title="Function used to update a sprite image and position." alt="" coords="5,31,91,57"/>
-<area shape="rect" id="node2" href="$_sprite_8c.html#af14295fd1fbc31a8f2f8b3e2e056d64b" title="Auxiliar function used to change the current sprite image." alt="" coords="139,5,272,32"/>
-<area shape="rect" id="node3" href="$database_8c.html#a5120243e5ca027b6f460c9d0e6042282" title="To facilitate using db in another file (note that it&#39;s static)" alt="" coords="176,56,235,83"/>
-</map>

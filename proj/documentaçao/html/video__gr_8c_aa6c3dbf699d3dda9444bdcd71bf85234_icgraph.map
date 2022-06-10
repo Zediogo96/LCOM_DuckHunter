@@ -1,6 +1,0 @@
-<map id="get_v_res" name="get_v_res">
-<area shape="rect" id="node1" title="Get the v_res value." alt="" coords="293,31,371,57"/>
-<area shape="rect" id="node2" href="$_sprite_8c.html#a6c75fbf31230126d2f19b29deaf24b2f" title="Draws the sprite to the double buffer." alt="" coords="157,31,245,57"/>
-<area shape="rect" id="node3" href="$database_8c.html#ad915b0e6f90c8c9e759721a8460445f7" title="Function that draws all the duck sprites from the duck array." alt="" coords="12,5,103,32"/>
-<area shape="rect" id="node4" href="$database_8c.html#a16e95c1aa375ed27180585335be4c819" title="Draws the crosshair sprite." alt="" coords="5,56,109,83"/>
-</map>

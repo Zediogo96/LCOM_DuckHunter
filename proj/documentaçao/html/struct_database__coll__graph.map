@@ -1,6 +1,0 @@
-<map id="Database" name="Database">
-<area shape="rect" id="node1" title="Struct that encapsulates all the necessary information to be used by the program." alt="" coords="61,564,171,715"/>
-<area shape="rect" id="node2" href="$struct_game_images.html" title="Struct with all the xpm_images used by the game." alt="" coords="5,277,141,501"/>
-<area shape="rect" id="node3" href="$struct_sprites.html" title="Struct that encapsulates sprites used by the game." alt="" coords="166,351,229,428"/>
-<area shape="rect" id="node4" href="$struct_sprite.html" title="Struct to keep all the relevant information of an Sprite." alt="" coords="156,5,239,200"/>
-</map>

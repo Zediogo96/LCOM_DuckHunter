@@ -1,9 +1,0 @@
-<map id="change_Sprite_Img" name="change_Sprite_Img">
-<area shape="rect" id="node1" title="Auxiliar function used to change the current sprite image." alt="" coords="555,81,688,108"/>
-<area shape="rect" id="node2" href="$duck_8c.html#aa57a346d4d9ecd332bd7068e6d24b860" title="Function used to update a sprite image and position." alt="" coords="397,5,482,32"/>
-<area shape="rect" id="node3" href="$duck_8c.html#a808a9aa7d7b3a927b55122d0560da032" title="Auxiliar function used to update a sprite direction given the random direction that it gets from gene..." alt="" coords="192,31,309,57"/>
-<area shape="rect" id="node5" href="$hitboxes_8c.html#a4fd8478f0a41064533c224cf8feee0b3" title="Function to check for every duck if they collided with the center of crosshair (sprite1) while mouse ..." alt="" coords="372,107,507,133"/>
-<area shape="rect" id="node6" href="$duck_8c.html#a719cabe8173fc0ffb53a96991e80584a" title="Updates the duck position, state and direction." alt="" coords="390,157,489,184"/>
-<area shape="rect" id="node4" href="$duck_8c.html#a2f080265a124f25eab5788756b387fb6" title="Function to encapsulate the try to give the duck a random direction if given conditions are met." alt="" coords="5,31,129,57"/>
-<area shape="rect" id="node7" href="$duck_8c.html#af40a5fbbe5535ae021b5110b70cb0a31" title="Function to encapsulate the update of every duck position, state and direction, that is currently all..." alt="" coords="177,157,324,184"/>
-</map>

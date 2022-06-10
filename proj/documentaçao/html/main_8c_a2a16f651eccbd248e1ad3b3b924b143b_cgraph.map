@@ -1,5 +1,0 @@
-<map id="proj_main_loop" name="proj_main_loop">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,115,57"/>
-<area shape="rect" id="node2" href="$database_8c.html#a239c6955f86a6904b5c1e76b04caf864" title="Method that will be used to load all xpm&#39;s necessary to the game to a single struct,..." alt="" coords="163,5,257,32"/>
-<area shape="rect" id="node3" href="$video__gr_8c.html#afa0e432c3ebeefc29a59abc4d22918df" title="Initializes the graphics in a given mode. Extracts information from the vbe and passes it to static v..." alt="" coords="181,56,239,83"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="kbc_read_outb" name="kbc_read_outb">
-<area shape="rect" id="node1" title="Function to read the data from the KBC and pass it to the OUT BYTE. Checks if the input is full befor..." alt="" coords="132,31,239,57"/>
-<area shape="rect" id="node2" href="$kbc_8c.html#aea970a154161a35f6894898a092ed70a" title="Function to check if there was any informationr read to the OUT BYTE. If not waits for a specified ti..." alt="" coords="15,5,75,32"/>
-<area shape="rect" id="node3" href="$mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title=" " alt="" coords="5,56,84,83"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="kbc_ih" name="kbc_ih">
-<area shape="rect" id="node1" title="Function to check if there was any informationr read to the OUT BYTE. If not waits for a specified ti..." alt="" coords="5,5,65,32"/>
-<area shape="rect" id="node2" href="$kbc_8c.html#a3e0dcbc6f00b8e485e307b5589dd2c3c" title="Function to read the data from the KBC and pass it to the OUT BYTE. Checks if the input is full befor..." alt="" coords="113,5,220,32"/>
-<area shape="rect" id="node3" href="$utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title="Auxiliar function to extract a 32 bit number to a bit and pass that information converted into a 8 bi..." alt="" coords="268,5,359,32"/>
-</map>

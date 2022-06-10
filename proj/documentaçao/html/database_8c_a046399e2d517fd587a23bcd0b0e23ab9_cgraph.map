@@ -1,4 +1,0 @@
-<map id="gameDestroy" name="gameDestroy">
-<area shape="rect" id="node1" title="Auxiliar function to free memory allocated for the game." alt="" coords="5,5,104,32"/>
-<area shape="rect" id="node2" href="$_sprite_8c.html#af16c6befaac9ffb673b9e3c798d542ed" title="Deletes the sprite, freeing all the memory that was allocated for it." alt="" coords="152,5,256,32"/>
-</map>

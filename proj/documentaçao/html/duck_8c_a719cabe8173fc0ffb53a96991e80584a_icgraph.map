@@ -1,4 +1,0 @@
-<map id="update_Duck" name="update_Duck">
-<area shape="rect" id="node1" title="Updates the duck position, state and direction." alt="" coords="200,5,299,32"/>
-<area shape="rect" id="node2" href="$duck_8c.html#af40a5fbbe5535ae021b5110b70cb0a31" title="Function to encapsulate the update of every duck position, state and direction, that is currently all..." alt="" coords="5,5,152,32"/>
-</map>

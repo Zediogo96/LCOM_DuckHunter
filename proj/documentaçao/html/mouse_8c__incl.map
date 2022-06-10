@@ -1,8 +1,0 @@
-<map id="src/Devices/mouse.c" name="src/Devices/mouse.c">
-<area shape="rect" id="node1" title=" " alt="" coords="10,5,152,32"/>
-<area shape="rect" id="node2" href="$mouse_8h.html" title=" " alt="" coords="16,80,146,107"/>
-<area shape="rect" id="node3" href="$i8042_8h.html" title=" " alt="" coords="13,229,77,256"/>
-<area shape="rect" id="node4" title=" " alt="" coords="40,304,119,331"/>
-<area shape="rect" id="node5" href="$kbc_8h.html" title=" " alt="" coords="22,155,76,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="152,155,258,181"/>
-</map>

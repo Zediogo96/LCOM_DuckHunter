@@ -1,7 +1,0 @@
-<map id="drawCrosshair" name="drawCrosshair">
-<area shape="rect" id="node1" title="Draws the crosshair sprite." alt="" coords="5,56,109,83"/>
-<area shape="rect" id="node2" href="$_sprite_8c.html#a6c75fbf31230126d2f19b29deaf24b2f" title="Draws the sprite to the double buffer." alt="" coords="157,56,245,83"/>
-<area shape="rect" id="node3" href="$video__gr_8c.html#a40a9a53f98c0f310f15090d887338dbe" title="Changes a pixel color in the double buffer by using memcpy()" alt="" coords="293,5,427,32"/>
-<area shape="rect" id="node4" href="$video__gr_8c.html#a3456b8539e4326dd13cbfc4f81b609f1" title="Get the h_res value." alt="" coords="321,56,399,83"/>
-<area shape="rect" id="node5" href="$video__gr_8c.html#aa6c3dbf699d3dda9444bdcd71bf85234" title="Get the v_res value." alt="" coords="321,107,399,133"/>
-</map>

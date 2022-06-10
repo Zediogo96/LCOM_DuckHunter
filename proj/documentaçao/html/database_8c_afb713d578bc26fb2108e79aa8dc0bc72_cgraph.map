@@ -1,7 +1,0 @@
-<map id="drawScoreDigits" name="drawScoreDigits">
-<area shape="rect" id="node1" title="Function that used to draw all the score digits." alt="" coords="5,31,121,57"/>
-<area shape="rect" id="node2" href="$database_8c.html#ae468fff2c640fbd5cbfea0a16e2d3ec9" title="Function used to draw a xpm_image based on the number it&#39;s given." alt="" coords="169,5,264,32"/>
-<area shape="rect" id="node5" href="$database_8c.html#a5120243e5ca027b6f460c9d0e6042282" title="To facilitate using db in another file (note that it&#39;s static)" alt="" coords="187,56,246,83"/>
-<area shape="rect" id="node3" href="$video__gr_8c.html#a16d10eb0485da56eb548625109da2479" title="Draws a xpm image." alt="" coords="312,5,423,32"/>
-<area shape="rect" id="node4" href="$video__gr_8c.html#a40a9a53f98c0f310f15090d887338dbe" title="Changes a pixel color in the double buffer by using memcpy()" alt="" coords="471,5,604,32"/>
-</map>
